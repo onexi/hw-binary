@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<script src="exercise.js"></script>
+
+<script> 
+// start timer when page is loaded
+// your code here
+window.onload = function() {
+    timer();
+};
+
+var timer = function() {
+	// get the current date & time
+    var time = new Date();
+	// show roman time, using 6 columns
+    setRoman(time);
+
+    //console.log(setBinary.hour_col1);
+	// show binary time
+    setBinary(time);
+
+	// update every 1 second
+    setTimeout(timer, 1000);
+};
+
+var setRoman = function(time){
+	// set roman time
+	// you must implement exercise.roman() 
+    var roman_time = exercise.roman(time);
+
+    document.getElementById('hour1').innerHTML = roman_time.hour_col1;
+    document.getElementById('hour2').innerHTML = roman_time.hour_col2;
+    document.getElementById('min1').innerHTML = roman_time.min_col1;
+    document.getElementById('min2').innerHTML = roman_time.min_col2;
+    document.getElementById('sec1').innerHTML = roman_time.sec_col1;
+    document.getElementById('sec2').innerHTML = roman_time.sec_col2;
+};
+
+var setBinary = function(time){
+    //var col1, col2, col3, col4, col5, col6;
+
+    var hour1 = exercise.binary(time, 'hour_col1');
+    if (hour1.position1=='on'){document.getElementById('hour_col1_pos1').style.backgroundColor='red';}
+    else {document.getElementById('hour_col1_pos1').style.backgroundColor='silver';}
+    if (hour1.position2=='on'){document.getElementById('hour_col1_pos2').style.backgroundColor='red';}
+    else {document.getElementById('hour_col1_pos2').style.backgroundColor='silver';}
+    if (hour1.position4=='on'){document.getElementById('hour_col1_pos4').style.backgroundColor='red';}
+    else {document.getElementById('hour_col1_pos4').style.backgroundColor='silver';}
+    if (hour1.position8=='on'){document.getElementById('hour_col1_pos8').style.backgroundColor='red';}
+    else {document.getElementById('hour_col1_pos8').style.backgroundColor='silver';}
+
+    var hour2 = exercise.binary(time, 'hour_col2');
+    if (hour2.position1=='on'){document.getElementById('hour_col2_pos1').style.backgroundColor='red';}
+    else {document.getElementById('hour_col2_pos1').style.backgroundColor='silver';}
+    if (hour2.position2=='on'){document.getElementById('hour_col2_pos2').style.backgroundColor='red';}
+    else {document.getElementById('hour_col2_pos2').style.backgroundColor='silver';}
+    if (hour2.position4=='on'){document.getElementById('hour_col2_pos4').style.backgroundColor='red';}
+    else {document.getElementById('hour_col2_pos4').style.backgroundColor='silver';}
+    if (hour2.position8=='on'){document.getElementById('hour_col2_pos8').style.backgroundColor='red';}
+    else {document.getElementById('hour_col2_pos8').style.backgroundColor='silver';}
+
+    var minute1 = exercise.binary(time, 'min_col1');
+    if (minute1.position1=='on'){document.getElementById('minute_col1_pos1').style.backgroundColor='red';}
+    else {document.getElementById('minute_col1_pos1').style.backgroundColor='silver';}
+    if (minute1.position2=='on'){document.getElementById('minute_col1_pos2').style.backgroundColor='red';}
+    else {document.getElementById('minute_col1_pos2').style.backgroundColor='silver';}
+    if (minute1.position4=='on'){document.getElementById('minute_col1_pos4').style.backgroundColor='red';}
+    else {document.getElementById('minute_col1_pos4').style.backgroundColor='silver';}
+    if (minute1.position8=='on'){document.getElementById('minute_col1_pos8').style.backgroundColor='red';}
+    else {document.getElementById('minute_col1_pos8').style.backgroundColor='silver';}
+
+    var minute2 = exercise.binary(time, 'min_col2');
+    if (minute2.position1=='on'){document.getElementById('minute_col2_pos1').style.backgroundColor='red';}
+    else {document.getElementById('minute_col2_pos1').style.backgroundColor='silver';}
+    if (minute2.position2=='on'){document.getElementById('minute_col2_pos2').style.backgroundColor='red';}
+    else {document.getElementById('minute_col2_pos2').style.backgroundColor='silver';}
+    if (minute2.position4=='on'){document.getElementById('minute_col2_pos4').style.backgroundColor='red';}
+    else {document.getElementById('minute_col2_pos4').style.backgroundColor='silver';}
+    if (minute2.position8=='on'){document.getElementById('minute_col2_pos8').style.backgroundColor='red';}
+    else {document.getElementById('minute_col2_pos8').style.backgroundColor='silver';}
+
+    var second1 = exercise.binary(time, 'sec_col1');
+    if (second1.position1=='on'){document.getElementById('second_col1_pos1').style.backgroundColor='red';}
+    else {document.getElementById('second_col1_pos1').style.backgroundColor='silver';}
+    if (second1.position2=='on'){document.getElementById('second_col1_pos2').style.backgroundColor='red';}
+    else {document.getElementById('second_col1_pos2').style.backgroundColor='silver';}
+    if (second1.position4=='on'){document.getElementById('second_col1_pos4').style.backgroundColor='red';}
+    else {document.getElementById('second_col1_pos4').style.backgroundColor='silver';}
+    if (second1.position8=='on'){document.getElementById('second_col1_pos8').style.backgroundColor='red';}
+    else {document.getElementById('second_col1_pos8').style.backgroundColor='silver';}
+
+    var second2 = exercise.binary(time, 'sec_col2');
+    if (second2.position1=='on'){document.getElementById('second_col2_pos1').style.backgroundColor='red';}
+    else {document.getElementById('second_col2_pos1').style.backgroundColor='silver';}
+    if (second2.position2=='on'){document.getElementById('second_col2_pos2').style.backgroundColor='red';}
+    else {document.getElementById('second_col2_pos2').style.backgroundColor='silver';}
+    if (second2.position4=='on'){document.getElementById('second_col2_pos4').style.backgroundColor='red';}
+    else {document.getElementById('second_col2_pos4').style.backgroundColor='silver';}
+    if (second2.position8=='on'){document.getElementById('second_col2_pos8').style.backgroundColor='red';}
+    else {document.getElementById('second_col2_pos8').style.backgroundColor='silver';}
+
+    // set roman time
+	// you must implement exercise.binary()
+};
+
+</script>
+
+<!--
+	Write HTML elements to hold your binary clock positions
+	There are 6 columns in a binary clock
+-->
+
+<style> div {position:absolute; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;} </style>
+
+<div id = "hour_col1_pos1" style = "left:10px; top: 340px"></div>
+<div id = "hour_col1_pos2" style = "left:10px; top: 230px"></div>
+<div id = "hour_col1_pos4" style = "left:10px; top: 120px; visibility: hidden"></div>
+<div id = "hour_col1_pos8" style = "left:10px; top: 10px; visibility: hidden"></div>
+
+<div id = "hour_col2_pos1" style = "left:120px; top: 340px"></div>
+<div id = "hour_col2_pos2" style = "left:120px; top: 230px"></div>
+<div id = "hour_col2_pos4" style = "left:120px; top: 120px"></div>
+<div id = "hour_col2_pos8" style = "left:120px; top: 10px"></div>
+
+<div id = "minute_col1_pos1" style = "left:230px; top: 340px"></div>
+<div id = "minute_col1_pos2" style = "left:230px; top: 230px"></div>
+<div id = "minute_col1_pos4" style = "left:230px; top: 120px"></div>
+<div id = "minute_col1_pos8" style = "left:230px; top: 10px; visibility: hidden"></div>
+
+<div id = "minute_col2_pos1" style = "left:340px; top: 340px"></div>
+<div id = "minute_col2_pos2" style = "left:340px; top: 230px"></div>
+<div id = "minute_col2_pos4" style = "left:340px; top: 120px"></div>
+<div id = "minute_col2_pos8" style = "left:340px; top: 10px"></div>
+
+<div id = "second_col1_pos1" style = "left:450px; top: 340px"></div>
+<div id = "second_col1_pos2" style = "left:450px; top: 230px"></div>
+<div id = "second_col1_pos4" style = "left:450px; top: 120px"></div>
+<div id = "second_col1_pos8" style = "left:450px; top: 10px; visibility: hidden"></div>
+
+<div id = "second_col2_pos1" style = "left:560px; top: 340px;"></div>
+<div id = "second_col2_pos2" style = "left:560px; top: 230px;"></div>
+<div id = "second_col2_pos4" style = "left:560px; top: 120px"></div>
+<div id = "second_col2_pos8" style = "left:560px; top: 10px"></div>
+
+<div id="hour1" style="left:10px; top: 450px; background:white">  </div>
+<div id="hour2" style="left:120px; top: 450px; background:white">  </div>
+<div id="min1" style="left:230px; top: 450px; background:white">  </div>
+<div id="min2" style="left:340px; top: 450px; background:white">  </div>
+<div id="sec1" style="left:450px; top: 450px; background:white">  </div>
+<div id="sec2" style="left:560px; top: 450px; background:white">  </div>
+
+</html>
+     
