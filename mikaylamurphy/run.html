@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<style> div {position:absolute; width: 100px; height: 100px; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;} 
+</style>
+
+
+<div id = "hr12" style=" position:absolute; left:10px; top:230px; width:100px; height:100px; background:green"></div>
+<div id = "hr11" style=" position:absolute; left:10px; top:340px; width:100px; height:100px; background:green"></div>
+<div id = "hr1r" style=" position:absolute; left:10px; top:450px; width:100px; height:100px"></div>
+
+<div id = "hr28" style=" position:absolute; left:120px; top:10px; width:100px; height:100px; background:green"></div>
+<div id = "hr24" style=" position:absolute; left:120px; top:120px; width:100px; height:100px; background:green"></div>
+<div id = "hr22" style=" position:absolute; left:120px; top:230px; width:100px; height:100px; background:green"></div>
+<div id = "hr21" style=" position:absolute; left:120px; top:340px; width:100px; height:100px; background:green"></div>
+<div id = "hr2r" style=" position:absolute; left:120px; top:450px; width:100px; height:100px"></div>
+
+<div id = "min14" style=" position:absolute; left:230px; top:120px; width:100px; height:100px; background:green"></div>
+<div id = "min12" style=" position:absolute; left:230px; top:230px; width:100px; height:100px; background:green"></div>
+<div id = "min11" style=" position:absolute; left:230px; top:340px; width:100px; height:100px; background:green"></div>
+<div id = "min1r" style=" position:absolute; left:230px; top:450px; width:100px; height:100px"></div>
+
+<div id = "min28" style=" position:absolute; left:340px; top:10px; width:100px; height:100px; background:green"></div>
+<div id = "min24" style=" position:absolute; left:340px; top:120px; width:100px; height:100px; background:green"></div>
+<div id = "min22" style=" position:absolute; left:340px; top:230px; width:100px; height:100px; background:green"></div>
+<div id = "min21" style=" position:absolute; left:340px; top:340px; width:100px; height:100px; background:green"></div>
+<div id = "min2r" style=" position:absolute; left:340px; top:450px; width:100px; height:100px"></div>
+
+<div id = "sec14" style=" position:absolute; left:450px; top:120px; width:100px; height:100px; background:green"></div>
+<div id = "sec12" style=" position:absolute; left:450px; top:230px; width:100px; height:100px; background:green"></div>
+<div id = "sec11" style=" position:absolute; left:450px; top:340px; width:100px; height:100px; background:green"></div>
+<div id = "sec1r" style=" position:absolute; left:450px; top:450px; width:100px; height:100px"></div>
+
+<div id = "sec28" style=" position:absolute; left:560px; top:10px; width:100px; height:100px; background:green"></div>
+<div id = "sec24" style=" position:absolute; left:560px; top:120px; width:100px; height:100px; background:green"></div>
+<div id = "sec22" style=" position:absolute; left:560px; top:230px; width:100px; height:100px; background:green"></div>
+<div id = "sec21" style=" position:absolute; left:560px; top:340px; width:100px; height:100px; background:green"></div>
+<div id = "sec2r" style=" position:absolute; left:560px; top:450px; width:100px; height:100px"></div>
+
+
+<script src="exercise.js"></script>
+<script>
+
+var timer = function() {
+	// get the current date & time
+	var time = new Date();
+	console.log(time);
+
+	// show roman time, using 6 columns
+	setRoman(time);
+
+	// show binary time
+	setBinary(time);
+
+	// update every 1 second
+	setTimeout(timer, 1000);
+};
+
+var setRoman = function(time){
+	// set roman time
+	// you must implement exercise.roman()
+	exercise.roman(time) 
+};
+
+var setBinary = function(time){
+	// set roman time
+	// you must implement exercise.binary()
+
+
+    hr12 = document.getElementById('hr12');
+    hr11 = document.getElementById( 'hr11' );
+    hr28 = document.getElementById('hr28');
+    hr24 = document.getElementById( 'hr24' );
+    hr22 = document.getElementById('hr22');
+    hr21 = document.getElementById( 'hr21' );
+    min14 = document.getElementById('min14');
+    min12 = document.getElementById( 'min12' );
+    min11 = document.getElementById('min11');
+    min28 = document.getElementById( 'min28' );
+    min24 = document.getElementById('min24');
+    min22 = document.getElementById( 'min22' );
+    min21 = document.getElementById('min21');
+    sec14 = document.getElementById('sec14');
+    sec12 = document.getElementById('sec12' );
+    sec11 = document.getElementById('sec11');
+    sec28 = document.getElementById( 'sec28' );
+    sec24 = document.getElementById('sec24');
+    sec22 = document.getElementById( 'sec22' );
+    sec21 = document.getElementById('sec21');
+
+	hr12.style.backgroundColor = 'silver';
+    hr11.style.backgroundColor = 'silver';
+    hr28.style.backgroundColor = 'silver';
+    hr24.style.backgroundColor = 'silver';
+    hr22.style.backgroundColor = 'silver';
+    hr21.style.backgroundColor = 'silver';
+
+    min14.style.backgroundColor = 'silver';
+    min12.style.backgroundColor = 'silver';
+    min11.style.backgroundColor = 'silver';
+    min28.style.backgroundColor = 'silver';
+    min24.style.backgroundColor = 'silver';
+    min22.style.backgroundColor = 'silver';
+    min21.style.backgroundColor = 'silver';
+
+    sec14.style.backgroundColor = 'silver';
+    sec12.style.backgroundColor = 'silver';
+    sec11.style.backgroundColor = 'silver';
+    sec28.style.backgroundColor = 'silver';
+    sec24.style.backgroundColor = 'silver';
+    sec22.style.backgroundColor = 'silver';
+    sec21.style.backgroundColor = 'silver';
+
+	exercise.binary(time, 'hour_col_1')
+	exercise.binary(time, 'hour_col_2')
+	exercise.binary(time, 'min_col_1')
+	exercise.binary(time, 'min_col_2')
+	exercise.binary(time, 'sec_col_1')
+	exercise.binary(time, 'sec_col_2')
+};
+
+// start timer when page is loaded
+// your code here
+onload:timer();
+</script>
+
+
+
+<!--
+
+	Write HTML elements to hold your binary clock positions
+
+	There are 6 columns in a binary clock
+
+-->
+
+
+
+</html>
+     
