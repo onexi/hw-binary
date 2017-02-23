@@ -20,10 +20,10 @@ exercise.roman = function (time) {
 
     //-------------------------------------
     return {
-        hour_col1: Number(time.getHours().toString()[0]),
-        hour_col2: Number(time.getHours().toString()[1]),
-        min_col1: Number(time.getMinutes().toString()[0]),
-        min_col2: Number(time.getMinutes().toString()[1]),
+        hour_col1: Number(Math.floor(time.getHours() / 10)),
+        hour_col2: Number(time.getHours() % 10),
+        min_col1: Number(Math.floor(time.getMinutes() / 10)),
+        min_col2: Number(time.getMinutes() % 10),
         sec_col1: Number(Math.floor(time.getSeconds() / 10)),
         sec_col2: Number(time.getSeconds() % 10)
     };
