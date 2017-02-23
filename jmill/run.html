@@ -21,17 +21,39 @@ var timer = function() {
 var setRoman = function(time){
 	// set roman time
 	// you must implement exercise.roman() 
+    var romanResult = exercise.roman(time);
+
+
+    return {
+        hour_col1 : romanResult.hour_col1,
+        hour_col2 : romanResult.hour_col2,
+        min_col1  : romanResult.min_col1,
+        min_col2  : romanResult.min_col2,
+        sec_col1  : romanResult.sec_col1,
+        sec_col2  : romanResult.sec_col2
+    };
 };
 
 var setBinary = function(time){
 	// set roman time
 	// you must implement exercise.binary()
+    
+    //???
+    // var binaryResult = exercise.binary(time,...);
+    // var hour_col1 = 
+    // return {
+    //     position8 : position8,
+    //     position4 : position4,
+    //     position2 : position2,
+    //     position1 : position1
+    // };
 };
 
 // start timer when page is loaded
-// your code here
+window.onload = timer();
 
 </script>
+
 
 <style> div {position:absolute; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;} </style>
 
@@ -42,6 +64,14 @@ var setBinary = function(time){
 	There are 6 columns in a binary clock
 
 -->
+<div id="hour_col1_pos1" style="left: 10px; top: 340px;"></div>
+<div id="hour_col1_pos2" style="left: 10px; top: 230px;"></div>
+<div id="hour_col1_pos4" style="left: 10px; top: 120px; visibility: hidden"></div>
+<div id="hour_col1_pos8" style="left: 10px; top: 10px; visibility: hidden"></div>
+
+<script>
+document.getElementById('hour_col1_pos1').style.backgroundColor = 'red';
+</script>
 
 </html>
      
