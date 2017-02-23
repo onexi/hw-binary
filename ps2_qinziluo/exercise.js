@@ -36,14 +36,15 @@ exercise.roman = function (time) {
         sec_col1,
         sec_col2
     };
-    /*document.getElementById('txt').innerHTML = hour_col1;*/
-
     return romantime;
-    
 };
 
 
 exercise.binary = function (time, col) {
+    // time -> Date
+    // col -> 'hour_col1', 'hour_col2', 'min_col1', 'min_col2' ..
+    var binary = exercise.roman(time);
+    var number = binary[col];
 
     //----------------------------------------------------------
     //  YOUR CODE
@@ -60,37 +61,48 @@ exercise.binary = function (time, col) {
     //    }; 
     // 
     //----------------------------------------------------------
-    if (col >= 8) {
-        position8 = 'on';
-        col = col - 8;
+    /*
+    */
+    //console.log(col);
+    var pos1='off';
+    var pos2='off';
+    var pos4='off';
+    var pos8='off';
+
+    if (number >= 8) {
+        pos8 = 'on';
+        number -= 8;
     } else {
-        position8 = 'off';
+        pos8 = 'off';
     }
 
-    if (col >= 4) {
-        position4 = 'on';
-        col -= 4;
+    if (number >= 4) {
+        pos4 = 'on';
+        number -= 4;
     } else {
-        position4 = 'off';
+        pos4 = 'off';
     }
-    if (col >= 2) {
-        position2 = 'on';
-        col -= 2;
+
+    if (number >= 2) {
+        pos2 = 'on';
+        number -= 2;
     } else {
-        position2 = 'off';
+        pos2 = 'off';
     }
-    if (col >= 1) {
-        position1 = 'on';
-        col -= 1;
+
+    if (number >= 1) {
+        pos1 = 'on';
+        number -= 1;
     } else {
-        position1 = 'off';
+        pos1 = 'off';
     }
+
     var binary = {
-        position8,
-        position4,
-        position2,
-        position1,
+        position8: pos8,
+        position4: pos4,
+        position2: pos2,
+        position1: pos1
     };
-    return binary;
 
+    return binary;
 };
