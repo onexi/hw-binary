@@ -37,7 +37,7 @@ var setBinary = function(time){
     var time = exercise.roman(time);
 	// you must implement exercise.binary()
     var binary = exercise.binary();
-    
+
     // hour col 1
     if (binary.position1 == 'on'){document.getElementById('hour_col1_pos1').style.backgroundColor = 'red'}
     else {document.getElementById('hour_col1_pos1').style.backgroundColor = 'silver'};
@@ -68,8 +68,6 @@ var setBinary = function(time){
     if (binary.position4 == 'on') {document.getElementById('min_col1_pos4').style.backgroundColor = 'red'}
     else {document.getElementById('min_col1_pos4').style.backgroundColor = 'silver'};
 
-    if (binary.position8 == 'on') {document.getElementById('min_col1_pos8').style.backgroundColor = 'red'}
-    else {document.getElementById('min_col1_pos8').style.backgroundColor = 'silver'};
 
     // min col 2
     if (binary.position1 == 'on') {document.getElementById('min_col2_pos1').style.backgroundColor = 'red'}
@@ -95,8 +93,6 @@ var setBinary = function(time){
     if (binary.position4 == 'on') {document.getElementById('sec_col1_pos4').style.backgroundColor = 'red'}
     else {document.getElementById('sec_col1_pos4').style.backgroundColor = 'silver'};
 
-    if (binary.position8 == 'on') {document.getElementById('sec_col1_pos8').style.backgroundColor = 'red'}
-    else {document.getElementById('sec_col1_pos8').style.backgroundColor = 'silver'};
 
     // sec col 2
     if (binary.position1 == 'on') {document.getElementById('sec_col2_pos1').style.backgroundColor = 'red'}
