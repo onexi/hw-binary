@@ -8,8 +8,14 @@
         var time = new Date();
         console.log(time);
         var hour = time.getHours();
+        //console.log(hour);
+        /*var hour_col2=hour%10;
+         var hour_col1=(hour-hour_col2)/10;
+        console.log(hour_col1);
+        console.log(hour_col2);*/
         // show roman time, using 6 columns
         setRoman(time);
+
         // show binary time
         setBinary(time);
 
@@ -22,8 +28,9 @@
         // set roman time
         // you must implement exercise.roman() 
         romantime = exercise.roman(time);
+        //a=romantime.hour_col1;
         console.log(romantime);
-        document.getElementById("txt_hour_col1").innerHTML = romantime.hour_col1;//write the time at the square
+        document.getElementById("txt_hour_col1").innerHTML = romantime.hour_col1;
         document.getElementById("txt_hour_col2").innerHTML = romantime.hour_col2;
         document.getElementById("txt_min_col1").innerHTML = romantime.min_col1;
         document.getElementById("txt_min_col2").innerHTML = romantime.min_col2;
@@ -38,6 +45,8 @@
     var setBinary = function (time) {
         // set roman time
         // you must implement exercise.binary()
+        //hour_col1
+
         var setcolor = function (binary, id) {
             if (binary.position1 === 'on') {
                 document.getElementById(id1).style.backgroundColor = 'red';
@@ -64,42 +73,42 @@
         var id = {
             id1, id2, id4, id8
         }
-        binary = exercise.binary(time, romantime.hour_col1);
+        binary = exercise.binary(time, 'hour_col1');
         var id1 = "hour_col1_pos1";
         var id2 = "hour_col1_pos2";
         var id4 = "hour_col1_pos4";
         var id8 = "hour_col1_pos8";
         setcolor(binary, id);
 
-        binary = exercise.binary(time, romantime.hour_col2);
+        binary = exercise.binary(time, 'hour_col2');
         var id1 = "hour_col2_pos1";
         var id2 = "hour_col2_pos2";
         var id4 = "hour_col2_pos4";
         var id8 = "hour_col2_pos8";
         setcolor(binary, id);
 
-        binary = exercise.binary(time, romantime.min_col1);
+        binary = exercise.binary(time, 'min_col1');
         var id1 = "min_col1_pos1";
         var id2 = "min_col1_pos2";
         var id4 = "min_col1_pos4";
         var id8 = "min_col1_pos8";
         setcolor(binary, id);
 
-        binary = exercise.binary(time, romantime.min_col2);
+        binary = exercise.binary(time, 'min_col2');
         var id1 = "min_col2_pos1";
         var id2 = "min_col2_pos2";
         var id4 = "min_col2_pos4";
         var id8 = "min_col2_pos8";
         setcolor(binary, id);
 
-        binary = exercise.binary(time, romantime.sec_col1);
+        binary = exercise.binary(time, 'sec_col1');
         var id1 = "sec_col1_pos1";
         var id2 = "sec_col1_pos2";
         var id4 = "sec_col1_pos4";
         var id8 = "sec_col1_pos8";
         setcolor(binary, id);
 
-        binary = exercise.binary(time, romantime.sec_col2);
+        binary = exercise.binary(time, 'sec_col2');
         var id1 = "sec_col2_pos1";
         var id2 = "sec_col2_pos2";
         var id4 = "sec_col2_pos4";
@@ -111,7 +120,7 @@
 
     // start timer when page is loaded
     // your code here
-    window.onload = timer;//onload the time now
+    window.onload = timer;
 
 </script>
 
@@ -135,13 +144,17 @@
 	There are 6 columns in a binary clock
 
 -->
+<!--<div id='txt' style="left: 10px; top:450px;background: white "></div>-->
+
+<!--<body onload="exercise.roman(time)">
+<div id="txt"></div>-->
 
 
 <div id="hour_col1_pos1" style="left: 10px; top:340px; "></div>
 <div id="hour_col1_pos2" style="left: 10px; top:230px; "></div>
 <div id="hour_col1_pos4" style="left: 10px; top:120px; visibility:hidden"></div>
 <div id="hour_col1_pos8" style="left: 10px; top:10px; visibility:hidden"></div>
-<div id="txt_hour_col1" style="left: 10px; top:450px; background: white"></div> <!--create an empty square--> 
+<div id="txt_hour_col1" style="left: 10px; top:450px; background: white"></div>
 
 <div id="hour_col2_pos1" style="left: 120px; top:340px; "></div>
 <div id="hour_col2_pos2" style="left: 120px; top:230px; "></div>
@@ -175,5 +188,11 @@
 
 
 
+<script>
+    //var response = exercise.binary (time,'hour_col1');
+
+//document.getElementById("hour_col1_pos1").style.backgroundColor = 'red';
+
+</script>
 
 </html>
