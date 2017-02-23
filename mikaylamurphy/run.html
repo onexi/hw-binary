@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<style> div {position:absolute; width: 100px; height: 100px; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;} 
+</style>
+
+
+<div id = "hr12" style=" position:absolute; left:10px; top:230px; width:100px; height:100px; background:green"></div>
+<div id = "hr11" style=" position:absolute; left:10px; top:340px; width:100px; height:100px; background:green"></div>
+<div id = "hr1r" style=" position:absolute; left:10px; top:450px; width:100px; height:100px"></div>
+
+<div id = "hr28" style=" position:absolute; left:120px; top:10px; width:100px; height:100px; background:green"></div>
+<div id = "hr24" style=" position:absolute; left:120px; top:120px; width:100px; height:100px; background:green"></div>
+<div id = "hr22" style=" position:absolute; left:120px; top:230px; width:100px; height:100px; background:green"></div>
+<div id = "hr21" style=" position:absolute; left:120px; top:340px; width:100px; height:100px; background:green"></div>
+<div id = "hr2r" style=" position:absolute; left:120px; top:450px; width:100px; height:100px"></div>
+
+<div id = "min14" style=" position:absolute; left:230px; top:120px; width:100px; height:100px; background:green"></div>
+<div id = "min12" style=" position:absolute; left:230px; top:230px; width:100px; height:100px; background:green"></div>
+<div id = "min11" style=" position:absolute; left:230px; top:340px; width:100px; height:100px; background:green"></div>
+<div id = "min1r" style=" position:absolute; left:230px; top:450px; width:100px; height:100px"></div>
+
+<div id = "min28" style=" position:absolute; left:340px; top:10px; width:100px; height:100px; background:green"></div>
+<div id = "min24" style=" position:absolute; left:340px; top:120px; width:100px; height:100px; background:green"></div>
+<div id = "min22" style=" position:absolute; left:340px; top:230px; width:100px; height:100px; background:green"></div>
+<div id = "min21" style=" position:absolute; left:340px; top:340px; width:100px; height:100px; background:green"></div>
+<div id = "min2r" style=" position:absolute; left:340px; top:450px; width:100px; height:100px"></div>
+
+<div id = "sec14" style=" position:absolute; left:450px; top:120px; width:100px; height:100px; background:green"></div>
+<div id = "sec12" style=" position:absolute; left:450px; top:230px; width:100px; height:100px; background:green"></div>
+<div id = "sec11" style=" position:absolute; left:450px; top:340px; width:100px; height:100px; background:green"></div>
+<div id = "sec1r" style=" position:absolute; left:450px; top:450px; width:100px; height:100px"></div>
+
+<div id = "sec28" style=" position:absolute; left:560px; top:10px; width:100px; height:100px; background:green"></div>
+<div id = "sec24" style=" position:absolute; left:560px; top:120px; width:100px; height:100px; background:green"></div>
+<div id = "sec22" style=" position:absolute; left:560px; top:230px; width:100px; height:100px; background:green"></div>
+<div id = "sec21" style=" position:absolute; left:560px; top:340px; width:100px; height:100px; background:green"></div>
+<div id = "sec2r" style=" position:absolute; left:560px; top:450px; width:100px; height:100px"></div>
+
+
+<script src="exercise.js"></script>
+<script>
+
+var timer = function() {
+	// get the current date & time
+	var time = new Date();
+
+	// show roman time, using 6 columns
+	setRoman(time);
+
+	// show binary time
+	setBinary(time);
+
+	// update every 1 second
+	setTimeout(timer, 1000);
+};
+
+var setRoman = function(time){
+	// set roman time
+	// you must implement exercise.roman()
+	var roman = exercise.roman(time);
+
+    document.getElementById('hr1r').innerText = String(roman.hour_col1);
+    document.getElementById('hr2r').innerText = String(roman.hour_col2);
+    document.getElementById('min1r').innerText = String(roman.min_col1);
+    document.getElementById('min2r').innerText = String(roman.min_col2);
+    document.getElementById('sec1r').innerText = String(roman.sec_col1);
+    document.getElementById('sec2r').innerText = String(roman.sec_col2);
+};
+
+var setBinary = function(time){
+	// set roman time
+	// you must implement exercise.binary()
+    var hr1 = exercise.binary(time, 'hour_col1');
+	var hr2 = exercise.binary(time, 'hour_col2');
+	var min1 = exercise.binary(time, 'min_col1');
+	var min2 = exercise.binary(time, 'min_col2');
+	var sec1 = exercise.binary(time, 'sec_col1');
+	var sec2 = exercise.binary(time, 'sec_col2');
+
+
+    if(hr1.position2 === 'on'){	
+    document.getElementById('hr12').style.backgroundColor= 'red';
+    } else {
+    document.getElementById('hr12').style.backgroundColor= 'silver';
+}
+
+    if (hr1.position1 === 'on'){	
+    document.getElementById('hr11').style.backgroundColor= 'red';
+    } else {
+    document.getElementById('hr11').style.backgroundColor= 'silver';
+}
+
+
+    if (hr2.position8 === 'on'){	
+    document.getElementById('hr28').style.backgroundColor= 'red';
+    } else {
+    document.getElementById('hr28').style.backgroundColor= 'silver';
+}
+    if (hr2.position4 === 'on'){	
+    document.getElementById('hr24').style.backgroundColor= 'red';
+    } else {
+    document.getElementById('hr24').style.backgroundColor= 'silver';
+}
+    if (hr2.position2 === 'on'){	
+    document.getElementById('hr22').style.backgroundColor= 'red';
+    } else {
+    document.getElementById('hr22').style.backgroundColor= 'silver';
+}
+    if (hr2.position1 === 'on'){	
+    document.getElementById('hr21').style.backgroundColor= 'red';
+    } else {
+    document.getElementById('hr21').style.backgroundColor= 'silver';
+}
+
+
+    if (min1.position4 === 'on'){	
+    document.getElementById('min14').style.backgroundColor= 'red';
+    } else {
+    document.getElementById('min14').style.backgroundColor= 'silver';
+}
+    if (min1.position2 === 'on'){	
+    document.getElementById('min12').style.backgroundColor= 'red';
+    } else {
+    document.getElementById('min12').style.backgroundColor= 'silver';
+}
+    if (min1.position1 === 'on'){	
+    document.getElementById('min11').style.backgroundColor= 'red';
+    } else {
+    document.getElementById('min11').style.backgroundColor= 'silver';
+}
+
+
+if (min2.position8 === 'on'){	
+    document.getElementById('min28').style.backgroundColor= 'red';
+    } else {
+    document.getElementById('min28').style.backgroundColor= 'silver';
+}
+if (min2.position4 === 'on'){	
+    document.getElementById('min24').style.backgroundColor= 'red';
+    } else {
+    document.getElementById('min24').style.backgroundColor= 'silver';
+}
+if (min2.position2 === 'on'){	
+    document.getElementById('min22').style.backgroundColor= 'red';
+    } else {
+    document.getElementById('min22').style.backgroundColor= 'silver';
+}
+if (min2.position1 === 'on'){	
+    document.getElementById('min21').style.backgroundColor= 'red';
+    } else {
+    document.getElementById('min21').style.backgroundColor= 'silver';
+}
+
+
+if (sec1.position4 === 'on'){	
+    document.getElementById('sec14').style.backgroundColor= 'red';
+    } else {
+    document.getElementById('sec14').style.backgroundColor= 'silver';
+}
+if (sec1.position2 === 'on'){	
+    document.getElementById('sec12').style.backgroundColor= 'red';
+    } else {
+    document.getElementById('sec12').style.backgroundColor= 'silver';
+}
+if (sec1.position1 === 'on'){	
+    document.getElementById('sec11').style.backgroundColor= 'red';
+    } else {
+    document.getElementById('sec11').style.backgroundColor= 'silver';
+}
+
+
+
+if (sec2.position8 === 'on'){	
+    document.getElementById('sec28').style.backgroundColor= 'red';
+    } else {
+    document.getElementById('sec28').style.backgroundColor= 'silver';
+}
+if (sec2.position4 === 'on'){	
+    document.getElementById('sec24').style.backgroundColor= 'red';
+    } else {
+    document.getElementById('sec24').style.backgroundColor= 'silver';
+}
+if (sec2.position2 === 'on'){	
+    document.getElementById('sec22').style.backgroundColor= 'red';
+    } else {
+    document.getElementById('sec22').style.backgroundColor= 'silver';
+}
+if (sec2.position1 === 'on'){	
+    document.getElementById('sec21').style.backgroundColor= 'red';
+    } else {
+    document.getElementById('sec21').style.backgroundColor= 'silver';
+}
+
+};
+
+// start timer when page is loaded
+// your code here
+onload:timer();
+</script>
+
+
+
+<!--
+
+	Write HTML elements to hold your binary clock positions
+
+	There are 6 columns in a binary clock
+
+-->
+
+
+
+</html>
+     
