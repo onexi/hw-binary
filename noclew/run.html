@@ -2,69 +2,168 @@
 <html>
 <script src="exercise.js"></script>
 <script>
+    var timer = function () {
+        // get the current date & time
+        var time = new Date();
+        //console.log(time);
 
-var timer = function() {
-	// get the current date & time
-	var time = new Date();
-	//console.log(time);
+        // show roman time, using 6 columns
+        setRoman(time);
 
-	// show roman time, using 6 columns
-    setRoman(time);
+        // show binary time
+        setBinary(time);
 
-	// show binary time
-    setBinary(time);
+        // update every 1 second
+        setTimeout(timer, 1000);
+    };
 
-	// update every 1 second
-	setTimeout(timer, 1000);
-};
+    var setRoman = function (time) {
+        // set roman time
+        // you must implement exercise.roman() 
+        var romanTime = exercise.roman(time);
+        for (var key in romanTime) {
+            document.getElementById(key).innerHTML = romanTime[key];
+        }
 
-var setRoman = function(time){
-	// set roman time
-	// you must implement exercise.roman() 
-    var romanTime = exercise.roman(time);
-    for (var key in romanTime){
-        document.getElementById(key).innerHTML = romanTime[key];
-    }
+    };
+    var c6, c5, c4, c3, c2, c1;
+    var setBinary = function (time) {
+        // set roman time
+        // you must implement exercise.binary()
+        c6 = exercise.binary(time, 'sec_col2');
+        c5 = exercise.binary(time, 'sec_col1');
+        c4 = exercise.binary(time, 'min_col2');
+        c3 = exercise.binary(time, 'min_col1');
+        c2 = exercise.binary(time, 'hour_col2');
+        c1 = exercise.binary(time, 'hour_col1');
 
-};
-
-var setBinary = function(time){
-	// set roman time
-	// you must implement exercise.binary()
-    // exercise.binary(time, 1);
-    // exercise.binary(time, 2);
-    // exercise.binary(time, 3);
-    // exercise.binary(time, 4);
-    // exercise.binary(time, 5);
-    var c6 = exercise.binary(time, 6);
-    var c5 = exercise.binary(time, 5);
-    var c4 = exercise.binary(time, 4);
-    var c3 = exercise.binary(time, 3);
-    var c2 = exercise.binary(time, 2);
-    var c1 = exercise.binary(time, 1);
-
-    exercise.placeDiv(c6, 6);
-    exercise.placeDiv(c5, 5);
-    exercise.placeDiv(c4, 4);
-    exercise.placeDiv(c3, 3);
-    exercise.placeDiv(c2, 2);
-    exercise.placeDiv(c1, 1);
-
-    
-};
+        placeDiv(c6, 6);
+        placeDiv(c5, 5);
+        placeDiv(c4, 4);
+        placeDiv(c3, 3);
+        placeDiv(c2, 2);
+        placeDiv(c1, 1);
 
 
 
-// start timer when page is loaded
-// your code here
-window.onload = timer;
+    };
+    var placeDiv = function (binObj, col) {
+        var posLeft = 50 + (col - 1) * 110;
+
+        var div8;
+        if (binObj.position8 === 'on') {
+            div8 = document.createElement('div');
+            div8.className = 'digitOn';
+        }
+        else if (binObj.position8 === 'off') {
+            div8 = document.createElement('div');
+            div8.className = 'digitOff';
+        }
+        else div8 = null;
+
+        if (div8 !== null) {
+            div8.style.left = posLeft + 'px';
+            div8.style.posTop = 50;
+            document.body.appendChild(div8);
+        }
+
+
+        var div4;
+        if (binObj.position4 === 'on') {
+            div4 = document.createElement('div');
+            div4.className = 'digitOn';
+        }
+        else if (binObj.position4 === 'off') {
+            div4 = document.createElement('div');
+            div4.className = 'digitOff';
+        }
+        else div4 = null;
+
+        if (div4 !== null) {
+            div4.style.left = posLeft + 'px';
+            div4.style.posTop = 160;
+            document.body.appendChild(div4);
+        }
+
+        var div2;
+        if (binObj.position2 === 'on') {
+            div2 = document.createElement('div');
+            div2.className = 'digitOn';
+        }
+        else if (binObj.position2 === 'off') {
+            div2 = document.createElement('div');
+            div2.className = 'digitOff';
+        }
+        else div2 = null;
+
+        if (div2 !== null) {
+            div2.style.left = posLeft + 'px';
+            div2.style.posTop = 270;
+            document.body.appendChild(div2);
+        }
+
+
+        var div1;
+        if (binObj.position1 === 'on') {
+            div1 = document.createElement('div');
+            div1.className = 'digitOn';
+        }
+        else if (binObj.position1 === 'off') {
+            div1 = document.createElement('div');
+            div1.className = 'digitOff';
+        }
+        else div1 = null;
+
+        if (div1 !== null) {
+            div1.style.left = posLeft + 'px';
+            div1.style.posTop = 380;
+            document.body.appendChild(div1);
+        }
+
+
+    };
+
+
+
+    // start timer when page is loaded
+    // your code here
+    window.onload = timer;
 
 </script>
 
-<style> 
-div.digitOff {position:absolute; width: 100px; height: 100px; background:wheat ; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;} 
-div.digitOn {position:absolute; width: 100px; height: 100px; background: darkred; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;} 
-div.letterBox {position:absolute; width: 100px; height: 100px; outline: gray dotted thin; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;} 
+<style>
+    div.digitOff {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: wheat;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 100px;
+        font-size: 5em;
+    }
+    
+    div.digitOn {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: darkred;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 100px;
+        font-size: 5em;
+    }
+    
+    div.letterBox {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        outline: gray dotted thin;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 100px;
+        font-size: 5em;
+    }
 </style>
 
 <!--
@@ -74,15 +173,15 @@ div.letterBox {position:absolute; width: 100px; height: 100px; outline: gray dot
 	There are 6 columns in a binary clock
 
 -->
+
 <body>
-    <div id = 'hour_col1' class='letterBox' style="left: 50px; top: 490px">0</div>
-    <div id = 'hour_col2' class='letterBox' style="left: 160px; top: 490px">0</div>
-    <div id = 'min_col1' class='letterBox' style="left: 270px; top: 490px">0</div>
-    <div id = 'min_col2' class='letterBox' style="left: 380px; top: 490px">0</div>
-    <div id = 'sec_col1' class='letterBox' style="left: 490px; top: 490px">0</div>
-    <div id = 'sec_col2' class='letterBox' style="left: 600px; top: 490px">0</div>
-    
+    <div id='hour_col1' class='letterBox' style="left: 50px; top: 490px">0</div>
+    <div id='hour_col2' class='letterBox' style="left: 160px; top: 490px">0</div>
+    <div id='min_col1' class='letterBox' style="left: 270px; top: 490px">0</div>
+    <div id='min_col2' class='letterBox' style="left: 380px; top: 490px">0</div>
+    <div id='sec_col1' class='letterBox' style="left: 490px; top: 490px">0</div>
+    <div id='sec_col2' class='letterBox' style="left: 600px; top: 490px">0</div>
+
 </body>
 
 </html>
-     
