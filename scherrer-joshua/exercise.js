@@ -9,7 +9,6 @@ function addZero(i){
 
 var timer = function() {
 	time = new Date();
-	console.log(time);
     setRoman(time);
 	setBinary(time);
 	setTimeout(timer, 1000);
