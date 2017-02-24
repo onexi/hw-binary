@@ -26,6 +26,12 @@ var timer = function() {
 };
 
 var setRoman = function(time){
+    var h1 = time.getHours().toString()[0];
+    var h2 = time.getHours().toString()[1];
+    var m1 = time.getMinutes().toString()[0];
+    var m2 = time.getMinutes().toString()[1];
+    var s1 = time.getSeconds().toString()[0];
+    var s2 = time.getSeconds().toString()[1];
     exercise.roman(time);
 };
 
@@ -78,7 +84,7 @@ var setBinary = function(time){
     
 };
 
-onload = timer();
+window.onload = timer();
 
 
 </script>

@@ -1,12 +1,18 @@
 var exercise = {};
 
 exercise.roman = function(time){
-    document.getElementById('hour1').innerHTML = time.getHours().toString()[0];
-    document.getElementById('hour2').innerHTML = time.getHours().toString()[1];
-    document.getElementById('min1').innerHTML = time.getMinutes().toString()[0];
-    document.getElementById('min2').innerHTML = time.getMinutes().toString()[1];
-    document.getElementById('sec1').innerHTML = time.getSeconds().toString()[0];
-    document.getElementById('sec2').innerHTML = time.getSeconds().toString()[1];
+    var h1 = time.getHours().toString()[0];
+    var h2 = time.getHours().toString()[1];
+    var m1 = time.getMinutes().toString()[0];
+    var m2 = time.getMinutes().toString()[1];
+    var s1 = time.getSeconds().toString()[0];
+    var s2 = time.getSeconds().toString()[1];
+    document.getElementById('hour1').innerHTML = h1;
+    document.getElementById('hour2').innerHTML = h2;
+    document.getElementById('min1').innerHTML = m1;
+    document.getElementById('min2').innerHTML = m2;
+    document.getElementById('sec1').innerHTML = s1;
+    document.getElementById('sec2').innerHTML = s2;
 };
 
 exercise.binary = function(time, col){
