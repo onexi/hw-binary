@@ -1,12 +1,23 @@
 var exercise = {};
 
+function addZero(i){
+    if (i < 10){
+        i = '0' + i;
+    }
+    return i;
+}
+
+
 exercise.roman = function(time){
-    var h1 = time.getHours().toString()[0];
-    var h2 = time.getHours().toString()[1];
-    var m1 = time.getMinutes().toString()[0];
-    var m2 = time.getMinutes().toString()[1];
-    var s1 = time.getSeconds().toString()[0];
-    var s2 = time.getSeconds().toString()[1];
+    var hours = addZero(time.getHours());
+    var minutes = addZero(time.getMinutes());
+    var seconds = addZero(time.getSeconds());
+    var h1 = hours.toString()[0];
+    var h2 = hours.toString()[1];
+    var m1 = minutes.toString()[0];
+    var m2 = minutes.toString()[1];
+    var s1 = seconds.toString()[0];
+    var s2 = seconds.toString()[1];
     document.getElementById('hour1').innerHTML = h1;
     document.getElementById('hour2').innerHTML = h2;
     document.getElementById('min1').innerHTML = m1;
