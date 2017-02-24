@@ -47,6 +47,14 @@ exercise.roman = function(time){
 };
 
 exercise.binary = function(time, col){
+    // var digit;
+    // if (col == 'hour_col1'){digit = exercise.roman.hour_col1;}
+    // if (col == 'hour_col2'){digit = exercise.roman.hour_col2;}
+    // if (col == 'min_col1'){digit = exercise.roman.min_col1;}
+    // if (col == 'min_col2'){digit = exercise.roman.min_col2;}
+    // if (col == 'sec_col1'){digit = exercise.roman.sec_col1;}
+    // if (col == 'sec_col2'){digit = exercise.roman.sec_col2;} 
+
     var binary = {
         position8: 'off',
         position4: 'off',
@@ -63,7 +71,7 @@ exercise.binary = function(time, col){
         binary.position4 = 'on';
         time -= 4;
     };
-    if (time>=2){
+    if (time >=2){
         binary.position2 = 'on';
         time -=2;
     };
