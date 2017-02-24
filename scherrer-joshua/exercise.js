@@ -8,7 +8,7 @@ function addZero(i){
 }
 
 var timer = function() {
-	var time = new Date();
+	time = new Date();
 	console.log(time);
     setRoman(time);
 	setBinary(time);
@@ -54,131 +54,131 @@ exercise.binary = function(time){
     var s2 = seconds.toString()[1];
     
     if(h1==2) {
-        document.getElementById('h11').style.background = 'red';
+        document.getElementById('h11').style.background = '#afafcf';
     } else {
-        document.getElementById('h11').style.background = 'silver';
+        document.getElementById('h11').style.background = '#1d1d30';
     } 
     if(h1==1){
-        document.getElementById('h12').style.background = 'red';
+        document.getElementById('h12').style.background = '#afafcf';
     } else {
-        document.getElementById('h12').style.background = 'silver';
+        document.getElementById('h12').style.background = '#1d1d30';
     }
 
 
     if(h2>=8){
         h2-=8;
-        document.getElementById('h21').style.background = 'red';
+        document.getElementById('h21').style.background = '#afafcf';
     } else {
-        document.getElementById('h21').style.background = 'silver';
+        document.getElementById('h21').style.background = '#1d1d30';
     }
     if(h2>=4){
         h2-=4;
-        document.getElementById('h22').style.background = 'red';
+        document.getElementById('h22').style.background = '#afafcf';
     } else {
-        document.getElementById('h22').style.background = 'silver';
+        document.getElementById('h22').style.background = '#1d1d30';
     }
     if(h2>=2){
         h2-=2;
-        document.getElementById('h23').style.background = 'red';
+        document.getElementById('h23').style.background = '#afafcf';
     } else {
-        document.getElementById('h23').style.background = 'silver';
+        document.getElementById('h23').style.background = '#1d1d30';
     }
     if(h2>=1){
         h2-=1;
-        document.getElementById('h24').style.background = 'red';
+        document.getElementById('h24').style.background = '#afafcf';
     } else {
-        document.getElementById('h24').style.background = 'silver';
+        document.getElementById('h24').style.background = '#1d1d30';
     }
 
 
     if(m1>=4){
         m1-=4;
-        document.getElementById('m11').style.background = 'red';
+        document.getElementById('m11').style.background = '#afafcf';
     } else {
-        document.getElementById('m11').style.background = 'silver';
+        document.getElementById('m11').style.background = '#1d1d30';
     }
     if(m1>=2){
         m1-=2;
-        document.getElementById('m12').style.background = 'red';
+        document.getElementById('m12').style.background = '#afafcf';
     } else {
-        document.getElementById('m12').style.background = 'silver';
+        document.getElementById('m12').style.background = '#1d1d30';
     }
     if(m1>=1){
         m1-=1;
-        document.getElementById('m13').style.background = 'red';
+        document.getElementById('m13').style.background = '#afafcf';
     } else {
-        document.getElementById('m13').style.background = 'silver';
+        document.getElementById('m13').style.background = '#1d1d30';
     }
 
 
     if(m2>=8){
         m2-=8;
-        document.getElementById('m21').style.background = 'red';
+        document.getElementById('m21').style.background = '#afafcf';
     } else {
-        document.getElementById('m21').style.background = 'silver';
+        document.getElementById('m21').style.background = '#1d1d30';
     }
     if(m2>=4){
         m2-=4;
-        document.getElementById('m22').style.background = 'red';
+        document.getElementById('m22').style.background = '#afafcf';
     } else {
-        document.getElementById('m22').style.background = 'silver';
+        document.getElementById('m22').style.background = '#1d1d30';
     }
     if(m2>=2){
         m2-=2;
-        document.getElementById('m23').style.background = 'red';
+        document.getElementById('m23').style.background = '#afafcf';
     } else {
-        document.getElementById('m23').style.background = 'silver';
+        document.getElementById('m23').style.background = '#1d1d30';
     }
     if(m2>=1){
         m2-=1;
-        document.getElementById('m24').style.background = 'red';
+        document.getElementById('m24').style.background = '#afafcf';
     } else {
-        document.getElementById('m24').style.background = 'silver';
+        document.getElementById('m24').style.background = '#1d1d30';
     }
 
 
     if(s1>=4){
         s1-=4;
-        document.getElementById('s11').style.background = 'red';
+        document.getElementById('s11').style.background = '#afafcf';
     } else {
-        document.getElementById('s11').style.background = 'silver';
+        document.getElementById('s11').style.background = '#1d1d30';
     }
     if(s1>=2){
         s1-=2;
-        document.getElementById('s12').style.background = 'red';
+        document.getElementById('s12').style.background = '#afafcf';
     } else {
-        document.getElementById('s12').style.background = 'silver';
+        document.getElementById('s12').style.background = '#1d1d30';
     }
     if(s1>=1){
         s1-=1;
-        document.getElementById('s13').style.background = 'red';
+        document.getElementById('s13').style.background = '#afafcf';
     } else {
-        document.getElementById('s13').style.background = 'silver';
+        document.getElementById('s13').style.background = '#1d1d30';
     }
 
 
     if(s2>=8){
         s2-=8;
-        document.getElementById('s21').style.background = 'red';
+        document.getElementById('s21').style.background = '#afafcf';
     } else {
-        document.getElementById('s21').style.background = 'silver';
+        document.getElementById('s21').style.background = '#1d1d30';
     }
     if(s2>=4){
         s2-=4;
-        document.getElementById('s22').style.background = 'red';
+        document.getElementById('s22').style.background = '#afafcf';
     } else {
-        document.getElementById('s22').style.background = 'silver';
+        document.getElementById('s22').style.background = '#1d1d30';
     }
     if(s2>=2){
         s2-=2;
-        document.getElementById('s23').style.background = 'red';
+        document.getElementById('s23').style.background = '#afafcf';
     } else {
-        document.getElementById('s23').style.background = 'silver';
+        document.getElementById('s23').style.background = '#1d1d30';
     }
     if(s2>=1){
         s2-=1;
-        document.getElementById('s24').style.background = 'red';
+        document.getElementById('s24').style.background = '#afafcf';
     } else {
-        document.getElementById('s24').style.background = 'silver';
+        document.getElementById('s24').style.background = '#1d1d30';
     }
 };
