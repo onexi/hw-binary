@@ -1,43 +1,46 @@
 var exercise = {};
 
-
 exercise.roman = function(time){
-
-    //-------------------------------------
-    //  YOUR CODE
-    //    Return an object with roman time. 
-    //    Time is reported using 6 columns.
-    //
-    //  For example, for 05:13:47 PM
-    //    { 
-    //       hour_col1 : 1, 
-    //       hour_col2 : 7,
-    //       min_col1  : 1, 
-    //       min_col2  : 3, 
-    //       sec_col1  : 4, 
-    //       sec_col2  : 7
-    //     };
-    // 
-    //-------------------------------------
-
+    document.getElementById('hour1').innerHTML = time.getHours().toString()[0];
+    document.getElementById('hour2').innerHTML = time.getHours().toString()[1];
+    document.getElementById('min1').innerHTML = time.getMinutes().toString()[0];
+    document.getElementById('min2').innerHTML = time.getMinutes().toString()[1];
+    document.getElementById('sec1').innerHTML = time.getSeconds().toString()[0];
+    document.getElementById('sec2').innerHTML = time.getSeconds().toString()[1];
 };
 
 exercise.binary = function(time, col){
+    var clock = [];
+    for(var i=0; i < col.length; i++)
+    {
+        var bp = { 
+            position8 : 'off', 
+            position4 : 'off', 
+            position2 : 'off', 
+            position1 : 'off' 
+        };
 
-    //----------------------------------------------------------
-    //  YOUR CODE
-    //    Return an object with
-    //    the binary clock values 
-    //    for the given column
-    //
-    //  For example, for time 05:13:47 PM, and column hour_col2
-    //    var binary = { 
-    //        position8 : 'off', 
-    //        position4 : 'on', 
-    //        position2 : 'on', 
-    //        position1 : 'on', 
-    //    }; 
-    // 
-    //----------------------------------------------------------
+        if (time[i] >= 8) {
+            bp.position8 = 'on';
+            time[i] -= 8;
+        } 
+
+        if (time[i] >= 4) {
+            bp.position4 = 'on';
+            time[i] -= 4;
+        }
+
+        if (time[i] >= 2) {
+            bp.position2 = 'on';
+            time[i] -= 2;
+        }
+
+        if (time[i] >= 1) {
+            bp.position1 = 'on';
+            time[i] -= 1;
+        }
+        clock[col[i]]=bp;
+    }
+    return clock;
 
 };
