@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<script src="exercise.js"></script>
+
+<style> div {position:absolute; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;} </style>
+
+<!--Every block in the grid is assigned a coordinate-->
+<!--The first digit in the id is the column number, starting at 0 and counting from the left-->
+<!--The second digit in the id is the row number, starting at 0 and counting from the bottom-->
+
+<div id="00" style="left:15px; top:360px;"></div>
+<div id="01" style="left:15px; top:245px;"></div>
+<div id="02" style="left:15px; top:130px; visibility:hidden"></div>
+<div id="03" style="left:15px; top:15px; visibility:hidden"></div>
+
+<div id="10" style="left:130px; top:360px;"></div>
+<div id="11" style="left:130px; top:245px;"></div>
+<div id="12" style="left:130px; top:130px;"></div>
+<div id="13" style="left:130px; top:15px;"></div>
+
+<div id="20" style="left:245px; top:360px;"></div>
+<div id="21" style="left:245px; top:245px;"></div>
+<div id="22" style="left:245px; top:130px;"></div>
+<div id="23" style="left:245px; top:15px; visibility:hidden"></div>
+
+<div id="30" style="left:360px; top:360px;"></div>
+<div id="31" style="left:360px; top:245px;"></div>
+<div id="32" style="left:360px; top:130px;"></div>
+<div id="33" style="left:360px; top:15px;"></div>
+
+<div id="40" style="left:475px; top:360px;"></div>
+<div id="41" style="left:475px; top:245px;"></div>
+<div id="42" style="left:475px; top:130px;"></div>
+<div id="43" style="left:475px; top:15px; visibility:hidden"></div>
+
+<div id="50" style="left:590px; top:360px;"></div>
+<div id="51" style="left:590px; top:245px;"></div>
+<div id="52" style="left:590px; top:130px;"></div>
+<div id="53" style="left:590px; top:15px;"></div>
+
+<div id="roman0" style="left:15px; top:475px; background:transparent;"></div>
+<div id="roman1" style="left:130px; top:475px; background:transparent;"></div>
+<div id="roman2" style="left:245px; top:475px; background:transparent;"></div>
+<div id="roman3" style="left:360px; top:475px; background:transparent;"></div>
+<div id="roman4" style="left:475px; top:475px; background:transparent;"></div>
+<div id="roman5" style="left:590px; top:475px; background:transparent;"></div>
+
+<script>
+
+var timer = function() {
+	// get the current date & time
+	var time = new Date();
+	console.log(time);
+
+	// show roman time, using 6 columns
+	setRoman(time);
+
+	// show binary time
+	setBinary(time);
+
+	// update every 1 second
+	setTimeout(timer, 1000);
+
+};
+
+var setRoman = function(time){
+	// set roman time
+	// you must implement exercise.roman() 
+
+    var response = exercise.roman(time);
+
+    for(var x = 0; x < 6; x++){
+
+        var square = document.getElementById("roman" + x);
+        var content = document.createTextNode("" + response[x]);
+        //if(square.hasChildNodes){square.removeChild(square.lastChild);}
+        while (square.firstChild) square.removeChild(square.firstChild);
+        square.appendChild(content);
+
+    }
+
+};
+
+var setBinary = function(time){
+
+    // nested for loops to update the background of every element in the grid
+    //first for loop iterates by column 
+	for(var i = 0; i < 6; i++){
+        
+        //second for loop iterated by row
+        for(var ii = 0; ii < 4; ii++){
+
+            var response = exercise.binary(time, i);
+
+            if(response[ii] === 0){
+                document.getElementById('' + i + ii).style.backgroundColor = 'silver';
+            }
+            else if(response[ii] === 1){
+                document.getElementById('' + i + ii).style.backgroundColor = 'red';
+            }
+            }
+        }
+        }
+
+window.onload = timer();
+
+</script>
+
+</html>
+     
