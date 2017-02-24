@@ -24,6 +24,7 @@ exercise.roman = function(time){
         minutes = ("00" + time.getMinutes()).slice(-2),
         seconds = ("00" + time.getSeconds()).slice(-2);
 
+
     //convert sub-time strings to labeled column strings
     return {
         hour_col1 : hours.slice(0,1),
@@ -111,12 +112,13 @@ exercise.binary = function(time, col){
         }
     }
 
-    return {
+    var binary = {
         position8 : position8,
         position4 : position4,
         position2 : position2,
         position1 : position1
     };
+    return binary;
 };
 
 // added this function
