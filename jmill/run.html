@@ -9,7 +9,6 @@ var binaryResult;
 var timer = function() {
 	// get the current date & time
 	var time = new Date();
-	console.log(time);
 
 	// show roman time, using 6 columns
 	setRoman(time);
@@ -47,16 +46,6 @@ var setBinary = function(time){
         sec_col1 : exercise.binary(time, "sec_col1"),
         sec_col2 : exercise.binary(time, "sec_col2"),
     };
-
-    //???
-    // var binaryResult = exercise.binary(time,...);
-    // var hour_col1 = 
-    // return {
-    //     position8 : position8,
-    //     position4 : position4,
-    //     position2 : position2,
-    //     position1 : position1
-    // };
 };
 
 // start timer when page is loaded
@@ -198,6 +187,9 @@ document.getElementById('sec_col1').innerHTML = romanResult.sec_col1;
 document.getElementById('sec_col2').innerHTML = romanResult.sec_col2;
 //document.getElementById("sec_col2").contentWindow.reload(true);
 </script>
+
+<!--make page constantly refresh to animate the clock-->
+ <meta http-equiv="refresh" content="1" />
 
 </html>
      
