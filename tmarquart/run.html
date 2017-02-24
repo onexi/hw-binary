@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<script src="exercise.js"></script>
+<script>
+
+var timer = function() {
+	// get the current date & time
+    var time = new Date();
+    var timeMatrix;
+    //console.log(time);
+    //console.log(time.getSeconds());
+
+	// show roman time, using 6 columns
+	timeMatrix=setRoman(time);
+    console.log(timeMatrix);
+	// show binary time
+	setBinary(timeMatrix);
+
+	// update every 1 second
+	setTimeout(timer, 1000);
+};
+
+var setRoman = function(time){
+	// set roman time
+	// you must implement exercise.roman() 
+    return exercise.roman(time);
+};
+
+var setBinary = function(time){
+	// set roman time
+	// you must implement exercise.binary()
+    exercise.binary(time,2);
+};
+
+// start timer when page is loaded
+// your code here
+
+window.onload = timer;
+
+</script>
+
+<style> div {position:absolute; width: 100px; height: 100px; 
+background: silver; 
+text-align: center;
+vertical-align: middle; line-height: 100px;font-size: 5em;} </style>
+
+
+<div id="Bin11" style="left:10px; top:10px; visibility: hidden;"></div>
+<div id="Bin12" style="left:10px; top:120px; visibility: hidden;"></div>
+<div id="Bin13" style="left:10px; top:230px;"></div>
+<div id="Bin14" style="left:10px; top:340px;"></div>
+
+<div id="Bin21" style="left:120px; top:10px;"></div>
+<div id="Bin22" style="left:120px; top:120px;"></div>
+<div id="Bin23" style="left:120px; top:230px;"></div>
+<div id="Bin24" style="left:120px; top:340px;"></div>
+
+<div id="Bin31" style="left:230px; top:10px; visibility: hidden;"></div>
+<div id="Bin32" style="left:230px; top:120px;"></div>
+<div id="Bin33" style="left:230px; top:230px;"></div>
+<div id="Bin34" style="left:230px; top:340px;"></div>
+
+<div id="Bin41" style="left:340px; top:10px;"></div>
+<div id="Bin42" style="left:340px; top:120px;"></div>
+<div id="Bin43" style="left:340px; top:230px;"></div>
+<div id="Bin44" style="left:340px; top:340px;"></div>
+
+<div id="Bin51" style="left:450px; top:10px; visibility: hidden;"></div>
+<div id="Bin52" style="left:450px; top:120px;"></div>
+<div id="Bin53" style="left:450px; top:230px;"></div>
+<div id="Bin54" style="left:450px; top:340px;"></div>
+
+<div id="Bin61" style="left:560px; top:10px;"></div>
+<div id="Bin62" style="left:560px; top:120px;"></div>
+<div id="Bin63" style="left:560px; top:230px;"></div>
+<div id="Bin64" style="left:560px; top:340px;"></div>
+
+<div id="H1" style="left:10px; top:450px; line-height: 100%; background: white"></div>
+<div id="H2" style="left:120px; top:450px; line-height: 100%; background: white"></div>
+<div id="H3" style="left:230px; top:450px; line-height: 100%; background: white"></div>
+<div id="H4" style="left:340px; top:450px; line-height: 100%; background: white"></div>
+<div id="H5" style="left:450px; top:450px; line-height: 100%; background: white"></div>
+<div id="H6" style="left:560px; top:450px; line-height: 100%; background: white"></div>
+
+<!--
+
+	Write HTML elements to hold your binary clock positions
+
+	There are 6 columns in a binary clock
+
+-->
+
+
+</html>
+     
