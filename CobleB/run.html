@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<script src="exercise.js"></script>
+<script>
+
+var timer = function() {
+	// get the current date & time
+    var time = new Date();
+
+	// show roman time, using 6 columns
+    setRoman(time);
+
+	// show binary time
+    setBinary(time);
+
+	// update every 1 second
+    setTimeout(timer, 1000);
+};
+
+var setRoman = function(time){
+	// set roman time
+	// you must implement exercise.roman() 
+    var digits = exercise.roman(time);
+
+    document.getElementById('HourDigit1').innerHTML = digits.hour_col1;
+    document.getElementById('HourDigit2').innerHTML = digits.hour_col2;
+
+    document.getElementById('MinuteDigit1').innerHTML = digits.min_col1;
+    document.getElementById('MinuteDigit2').innerHTML = digits.min_col2;
+
+    document.getElementById('SecondDigit1').innerHTML = digits.sec_col1;
+    document.getElementById('SecondDigit2').innerHTML = digits.sec_col2;
+
+};
+
+var setBinary = function(time){
+	// set roman time
+	// you must implement exercise.binary()
+
+    var binary = exercise.binary(time, 'hour_col1');
+    setColor(binary, 'hour_col1');
+
+    binary = exercise.binary(time, 'hour_col2');
+    setColor(binary, 'hour_col2');
+
+    binary = exercise.binary(time, 'min_col1');
+    setColor(binary, 'min_col1');
+
+    binary = exercise.binary(time, 'min_col2');
+    setColor(binary, 'min_col2');
+
+    binary = exercise.binary(time, 'sec_col1');
+    setColor(binary, 'sec_col1');
+
+    binary = exercise.binary(time, 'sec_col2');
+    setColor(binary, 'sec_col2');
+
+    // {pos8: on, pos4: off, pos2. ... pos1}
+
+    
+   
+};
+
+var setColor = function(binary, column){
+if(binary.position1 === 'on'){
+        document.getElementById(column+'_position1').style.backgroundColor = 'red';
+    }else{
+        document.getElementById(column+'_position1').style.backgroundColor = 'silver';
+    }
+    if(binary.position2 === 'on'){
+        document.getElementById(column+'_position2').style.backgroundColor = 'red';
+    }else{
+        document.getElementById(column+'_position2').style.backgroundColor = 'silver';
+    }
+    if(binary.position4 === 'on'){
+        document.getElementById(column+'_position4').style.backgroundColor = 'red';
+    }else{
+        document.getElementById(column+'_position4').style.backgroundColor = 'silver';
+    }
+    if(binary.position8 === 'on'){
+        document.getElementById(column+'_position8').style.backgroundColor = 'red';
+    }else{
+        document.getElementById(column+'_position8').style.backgroundColor = 'silver';
+    }
+};
+
+// start timer when page is loaded
+// your code here
+window.onload=timer;
+
+</script>
+
+<style> div {position:absolute; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;} </style>
+
+<!--
+
+	Write HTML elements to hold your binary clock positions
+
+	There are 6 columns in a binary clock
+
+-->
+
+<!--Column1: Hours 1-->
+<div id="hour_col1_position8" style="left: 10px; top:10px; visibility:hidden"></div>
+<div id="hour_col1_position4" style="left: 10px; top:120px; visibility:hidden"></div>
+<div id="hour_col1_position2" style="left: 10px; top:230px"></div>
+<div id="hour_col1_position1" style="left: 10px; top:340px"></div>
+<!--Column2: Hours 2-->
+<div id="hour_col2_position8" style="left: 120px; top:10px"></div>
+<div id="hour_col2_position4" style="left: 120px; top:120px"></div>
+<div id="hour_col2_position2" style="left: 120px; top:230px"></div>
+<div id="hour_col2_position1" style="left: 120px; top:340px"></div>
+<!--Column3: Minutes 1-->
+<div id="min_col1_position8" style="left: 230px; top:10px; visibility:hidden"></div>
+<div id="min_col1_position4" style="left: 230px; top:120px"></div>
+<div id="min_col1_position2" style="left: 230px; top:230px"></div>
+<div id="min_col1_position1" style="left: 230px; top:340px"></div>
+<!--Column4: Minutes 2-->
+<div id="min_col2_position8" style="left: 340px; top:10px"></div>
+<div id="min_col2_position4" style="left: 340px; top:120px"></div>
+<div id="min_col2_position2" style="left: 340px; top:230px"></div>
+<div id="min_col2_position1" style="left: 340px; top:340px"></div>
+<!--Column5: Seconds 1-->
+<div id="sec_col1_position8" style="left: 450px; top:10px; visibility:hidden"></div>
+<div id="sec_col1_position4" style="left: 450px; top:120px"></div>
+<div id="sec_col1_position2" style="left: 450px; top:230px"></div>
+<div id="sec_col1_position1" style="left: 450px; top:340px"></div>
+<!--Column6: Seconds 2-->
+<div id="sec_col2_position8" style="left: 560px; top:10px"></div>
+<div id="sec_col2_position4" style="left: 560px; top:120px"></div>
+<div id="sec_col2_position2" style="left: 560px; top:230px"></div>
+<div id="sec_col2_position1" style="left: 560px; top:340px"></div>
+
+<style> div.roman {background: white; position:absolute; width: 100px; height: 100px; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;} </style>
+
+<div class="roman" id="HourDigit1" style="left: 10px; top:450px"></div>
+<div class="roman" id="HourDigit2" style="left: 120px; top:450px"></div>
+<div class="roman" id="MinuteDigit1" style="left: 230px; top:450px"></div>
+<div class="roman" id="MinuteDigit2" style="left: 340px; top:450px"></div>
+<div class="roman" id="SecondDigit1" style="left: 450px; top:450px"></div>
+<div class="roman" id="SecondDigit2" style="left: 560px; top:450px"></divs>
+
+
+</html>
