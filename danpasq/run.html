@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<script src="exercise.js"></script>
+<script>
+
+var timer = function() {
+	// get the current date & time
+	var time = new Date();
+	// console.log(time);
+
+	// show roman time, using 6 columns
+	setRoman(time);
+
+	// show binary time
+	setBinary(time);
+
+	// update every 1 second
+	setTimeout(timer, 1000);
+};
+
+var setRoman = function(time){
+	// set roman time
+	// you must implement exercise.roman()
+    var obj = exercise.roman(time);
+
+
+
+    var hour_col1 = document.getElementById('hr_c1');
+    hour_col1.innerText = obj['hr1'];
+    var hour_col2 = document.getElementById('hr_c2');
+    hour_col2.innerText = obj['hr2'];
+    var min_col1 = document.getElementById('mn_c1');
+    min_col1.innerText = obj['mn1'];
+    var min_col2 = document.getElementById('mn_c2');
+    min_col2.innerText = obj['mn2'];  
+    var sec_col1 = document.getElementById('se_c1');
+    sec_col1.innerText = obj['se1'];
+    var sec_col2 = document.getElementById('se_c2');
+    sec_col2.innerText = obj['se2'];
+
+};
+
+var setBinary = function(time){
+	// set roman time
+	// you must implement exercise.binary()
+    
+    var hr_c1_p8 = document.getElementById('hr_c1_p8');
+    hr_c1_p8.style.background = 'silver';
+    var hr_c1_p4 = document.getElementById('hr_c1_p4');
+    hr_c1_p4.style.background = 'silver';    
+    var hr_c1_p2 = document.getElementById('hr_c1_p2');
+    hr_c1_p2.style.background = 'silver';
+    var hr_c1_p1 = document.getElementById('hr_c1_p1');
+    hr_c1_p1.style.background = 'silver';    
+    var hr_c2_p8 = document.getElementById('hr_c2_p8');
+    hr_c2_p8.style.background = 'silver';
+    var hr_c2_p4 = document.getElementById('hr_c2_p4');
+    hr_c2_p4.style.background = 'silver';
+    var hr_c2_p2 = document.getElementById('hr_c2_p2');
+    hr_c2_p2.style.background = 'silver';
+    var hr_c2_p1 = document.getElementById('hr_c2_p1');
+    hr_c2_p1.style.background = 'silver';
+
+    var mn_c1_p8 = document.getElementById('mn_c1_p8');
+    mn_c1_p8.style.background = 'silver';    
+    var mn_c1_p4 = document.getElementById('mn_c1_p4');
+    mn_c1_p4.style.background = 'silver';
+    var mn_c1_p2 = document.getElementById('mn_c1_p2');
+    mn_c1_p2.style.background = 'silver';
+    var mn_c1_p1 = document.getElementById('mn_c1_p1');
+    mn_c1_p1.style.background = 'silver';
+    var mn_c2_p8 = document.getElementById('mn_c2_p8');
+    mn_c2_p8.style.background = 'silver';
+    var mn_c2_p4 = document.getElementById('mn_c2_p4');
+    mn_c2_p4.style.background = 'silver';
+    var mn_c2_p2 = document.getElementById('mn_c2_p2');
+    mn_c2_p2.style.background = 'silver';
+    var mn_c2_p1 = document.getElementById('mn_c2_p1');
+    mn_c2_p1.style.background = 'silver';
+
+    var se_c1_p8 = document.getElementById('se_c1_p8');
+    se_c1_p8.style.background = 'silver';        
+    var se_c1_p4 = document.getElementById('se_c1_p4');
+    se_c1_p4.style.background = 'silver';
+    var se_c1_p2 = document.getElementById('se_c1_p2');
+    se_c1_p2.style.background = 'silver';
+    var se_c1_p1 = document.getElementById('se_c1_p1');
+    se_c1_p1.style.background = 'silver';
+    var se_c2_p8 = document.getElementById('se_c2_p8');
+    se_c2_p8.style.background = 'silver';
+    var se_c2_p4 = document.getElementById('se_c2_p4');
+    se_c2_p4.style.background = 'silver';
+    var se_c2_p2 = document.getElementById('se_c2_p2');
+    se_c2_p2.style.background = 'silver';
+    var se_c2_p1 = document.getElementById('se_c2_p1');
+    se_c2_p1.style.background = 'silver';
+    
+
+    var hour_col1 = exercise.binary(time, 'hour_col1');
+    var hour_col2 = exercise.binary(time, 'hour_col2');
+    var min_col1 = exercise.binary(time, 'min_col1');
+    var min_col2 = exercise.binary(time, 'min_col2');
+    var sec_col1 = exercise.binary(time, 'sec_col1');
+    var sec_col2 = exercise.binary(time, 'sec_col2');  
+    
+    
+
+
+
+
+    // Hours
+
+    if (hour_col1.position2 === 'on'){
+        var hr_c1_p2 = document.getElementById('hr_c1_p2');
+        hr_c1_p2.style.background = 'red';
+        
+        
+    }
+    if (hour_col1.position1 === 'on'){
+        var hr_c1_p1 = document.getElementById('hr_c1_p1');
+        hr_c1_p1.style.background = 'red';
+        
+        
+    }
+    if (hour_col2.position8 === 'on'){
+        var hr_c2_p8 = document.getElementById('hr_c2_p8');
+        hr_c2_p8.style.background = 'red';
+
+    }
+    if (hour_col2.position4 === 'on'){
+        var hr_c2_p4 = document.getElementById('hr_c2_p4');
+        hr_c2_p4.style.background = 'red';
+
+    }
+    if (hour_col2.position2 === 'on'){
+        var hr_c2_p2 = document.getElementById('hr_c2_p2');
+        hr_c2_p2.style.background = 'red';
+
+    }
+    if (hour_col2.position1 === 'on'){
+        var hr_c2_p1 = document.getElementById('hr_c2_p1');
+        hr_c2_p1.style.background = 'red';
+    }
+    
+    // Minutes
+
+    if (min_col1.position4 === 'on'){
+        var mn_c1_p4 = document.getElementById('mn_c1_p4');
+        mn_c1_p4.style.background = 'red';
+
+    }
+    if (min_col1.position2 === 'on'){
+        var mn_c1_p2 = document.getElementById('mn_c1_p2');
+        mn_c1_p2.style.background = 'red';
+
+    }
+    if (min_col1.position1 === 'on'){
+        var mn_c1_p1 = document.getElementById('mn_c1_p1');
+        mn_c1_p1.style.background = 'red';
+    }
+    if (min_col2.position8 === 'on'){
+        var mn_c2_p8 = document.getElementById('mn_c2_p8');
+        mn_c2_p8.style.background = 'red';
+
+    }
+    if (min_col2.position4 === 'on'){
+        var mn_c2_p4 = document.getElementById('mn_c2_p4');
+        mn_c2_p4.style.background = 'red';
+
+    }
+    if (min_col2.position2 === 'on'){
+        var mn_c2_p2 = document.getElementById('mn_c2_p2');
+        mn_c2_p2.style.background = 'red';
+
+    }
+    if (min_col2.position1 === 'on'){
+        var mn_c2_p1 = document.getElementById('mn_c2_p1');
+        mn_c2_p1.style.background = 'red';
+    }
+
+    // Seconds
+
+    if (sec_col1.position4 === 'on'){
+        var se_c1_p4 = document.getElementById('se_c1_p4');
+        se_c1_p4.style.background = 'red';
+
+    }
+    if (sec_col1.position2 === 'on'){
+        var se_c1_p2 = document.getElementById('se_c1_p2');
+        se_c1_p2.style.background = 'red';
+
+    }
+    if (sec_col1.position1 === 'on'){
+        var se_c1_p1 = document.getElementById('se_c1_p1');
+        se_c1_p1.style.background = 'red';
+    }
+    if (sec_col2.position8 === 'on'){
+        var se_c2_p8 = document.getElementById('se_c2_p8');
+        se_c2_p8.style.background = 'red';
+
+    }
+    if (sec_col2.position4 === 'on'){
+        var se_c2_p4 = document.getElementById('se_c2_p4');
+        se_c2_p4.style.background = 'red';
+
+    }
+    if (sec_col2.position2 === 'on'){
+        var se_c2_p2 = document.getElementById('se_c2_p2');
+        se_c2_p2.style.background = 'red';
+
+    }
+    if (sec_col2.position1 === 'on'){
+        var se_c2_p1 = document.getElementById('se_c2_p1');
+        se_c2_p1.style.background = 'red';
+    }
+};
+
+// start timer when page is loaded
+// your code here
+window.onload = timer;
+</script>
+
+<style> div {
+            position:absolute; 
+            width: 100px; 
+            height: 100px; 
+            background: silver; 
+            text-align: center;
+            vertical-align: middle; 
+            line-height: 100px;
+            font-size: 5em;} </style>
+
+<div id="hr_c1_p1" style="left:10px; top:340px;"></div>
+<div id="hr_c1_p2" style="left:10px; top:230px;"></div>
+<div id="hr_c1_p4" style="left:10px; top:120px; visibility: hidden;"></div>
+<div id="hr_c1_p8" style="left:10px; top:10px; visibility: hidden;"></div>
+<div id="hr_c2_p1" style="left:120px; top:340px;"></div>
+<div id="hr_c2_p2" style="left:120px; top:230px;"></div>
+<div id="hr_c2_p4" style="left:120px; top:120px; visibility: visible;"></div>
+<div id="hr_c2_p8" style="left:120px; top:10px; visibility: visible;"></div>
+
+<div id="mn_c1_p1" style="left:230px; top:340px;"></div>
+<div id="mn_c1_p2" style="left:230px; top:230px;"></div>
+<div id="mn_c1_p4" style="left:230px; top:120px; visibility: visible;"></div>
+<div id="mn_c1_p8" style="left:230px; top:10px; visibility: hidden;"></div>
+<div id="mn_c2_p1" style="left:340px; top:340px;"></div>
+<div id="mn_c2_p2" style="left:340px; top:230px;"></div>
+<div id="mn_c2_p4" style="left:340px; top:120px; visibility: visible;"></div>
+<div id="mn_c2_p8" style="left:340px; top:10px; visibility: visible;"></div>
+
+<div id="se_c1_p1" style="left:450px; top:340px;"></div>
+<div id="se_c1_p2" style="left:450px; top:230px;"></div>
+<div id="se_c1_p4" style="left:450px; top:120px; visibility: visible;"></div>
+<div id="se_c1_p8" style="left:450px; top:10px; visibility: hidden;"></div>
+<div id="se_c2_p1" style="left:560px; top:340px;"></div>
+<div id="se_c2_p2" style="left:560px; top:230px;"></div>
+<div id="se_c2_p4" style="left:560px; top:120px; visibility: visible;"></div>
+<div id="se_c2_p8" style="left:560px; top:10px; visibility: visible;"></div>
+
+<div id="hr_c1" style="left:10px; top:450px; background:white; visibility: visible"></div>
+<div id="hr_c2" style="left:120px; top:450px; background:white; visibility: visible"></div>
+<div id="mn_c1" style="left:230px; top:450px; background:white; visibility: visible"></div>
+<div id="mn_c2" style="left:340px; top:450px; background:white; visibility: visible"></div>
+<div id="se_c1" style="left:450px; top:450px; background:white; visibility: visible"></div>
+<div id="se_c2" style="left:560px; top:450px; background:white; visibility: visible"></div>
+<!--
+
+	Write HTML elements to hold your binary clock positions
+
+	There are 6 columns in a binary clock
+
+-->
+
+</html>
+     
