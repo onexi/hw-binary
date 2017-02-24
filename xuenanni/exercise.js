@@ -90,7 +90,7 @@ if (col.hour_col2>=1){
 // minutes 
 if(col.min_col1>=4){
     response.m1pos4 = 'on';
-    col.hour_col1 = col.min_col1-4;
+    col.min_col1 = col.min_col1-4;
 };
 if(col.min_col1>=2){
     response.m1pos2 = 'on';
