@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+	Write HTML elements to hold your binary clock positions
+	There are 6 columns in a binary clock
+-->
+
+<!-- Create a common style tag for the squares -->
+<style> div {position:absolute; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;} </style>
+
+<!-- create our 4x6 grid, silver=0, red=1, initially all girds are silver-->
+
+<!-- NOTE: Columns and rows are shifted by 110px -->
+
+<!--Hour Columns-->
+<div id="hour_col1_pos1" style="left:10px; top:340px;"></div>
+<div id="hour_col1_pos2" style="left:10px; top:230px;"></div>
+<div id="hour_col1_pos4" style="left:10px; top:120px; visibility:hidden"></div>
+<div id="hour_col1_pos8" style="left:10px; top:10px; visibility:hidden"></div>
+
+<div id="hour_col2_pos1" style="left:120px; top:340px;"></div>
+<div id="hour_col2_pos2" style="left:120px; top:230px;"></div>
+<div id="hour_col2_pos4" style="left:120px; top:120px;"></div>
+<div id="hour_col2_pos8" style="left:120px; top:10px;"></div>
+
+<!--Minutes Columns -->
+<div id="minute_col1_pos1" style="left:230px; top:340px;"></div>
+<div id="minute_col1_pos2" style="left:230px; top:230px;"></div>
+<div id="minute_col1_pos4" style="left:230px; top:120px;"></div>
+<div id="minute_col1_pos8" style="left:230px; top:10px; visibility:hidden"></div>
+
+<div id="minute_col2_pos1" style="left:340px; top:340px;"></div>
+<div id="minute_col2_pos2" style="left:340px; top:230px;"></div>
+<div id="minute_col2_pos4" style="left:340px; top:120px;"></div>
+<div id="minute_col2_pos8" style="left:340px; top:10px;"></div>
+
+<!--Seconds Columns -->
+<div id="second_col1_pos1" style="left:450px; top:340px;"></div>
+<div id="second_col1_pos2" style="left:450px; top:230px;"></div>
+<div id="second_col1_pos4" style="left:450px; top:120px;"></div>
+<div id="second_col1_pos8" style="left:450px; top:10px; visibility:hidden"></div>
+
+<div id="second_col2_pos1" style="left:560px; top:340px;"></div>
+<div id="second_col2_pos2" style="left:560px; top:230px;"></div>
+<div id="second_col2_pos4" style="left:560px; top:120px;"></div>
+<div id="second_col2_pos8" style="left:560px; top:10px;"></div>
+
+
+<!-- Bottom extra row to hold roman time -->
+<div id="roman_col1_hour1"   style="left:10px;  top:450px; background: white"></div>
+<div id="roman_col2_hour2"   style="left:120px; top:450px; background: white"></div>
+<div id="roman_col3_minute1" style="left:230px; top:450px; background: white"></div>
+<div id="roman_col4_minute2" style="left:340px; top:450px; background: white"></div>
+<div id="roman_col5_second1" style="left:450px; top:450px; background: white"></div>
+<div id="roman_col6_second2" style="left:560px; top:450px; background: white"></div>
+
+
+
+
+
+
+
+
+
+<script src="exercise.js"></script>
+
+<script>
+
+var timer = function() {
+
+	// get the current date & time
+	var time = new Date();
+	console.log(time);
+
+	// show roman time, using 6 columns
+	setRoman(time);
+
+	// show binary time
+	setBinary(time);
+
+	// update every 1 second
+	setTimeout(timer, 1000);
+};
+
+
+
+//Calling this should write the numeric roman time at bottom row of grid
+var setRoman = function(time){
+	// set roman time
+	// you must implement exercise.roman() 
+
+    var roman_time = exercise.roman(time);
+
+    //Make sure we are getting correct object
+    //console.log(JSON.stringify(roman_time));
+
+    //Update roman time on last row on webpage
+    document.getElementById('roman_col1_hour1').innerHTML   = roman_time.hour_col1;
+    document.getElementById('roman_col2_hour2').innerHTML   = roman_time.hour_col2;
+    document.getElementById('roman_col3_minute1').innerHTML = roman_time.min_col1;
+    document.getElementById('roman_col4_minute2').innerHTML = roman_time.min_col2;
+    document.getElementById('roman_col5_second1').innerHTML = roman_time.sec_col1;
+    document.getElementById('roman_col6_second2').innerHTML = roman_time.sec_col2;
+
+};
+
+
+
+//Calling this should update binary clock position
+var setBinary = function(time){
+	// set binary time
+	// you must implement exercise.binary()
+
+    //The response result returned should look like
+    /*
+        {
+        position8: 'off',
+        position4: 'off',
+        position2: 'off',
+        position1: 'on'
+       };
+    */
+
+    //Get the responses
+    var hour_col1    = exercise.binary(time, 'hour_col1');
+    var hour_col2    = exercise.binary(time, 'hour_col2');
+    var minute_col1  = exercise.binary(time, 'min_col1');
+    var minute_col2  = exercise.binary(time, 'min_col2');
+    var second_col1  = exercise.binary(time, 'sec_col1');    
+    var second_col2  = exercise.binary(time, 'sec_col2');
+
+
+    //Next update binary clock colors to silver and red
+    exercise.updateScreen(hour_col1, 'hour_col1');
+    exercise.updateScreen(hour_col2, 'hour_col2');
+
+    exercise.updateScreen(minute_col1, 'minute_col1');
+    exercise.updateScreen(minute_col2, 'minute_col2');
+
+    exercise.updateScreen(second_col1, 'second_col1');
+    exercise.updateScreen(second_col2, 'second_col2');
+
+
+};
+
+
+// start timer when page is loaded
+// your code here
+
+//Start timer on webpage load
+window.onload = timer;
+
+
+</script>
+
+
+</html>
+     
