@@ -8,6 +8,8 @@ var mydighours = mydigtime.getHours();
 var mydigminutes = mydigtime.getMinutes();
 var mydigseconds = mydigtime.getSeconds();
 
+//used a switch function to change the inner html of my css objects from the run page to make the military time binary clock
+
 switch(mydighours){
     case 00:
     document.getElementById("dig_clock1").innerHTML = "0";
