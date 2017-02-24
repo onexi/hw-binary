@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<script src="exercise.js"></script>
+<script>
+
+var timer = function() {
+	// get the current date & time
+	var time = new Date();
+
+	// show roman time, using 6 columns
+	setRoman(time);
+
+	// show binary time
+	setBinary(time);
+
+	// update every 1 second
+	setTimeout(timer, 1000);
+};
+
+var setRoman = function(time){
+	// set roman time
+	// you must implement exercise.roman() 
+	romanTime=exercise.roman(time);
+	document.getElementById('roman_col1').innerHTML=romanTime['hour_col1'];
+	document.getElementById('roman_col2').innerHTML=romanTime['hour_col2'];
+	document.getElementById('roman_col3').innerHTML=romanTime['min_col1'];
+	document.getElementById('roman_col4').innerHTML=romanTime['min_col2'];
+	document.getElementById('roman_col5').innerHTML=romanTime['sec_col1'];
+	document.getElementById('roman_col6').innerHTML=romanTime['sec_col2'];
+};
+
+var colorSwitch = function(time,col,{id1,id2,id4,id8}){
+	//set the color of col
+	var col = exercise.binary(time, col)
+
+	if(col.position1==='on'){
+		document.getElementById(id1).style.backgroundColor ='red';
+	}
+	else{
+		document.getElementById(id1).style.backgroundColor ='silver';
+	}
+
+	if(col.position2==='on'){
+		document.getElementById(id2).style.backgroundColor ='red';
+	}
+	else{
+		document.getElementById(id2).style.backgroundColor ='silver';
+	}
+
+	if(col.position4==='on'){
+		document.getElementById(id4).style.backgroundColor ='red';
+	}
+	else{
+		document.getElementById(id4).style.backgroundColor ='silver';
+	}
+
+	if(col.position8==='on'){
+		document.getElementById(id8).style.backgroundColor ='red';
+	}
+	else{
+		document.getElementById(id8).style.backgroundColor ='silver';
+	}
+
+};
+
+var setBinary = function(time){
+	var col='hour_col1';
+	var id1='hour_col1_pos1';
+	var id2='hour_col1_pos2';
+	var id4='hour_col1_pos4';
+	var id8='hour_col1_pos8';
+	colorSwitch(time,col,{id1,id2,id4,id8});
+
+	col='hour_col2';
+	id1='hour_col2_pos1';
+	id2='hour_col2_pos2';
+	id4='hour_col2_pos4';
+	id8='hour_col2_pos8';
+	colorSwitch(time,col,{id1,id2,id4,id8});
+
+	col='min_col1';
+	id1='min_col1_pos1';
+	id2='min_col1_pos2';
+	id4='min_col1_pos4';
+	id8='min_col1_pos8';
+	colorSwitch(time,col,{id1,id2,id4,id8});
+
+	col='min_col2';
+	id1='min_col2_pos1';
+	id2='min_col2_pos2';
+	id4='min_col2_pos4';
+	id8='min_col2_pos8';
+	colorSwitch(time,col,{id1,id2,id4,id8});
+
+	col='sec_col1';
+	id1='sec_col1_pos1';
+	id2='sec_col1_pos2';
+	id4='sec_col1_pos4';
+	id8='sec_col1_pos8';
+	colorSwitch(time,col,{id1,id2,id4,id8});
+
+	col='sec_col2';
+	id1='sec_col2_pos1';
+	id2='sec_col2_pos2';
+	id4='sec_col2_pos4';
+	id8='sec_col2_pos8';
+	colorSwitch(time,col,{id1,id2,id4,id8});
+
+};
+
+// start timer when page is loaded
+window.onload=timer;
+
+</script>
+
+<style> div {position:absolute; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;} </style>
+
+<div id="hour_col1_pos1" style="left: 10px; top: 340px; "></div>
+<div id="hour_col1_pos2" style="left: 10px; top: 230px; "></div>
+<div id="hour_col1_pos4" style="left: 10px; top: 120px; visibility: hidden;"></div>
+<div id="hour_col1_pos8" style="left: 10px; top: 10px; visibility: hidden;"></div>
+<div id="roman_col1" style="left: 10px; top: 450px; background: black; color: white;"></div>
+
+
+<div id="hour_col2_pos1" style="left: 120px; top: 340px; "></div>
+<div id="hour_col2_pos2" style="left: 120px; top: 230px; "></div>
+<div id="hour_col2_pos4" style="left: 120px; top: 120px; "></div>
+<div id="hour_col2_pos8" style="left: 120px; top: 10px; "></div>
+<div id="roman_col2" style="left: 120px; top: 450px; background: black; color: white;"></div>
+
+<div id="min_col1_pos1" style="left: 230px; top: 340px; "></div>
+<div id="min_col1_pos2" style="left: 230px; top: 230px; "></div>
+<div id="min_col1_pos4" style="left: 230px; top: 120px; "></div>
+<div id="min_col1_pos8" style="left: 230px; top: 10px; visibility: hidden;"></div>
+<div id="roman_col3" style="left: 230px; top: 450px; background: black; color: white;"></div>
+
+
+<div id="min_col2_pos1" style="left: 340px; top: 340px; "></div>
+<div id="min_col2_pos2" style="left: 340px; top: 230px; "></div>
+<div id="min_col2_pos4" style="left: 340px; top: 120px; "></div>
+<div id="min_col2_pos8" style="left: 340px; top: 10px; "></div>
+<div id="roman_col4" style="left: 340px; top: 450px; background: black; color: white;"></div>
+
+
+<div id="sec_col1_pos1" style="left: 450px; top: 340px; "></div>
+<div id="sec_col1_pos2" style="left: 450px; top: 230px; "></div>
+<div id="sec_col1_pos4" style="left: 450px; top: 120px; "></div>
+<div id="sec_col1_pos8" style="left: 450px; top: 10px; visibility: hidden;"></div>
+<div id="roman_col5" style="left: 450px; top: 450px; background: black; color: white;"></div>
+
+<div id="sec_col2_pos1" style="left: 560px; top: 340px; "></div>
+<div id="sec_col2_pos2" style="left: 560px; top: 230px; "></div>
+<div id="sec_col2_pos4" style="left: 560px; top: 120px; "></div>
+<div id="sec_col2_pos8" style="left: 560px; top: 10px; "></div>
+<div id="roman_col6" style="left: 560px; top: 450px; background: black; color: white;"></div>
+
+
+
+
+</html>
+     

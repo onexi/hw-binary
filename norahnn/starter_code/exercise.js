@@ -15,7 +15,7 @@ exercise.roman = function(time){
         sec_col2: sec%10
     };
     return roman;
-};
+}
 
 exercise.binary = function(time, col){
     var binary = {
@@ -42,4 +42,4 @@ exercise.binary = function(time, col){
         binary.position8='on';
     };
     return binary;
-};
+}
