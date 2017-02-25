@@ -10,7 +10,7 @@ exercise.drawBaseGrid = function () {
             var div = document.createElement('div');
             div.className = 'digitOff';      
             div.style.left = posLeft + 'px';
-            div.style.posTop = 50 + (vIndex-1) * 110;
+            div.style.top = 50 + (vIndex-1) * 110 + 'px';
             div.id = index + '-' + idx[ vIndex-1];
             document.body.appendChild(div);
         }
