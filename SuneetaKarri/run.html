@@ -45,15 +45,15 @@ var hours = ("00" + time.getHours()).slice(-2);
    // sec_col56 : seconds.slice(1,2)
 
 binaryTime = {
-		hour_col1 : exercise.binary(6, "hour_col1"),
-		hour_col2 : exercise.binary(8, "hour_col2"),
-		min_col1 : exercise.binary(8, "min_col1"),
-		min_col2 : exercise.binary(8, "min_col2"),
+		hour_col1 : exercise.binary(hours.slice(0,1), "hour_col1"),
+		hour_col2 : exercise.binary(hours.slice(1,2), "hour_col2"),
+		min_col1 : exercise.binary(minutes.slice(0,1), "min_col1"),
+		min_col2 : exercise.binary(minutes.slice(1,2), "min_col2"),
 		sec_col1 : exercise.binary(seconds.slice(0,1), "sec_col1"),
 		sec_col2 : exercise.binary(seconds.slice(1,2), "sec_col2")
 	}
 
-	console.log(seconds)
+	// console.log(seconds)
 	if(binaryTime.sec_col2.position8 == "on")	{
 		document.getElementById('sec_col16').style.background = "red";
 	}
@@ -80,8 +80,7 @@ binaryTime = {
 	}
 
 
-    
-	if(binaryTime.sec_col1.position4 == "on")	{
+    if(binaryTime.sec_col1.position4 == "on")	{
 		document.getElementById('sec_col25').style.background = "red";
 	}
 	else{(binaryTime.sec_col1.position4 == "off")
@@ -101,10 +100,87 @@ binaryTime = {
 	}
 
 
+	if(binaryTime.min_col2.position8 == "on")	{
+		document.getElementById('min_col14').style.background = "red";
+	}
+	else{(binaryTime.min_col2.position8 == "off")
+		document.getElementById('min_col14').style.background = "silver";
+	}
+	if(binaryTime.min_col2.position4 == "on")	{
+		document.getElementById('min_col24').style.background = "red";
+	}
+	else{(binaryTime.min_col2.position4 == "off")
+		document.getElementById('min_col24').style.background = "silver";
+	}
+    if(binaryTime.min_col2.position2 == "on")	{
+		document.getElementById('min_col34').style.background = "red";
+	}
+	else{(binaryTime.min_col2.position2 == "off")
+		document.getElementById('min_col34').style.background = "silver";
+	}
+    if(binaryTime.min_col2.position1 == "on")	{
+		document.getElementById('min_col44').style.background = "red";
+	}
+	else{(binaryTime.min_col2.position1 == "off")
+		document.getElementById('min_col44').style.background = "silver";
+	}
 
-	
+	if(binaryTime.min_col1.position4 == "on")	{
+		document.getElementById('min_col23').style.background = "red";
+	}
+	else{(binaryTime.min_col1.position4 == "off")
+		document.getElementById('min_col23').style.background = "silver";
+	}
+    if(binaryTime.min_col1.position2 == "on")	{
+		document.getElementById('min_col33').style.background = "red";
+	}
+	else{(binaryTime.min_col1.position2 == "off")
+		document.getElementById('min_col33').style.background = "silver";
+	}
+    if(binaryTime.min_col1.position1 == "on")	{
+		document.getElementById('min_col43').style.background = "red";
+	}
+	else{(binaryTime.min_col1.position1 == "off")
+		document.getElementById('min_col43').style.background = "silver";
+	}
 
+	if(binaryTime.hour_col2.position8 == "on")	{
+		document.getElementById('hour_col12').style.background = "red";
+	}
+	else{(binaryTime.hour_col2.position8 == "off")
+		document.getElementById('hour_col12').style.background = "silver";
+	}
+	if(binaryTime.hour_col2.position4 == "on")	{
+		document.getElementById('hour_col22').style.background = "red";
+	}
+	else{(binaryTime.hour_col2.position4 == "off")
+		document.getElementById('hour_col22').style.background = "silver";
+	}
+    if(binaryTime.hour_col2.position2 == "on")	{
+		document.getElementById('hour_col32').style.background = "red";
+	}
+	else{(binaryTime.hour_col2.position2 == "off")
+		document.getElementById('hour_col32').style.background = "silver";
+	}
+    if(binaryTime.hour_col2.position1 == "on")	{
+		document.getElementById('hour_col42').style.background = "red";
+	}
+	else{(binaryTime.hour_col2.position1 == "off")
+		document.getElementById('hour_col42').style.background = "silver";
+	}
 
+	if(binaryTime.hour_col1.position2 == "on")	{
+		document.getElementById('hour_col31').style.background = "red";
+	}
+	else{(binaryTime.hour_col1.position2 == "off")
+		document.getElementById('hour_col31').style.background = "silver";
+	}
+    if(binaryTime.hour_col1.position1 == "on")	{
+		document.getElementById('hour_col41').style.background = "red";
+	}
+	else{(binaryTime.hour_col1.position1 == "off")
+		document.getElementById('hour_col41').style.background = "silver";
+	}
 	// set roman time
 	// you must implement exercise.binary()
 };
