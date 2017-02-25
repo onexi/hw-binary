@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<script src="exercise.js">
+</script>
+
+<style> 
+div {position:absolute; 
+    width: 100px; 
+    height: 100px; 
+    background: silver; 
+    text-align: center;
+    vertical-align: middle; 
+    line-height: 100px;
+    font-size: 5em;} 
+</style>
+
+<div id="00" style="left:15px; top:360px;"></div>
+<div id="01" style="left:15px; top:245px;"></div>
+<div id="02" style="left:15px; top:130px; visibility:hidden"></div>
+<div id="03" style="left:15px; top:15px; visibility:hidden"></div>
+
+<div id="10" style="left:130px; top:360px;"></div>
+<div id="11" style="left:130px; top:245px;"></div>
+<div id="12" style="left:130px; top:130px;"></div>
+<div id="13" style="left:130px; top:15px;"></div>
+
+<div id="20" style="left:245px; top:360px;"></div>
+<div id="21" style="left:245px; top:245px;"></div>
+<div id="22" style="left:245px; top:130px;"></div>
+<div id="23" style="left:245px; top:15px; visibility:hidden"></div>
+
+<div id="30" style="left:360px; top:360px;"></div>
+<div id="31" style="left:360px; top:245px;"></div>
+<div id="32" style="left:360px; top:130px;"></div>
+<div id="33" style="left:360px; top:15px;"></div>
+
+<div id="40" style="left:475px; top:360px;"></div>
+<div id="41" style="left:475px; top:245px;"></div>
+<div id="42" style="left:475px; top:130px;"></div>
+<div id="43" style="left:475px; top:15px; visibility:hidden"></div>
+
+<div id="50" style="left:590px; top:360px;"></div>
+<div id="51" style="left:590px; top:245px;"></div>
+<div id="52" style="left:590px; top:130px;"></div>
+<div id="53" style="left:590px; top:15px;"></div>
+
+<div id="roman0" style="left:15px; top:480px; background: white; border: dotted; border-color: grey"></div>
+<div id="roman1" style="left:130px; top:480px; background: white; border: dotted; border-color: grey"></div>
+<div id="roman2" style="left:245px; top:480px; background: white; border: dotted; border-color: grey"></div>
+<div id="roman3" style="left:360px; top:480px; background: white; border: dotted; border-color: grey"></div>
+<div id="roman4" style="left:475px; top:480px; background: white; border: dotted; border-color: grey"></div>
+<div id="roman5" style="left:590px; top:480px; background: white; border: dotted; border-color: grey"></div>
+
+<script>
+
+var timer = function() {
+    var time = new Date();
+    console.log(time);
+    setRoman(time);
+    setBinary(time);
+    setTimeout(timer, 1000);
+};
+
+var setRoman = function(time){
+
+    var response = exercise.roman(time);
+
+    for(var z = 0; z < 6; z++){
+
+        var square = document.getElementById('roman' + z);
+        var content = document.createTextNode('' + response[z]);
+        while (square.firstChild) square.removeChild(square.firstChild);
+        square.appendChild(content);
+    }
+};
+
+var setBinary = function(time){
+
+    for(var i = 0; i < 6; i++){
+
+        for(var j = 0; j < 4; j++){
+
+            var response = exercise.binary(time, i);
+
+            if(response[j] === 0){
+                document.getElementById('' + i + j).style.backgroundColor = 'silver';
+            }
+            else if(response[j] === 1){
+                document.getElementById('' + i + j).style.backgroundColor = 'red';
+            }
+        }   
+    }
+};
+
+window.onload = timer();
+
+</script>
+</html>
+	
