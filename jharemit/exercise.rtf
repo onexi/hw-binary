@@ -1,0 +1,170 @@
+var exercise = {};
+
+exercise.roman = function(time){
+
+    //grabs the hours, seperates them out into 10s digit and ones digit
+    var hours = time.getHours();
+    for(var k=0; k<=2;k++){
+        if(hours>=10*k){
+            hour_col1 = k;
+            hour_col2 = hours - 10*k;
+        }
+    }
+
+    //grabs the minutes seperates them out into 10s digit and 1s digits
+    var minutes = time.getMinutes();
+    for(var i=0; i<=5; i++){
+        if (minutes >= 10*i){
+            min_col1 = i;
+            min_col2 = minutes - 10*i;
+        }
+    }
+
+    //grabs the seconds and seperates them out into 10s digit and 1s digits
+    var seconds = time.getSeconds();
+    for(var j=0; j<=5; j++){
+        if (seconds >= 10*j){
+            sec_col1 = j;
+            sec_col2 = seconds - 10*j;
+        }
+    }
+
+    array = [hour_col1, hour_col2, min_col1, min_col2, sec_col1, sec_col2];
+
+    var col = {
+        "hour_col1": hour_col1,
+        "hour_col2": hour_col2,
+        "min_col1": min_col1,
+        "min_col2": min_col2,
+        "sec_col1": sec_col1,
+        "sec_col2": sec_col1
+    }
+
+    //displayst the hours, minutes and seconds for the array col
+    //console.log("hh:mm:ss = ", hour_col1, hour_col2,":", min_col1, min_col2,':', sec_col1, sec_col2)
+
+    //console.log(col)
+
+    return col;
+    //-------------------------------------
+    //  YOUR CODE
+    //    Return an object with roman time. 
+    //    Time is reported using 6 columns.
+    //
+    //  For example, for 05:13:47 PM
+    //    { 
+    //       hour_col1 : 1, 
+    //       hour_col2 : 7,
+    //       min_col1  : 1, 
+    //       min_col2  : 3, 
+    //       sec_col1  : 4, 
+    //       sec_col2  : 7
+    //     };
+    // 
+    //-------------------------------------
+}
+
+exercise.binary = function(time, columns){
+
+    var binary=[];
+    // console.log(hour_col1)
+
+    if(columns=0){
+        var binary= {
+            position8: 'off',
+            position4: 'off',
+            position2: 'off',
+            position1: 'off'
+        };
+    }
+
+    if(columns=1){
+        var binary= {
+            position8: 'off',
+            position4: 'off',
+            position2: 'off',
+            position1: 'on'
+        };
+    }
+    if(columns=2){
+        var binary= {
+            position8: 'off',
+            position4: 'off',
+            position2: 'on',
+            position1: 'off'
+        };
+    }
+    if(columns=3){
+        var binary= {
+            position8: 'off',
+            position4: 'off',
+            position2: 'on',
+            position1: 'on'
+        };
+    }
+
+    if(columns=4){
+        var binary= {
+            position8: 'off',
+            position4: 'on',
+            position2: 'off',
+            position1: 'off'
+        };
+    }
+    if(columns=5){
+        var binary= {
+            position8: 'off',
+            position4: 'on',
+            position2: 'off',
+            position1: 'on'
+        };
+    }
+    if(columns=6){
+        var binary= {
+            position8: 'off',
+            position4: 'on',
+            position2: 'on',
+            position1: 'off'
+        };
+    }
+    if(columns=7){
+        var binary= {
+            position8: 'off',
+            position4: 'on',
+            position2: 'on',
+            position1: 'on'
+        };
+    }
+    if(columns=8){
+        var binary= {
+            position8: 'on',
+            position4: 'off',
+            position2: 'off',
+            position1: 'off'
+        };
+    }
+    if(columns=9){
+        var binary= {
+            position8: 'on',
+            position4: 'off',
+            position2: 'off',
+            position1: 'on'
+        };
+    }
+return binary;
+    //----------------------------------------------------------
+    //  YOUR CODE
+    //    Return an object with
+    //    the binary clock values 
+    //    for the given column
+    //
+    //  For example, for time 05:13:47 PM, and column hour_col2
+    //    var binary = { 
+    //        position8 : 'off', 
+    //        position4 : 'on', 
+    //        position2 : 'on', 
+    //        position1 : 'on', 
+    //    }; 
+    // 
+    //----------------------------------------------------------
+};
