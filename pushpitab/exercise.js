@@ -39,5 +39,5 @@ exercise.binary = function(time, col){
     //    }; 
     // 
     //----------------------------------------------------------
-
+    console.log("test");
 };
