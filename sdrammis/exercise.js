@@ -2,7 +2,6 @@ var exercise = {};
 
 
 exercise.roman = function(time){
-    console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
     //-------------------------------------
     //  YOUR CODE
     //    Return an object with roman time. 
@@ -23,7 +22,7 @@ exercise.roman = function(time){
 };
 
 exercise.binary = function(time, col){
-
+    console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
     //----------------------------------------------------------
     //  YOUR CODE
     //    Return an object with
