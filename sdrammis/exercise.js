@@ -2,7 +2,7 @@ var exercise = {};
 
 
 exercise.roman = function(time){
-
+    console.log('testing...')
     //-------------------------------------
     //  YOUR CODE
     //    Return an object with roman time. 
