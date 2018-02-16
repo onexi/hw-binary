@@ -48,7 +48,7 @@ function binary(time, col){
 
 
 
-for(i=0;i<10;i++){
+for(i=0;i<1;i++){
 
 	var hours   = Math.floor(Math.random()*24);
 	var minutes = Math.floor(Math.random()*60);
