@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style>
+	div {
+		vertical-align: middle;
+	}
+	.roman-element{
+		padding 10px;
+		width: 6vw;
+		text-align: center;
+	}
+	.binary-element {
+		padding 10px;
+		background: red;
+		border-radius: 50%;
+		width: 6vw;
+		height: 6vw;
+	}
+	.binary-row {
+		padding: 10px 0;
+	}
+</style>
+</head>
+<body>
+
+	<div class="container">
+		<div class="row binary-row">
+			<div class="col">
+				<div id="hour_col1-position8" class="binary-element"></div>
+			</div>
+			<div class="col">
+				<div id="hour_col2-position8" class="binary-element"></div>
+			</div>
+			<div class="col">
+				<div id="min_col1-position8" class="binary-element"></div>
+			</div>
+			<div class="col">
+				<div id="min_col2-position8" class="binary-element"></div>
+			</div>
+			<div class="col">
+				<div id="sec_col1-position8" class="binary-element"></div>
+			</div>
+			<div class="col">
+				<div id="sec_col2-position8" class="binary-element"></div>
+			</div>
+		</div>
+		<div class="row binary-row">
+			<div class="col">
+				<div id="hour_col1-position4" class="binary-element"></div>
+			</div>
+			<div class="col">
+				<div id="hour_col2-position4" class="binary-element"></div>
+			</div>
+			<div class="col">
+				<div id="min_col1-position4" class="binary-element"></div>
+			</div>
+			<div class="col">
+				<div id="min_col2-position4" class="binary-element"></div>
+			</div>
+			<div class="col">
+				<div id="sec_col1-position4" class="binary-element"></div>
+			</div>
+			<div class="col">
+				<div id="sec_col2-position4" class="binary-element"></div>
+			</div>
+		</div>
+		<div class="row binary-row">
+			<div class="col">
+				<div id="hour_col1-position2" class="binary-element"></div>
+			</div>
+			<div class="col">
+				<div id="hour_col2-position2" class="binary-element"></div>
+			</div>
+			<div class="col">
+				<div id="min_col1-position2" class="binary-element"></div>
+			</div>
+			<div class="col">
+				<div id="min_col2-position2" class="binary-element"></div>
+			</div>
+			<div class="col">
+				<div id="sec_col1-position2" class="binary-element"></div>
+			</div>
+			<div class="col">
+				<div id="sec_col2-position2" class="binary-element"></div>
+			</div>
+		</div>
+		<div class="row binary-row">
+			<div class="col">
+				<div id="hour_col1-position1" class="binary-element"></div>
+			</div>
+			<div class="col">
+				<div id="hour_col2-position1" class="binary-element"></div>
+			</div>
+			<div class="col">
+				<div id="min_col1-position1" class="binary-element"></div>
+			</div>
+			<div class="col">
+				<div id="min_col2-position1" class="binary-element"></div>
+			</div>
+			<div class="col">
+				<div id="sec_col1-position1" class="binary-element"></div>
+			</div>
+			<div class="col">
+				<div id="sec_col2-position1" class="binary-element"></div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div id="hour_col1-text" class="roman-element">1</div>
+			</div>
+			<div class="col">
+				<div id="hour_col2-text" class="roman-element">2</div>
+			</div>
+			<div class="col">
+				<div id="min_col1-text" class="roman-element">3</div>
+			</div>
+			<div class="col">
+				<div id="min_col2-text" class="roman-element">4</div>
+			</div>
+			<div class="col">
+				<div id="sec_col1-text" class="roman-element">5</div>
+			</div>
+			<div class="col">
+				<div id="sec_col2-text" class="roman-element">6</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="exercise.js"></script>
+	<script>
+
+		var timer = function() {
+			// get the current date & time
+			var time = new Date();
+
+			// show roman time, using 6 columns
+			setRoman(time);
+
+			// show binary time
+			setBinary(time);
+
+			// update every 1 second
+			setTimeout(timer, 1000);
+		};
+
+		var setRoman = function(time){
+			// set roman time
+			var romanFormatted = exercise.roman(time);
+			Object.keys(romanFormatted).map(function(key){
+				document.getElementById(`${key}-text`).innerHTML = romanFormatted[key];
+			});
+		};
+
+		var setBinary = function(time){
+			var binaryMap = ['hour_col1', 'hour_col2', 'min_col1', 'min_col2', 'sec_col1', 'sec_col2'].reduce(function(obj, key) {
+				obj[key] = exercise.binary(time, key);
+				return obj;
+			}, {});
+
+			Object.keys(binaryMap).map(function(key){
+				Object.keys(binaryMap[key]).map(function(position){
+					document.getElementById(`${key}-${position}`).style.visibility = (binaryMap[key][position] == "on")? 'visible':'hidden';
+				});
+			});
+		};
+
+		// start timer when page is loaded
+		window.onload = function() {
+			timer();
+		};
+
+	</script>
+</body>
+</html>
