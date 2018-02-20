@@ -10,28 +10,43 @@ var timer = function() {
 	var hours = time.getHours();
 	var minutes = time.getMinutes();
 	var seconds = time.getSeconds();
-
+	if(hours.toString().length == 1){
+		hours = "0"+hours;
+	};
+	if(minutes.toString().length == 1){
+		minutes = "0"+minutes;
+	};
+	if(seconds.toString().length == 1){
+		seconds = "0"+seconds;
+	};
 	var formattedTime = hours + ":" + minutes + ":" + seconds;
 	console.log(formattedTime);
 
 	// show roman time, using 6 columns
-	setRoman(time);
+	setRoman(formattedTime);
 
 	// show binary time
-	setBinary(time);
+	setBinary(formattedTime);
 
 	// update every 1 second
 	setTimeout(timer, 1000);
 };
 
-var setRoman = function(time){
+var setRoman = function(formattedTime){
 	// set roman time
-	// you must implement exercise.roman() 
+	// you must implement exercise.roman()  
 };
 
-var setBinary = function(time){
+var setBinary = function(formattedTime){
 	// set roman time
 	// you must implement exercise.binary()
+	var col1response = exercise.binary(formattedTime,"col1");
+	var col2response = exercise.binary(formattedTime,"col2");
+	var col3response = exercise.binary(formattedTime,"col3");
+	var col4response = exercise.binary(formattedTime,"col4");
+	var col5response = exercise.binary(formattedTime,"col5");
+	var col6response = exercise.binary(formattedTime,"col6");
+
 };
 
 // start timer when page is loaded
