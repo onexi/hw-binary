@@ -24,7 +24,7 @@ exercise.roman = function(time){
     minutes = String(time.getMinutes());
     seconds = String(time.getSeconds());
 
-    var obj = {
+    var romanObj = {
         hour_col1 : Number(hours[0]), //index string, then make that value a number
         hour_col2 : Number(hours[1]),
         min_col1  : Number(minutes[0]), 
@@ -32,8 +32,7 @@ exercise.roman = function(time){
         sec_col1  : Number(seconds[0]), 
         sec_col2  : Number(seconds[1])
     };
-    console.log("HELLOOOOOOOOOOOO")
-    return obj;
+    return romanObj;
 };
 
 exercise.binary = function(time, col){
