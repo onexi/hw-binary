@@ -32,6 +32,7 @@ exercise.roman = function(time){
         sec_col1  : Number(seconds[0]), 
         sec_col2  : Number(seconds[1])
     };
+    console.log(Number(hours[0]))
     return obj;
 };
 
