@@ -5,8 +5,13 @@
 
 var timer = function() {
 	// get the current date & time
-	var time = new Date();
+	var time = new Date(); 
 	console.log(time);
+	// Example:
+	// myTime = new Date() --> Tue Feb 20 2018 14:16:12 GMT-0500 (EST)
+	// myTime.getHours() --> 14
+	// myTime.getMinutes() --> 16
+	// myTime.getSeconds() --> 12
 
 	// show roman time, using 6 columns
 	setRoman(time);
