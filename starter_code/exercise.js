@@ -2,24 +2,18 @@ var exercise = {};
 
 
 exercise.roman = function(time){
+    var hours = time.getHours().toString().padStart(2,0);
+    var minutes = time.getMinutes().toString().padStart(2,0);
+    var seconds = time.getSeconds().toString().padStart(2,0);
 
-    //-------------------------------------
-    //  YOUR CODE
-    //    Return an object with roman time.
-    //    Time is reported using 6 columns.
-    //
-    //  For example, for 05:13:47 PM
-    //    {
-    //       hour_col1 : 1,
-    //       hour_col2 : 7,
-    //       min_col1  : 1,
-    //       min_col2  : 3,
-    //       sec_col1  : 4,
-    //       sec_col2  : 7
-    //     };
-    //
-    //-------------------------------------
-
+    return {
+        hour_col1 : hours[0],
+        hour_col2 : hours[1],
+        min_col1  : minutes[0],
+        min_col2  : minutes[1],
+        sec_col1  : seconds[0],
+        sec_col2  : seconds[1]
+    };
 };
 
 exercise.binary = function(time, col){
