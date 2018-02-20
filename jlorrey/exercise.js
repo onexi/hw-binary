@@ -20,10 +20,9 @@ exercise.roman = function(time){
     //     };
     // 
     //-------------------------------------
-    hours   = String(exercise.time.getHours()); //make string for indexing
-    minutes = String(exercise.time.getMinutes());
-    seconds = String(exercise.time.getSeconds());
-    
+    var hours   = String(time.getHours()); //make string for indexing
+    var minutes = String(time.getMinutes());
+    var seconds = String(time.getSeconds());
     var obj = {
         hour_col1 : Number(hours[0]), //index string, then make that value a number
         hour_col2 : Number(hours[1]),
@@ -52,5 +51,5 @@ exercise.binary = function(time, col){
     //    }; 
     // 
     //----------------------------------------------------------
-
+    
 };
