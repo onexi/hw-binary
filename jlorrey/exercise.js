@@ -1,3 +1,4 @@
+// Jocelyn Lorrey 1.00 Pset 2 2/20/18
 var exercise = {};
 
 
@@ -19,9 +20,9 @@ exercise.roman = function(time){
     //     };
     // 
     //-------------------------------------
-    hours   = String(time.getHours()); //make string for indexing
-    minutes = String(time.getMinutes());
-    seconds = String(time.getSeconds());
+    hours   = String(exercise.time.getHours()); //make string for indexing
+    minutes = String(exercise.time.getMinutes());
+    seconds = String(exercise.time.getSeconds());
     
     var obj = {
         hour_col1 : Number(hours[0]), //index string, then make that value a number
