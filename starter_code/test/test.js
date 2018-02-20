@@ -20,12 +20,12 @@ function binary(time, col){
     var stamp  = timeStamp(time);
     var number = stamp[col];
 
-	var binary = { 
-        position8 : 'off', 
-		position4 : 'off', 
-		position2 : 'off', 
-		position1 : 'off', 
-    }; 
+	var binary = {
+        position8 : 'off',
+		position4 : 'off',
+		position2 : 'off',
+		position1 : 'off',
+    };
 
 	if (number >= 8){
         binary.position8 = 'on';
@@ -54,7 +54,7 @@ for(i=0;i<10;i++){
 	var minutes = Math.floor(Math.random()*60);
 	var seconds = Math.floor(Math.random()*60);
 
-	var time = new Date(Date.parse('09 Aug 2017 ' + 
+	var time = new Date(Date.parse('09 Aug 2017 ' +
 				hours   + ':' +
 				minutes + ':' +
 				seconds));
