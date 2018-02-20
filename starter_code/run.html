@@ -110,7 +110,6 @@
 		var timer = function() {
 			// get the current date & time
 			var time = new Date();
-			console.log(time);
 
 			// show roman time, using 6 columns
 			setRoman(time);
@@ -128,9 +127,17 @@
 };
 
 		var setBinary = function(time){
-	// set roman time
-	// you must implement exercise.binary()
-};
+			var binaryMap = ['hour_col1', 'hour_col2', 'min_col1', 'min_col2', 'sec_col1', 'sec_col2'].reduce(function(obj, key) {
+				obj[key] = exercise.binary(time, key);
+				return obj;
+			}, {});
+
+			Object.keys(binaryMap).map(function(key){
+				Object.keys(binaryMap[key]).map(function(position){
+					document.getElementById(`${key}-${position}`).style.visibility = (binaryMap[key][position] == "on")? 'visible':'hidden';
+				});
+			});
+		};
 
 		// start timer when page is loaded
 		window.onload = function() {
