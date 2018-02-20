@@ -68,6 +68,10 @@ exercise.binary = function(time, col){
             binary.position4 =  'off';
             binary.position2 =  'off';
             binary.position1 =  'off';
+            document.getElementById("hour_"+col+"_pos1").style.background = "silver";
+            document.getElementById("hour_"+col+"_pos2").style.background = "silver";
+            document.getElementById("hour_"+col+"_pos4").style.background = "silver";
+            document.getElementById("hour_"+col+"_pos8").style.background = "silver";
         break;
         case "1":
             binary.position8 =  'off'; 
@@ -75,6 +79,9 @@ exercise.binary = function(time, col){
             binary.position2 =  'off';
             binary.position1 =  'on';
             document.getElementById("hour_"+col+"_pos1").style.background = "red";
+            document.getElementById("hour_"+col+"_pos2").style.background = "silver";
+            document.getElementById("hour_"+col+"_pos4").style.background = "silver";
+            document.getElementById("hour_"+col+"_pos8").style.background = "silver";
         break;
         case "2":
             binary.position8 =  'off'; 
@@ -82,20 +89,51 @@ exercise.binary = function(time, col){
             binary.position2 =  'on';
             binary.position1 =  'off';
             document.getElementById("hour_"+col+"_pos2").style.background = "red";
+            document.getElementById("hour_"+col+"_pos1").style.background = "silver";
+            document.getElementById("hour_"+col+"_pos4").style.background = "silver";
+            document.getElementById("hour_"+col+"_pos8").style.background = "silver";
         break;
         case "3":
+            document.getElementById("hour_"+col+"_pos1").style.background = "red";
+            document.getElementById("hour_"+col+"_pos2").style.background = "red";
+            document.getElementById("hour_"+col+"_pos4").style.background = "silver";
+            document.getElementById("hour_"+col+"_pos8").style.background = "silver";
         break;
         case "4":
+            document.getElementById("hour_"+col+"_pos1").style.background = "silver";
+            document.getElementById("hour_"+col+"_pos2").style.background = "silver";
+            document.getElementById("hour_"+col+"_pos4").style.background = "red";
+            document.getElementById("hour_"+col+"_pos8").style.background = "silver";
         break;
         case "5":
+            document.getElementById("hour_"+col+"_pos1").style.background = "red";
+            document.getElementById("hour_"+col+"_pos2").style.background = "silver";
+            document.getElementById("hour_"+col+"_pos4").style.background = "red";
+            document.getElementById("hour_"+col+"_pos8").style.background = "silver";
         break;
         case "6":
+            document.getElementById("hour_"+col+"_pos8").style.background = "silver";
+            document.getElementById("hour_"+col+"_pos4").style.background = "red";
+            document.getElementById("hour_"+col+"_pos2").style.background = "red";
+            document.getElementById("hour_"+col+"_pos1").style.background = "silver";
         break;
         case "7":
+            document.getElementById("hour_"+col+"_pos1").style.background = "red";
+            document.getElementById("hour_"+col+"_pos2").style.background = "red";
+            document.getElementById("hour_"+col+"_pos4").style.background = "red";
+            document.getElementById("hour_"+col+"_pos8").style.background = "silver";
         break;
         case "8":
+            document.getElementById("hour_"+col+"_pos1").style.background = "silver";
+            document.getElementById("hour_"+col+"_pos2").style.background = "silver";
+            document.getElementById("hour_"+col+"_pos4").style.background = "silver";
+            document.getElementById("hour_"+col+"_pos8").style.background = "red";
         break;
         case "9":
+            document.getElementById("hour_"+col+"_pos1").style.background = "red";
+            document.getElementById("hour_"+col+"_pos2").style.background = "silver";
+            document.getElementById("hour_"+col+"_pos4").style.background = "silver";
+            document.getElementById("hour_"+col+"_pos8").style.background = "red";
         break;
     }
     return binary;
