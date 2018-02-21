@@ -1,3 +1,5 @@
+//Idaly Ali (idaly@mit.edu) and Rounaq Basu (rounaq@mit.edu)
+
 var exercise = {};
 
 exercise.roman = function(time){
