@@ -52,15 +52,8 @@ exercise.binary = function(time, col){
     //    };    
     //----------------------------------------------------------
     romanCols = exercise.roman(time); 
-    // romanVal = romanCols.col; //the roman digit associated with column
-    romanVal = {
-        hour_col1 : 1,
-        hour_col2 : 2,
-        min_col1  : 3,
-        min_col2  : 4,
-        sec_col1  : 5, 
-        sec_col2  : 6
-    };
+    romanVal = romanCols.col; //the roman digit associated with column
+
     binaryVal = romanVal.toString(2); //convert to binary string (bonus: can index strings)
     
     stateArray = ['off', 'on']; //will use to map binary (0, 1) to ('off', 'on') 
