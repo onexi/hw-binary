@@ -1,11 +1,8 @@
 var exercise = {};
 
-
 exercise.roman = function(time){
 
     //    Return an object with roman time
-
-    // var time = new Date(); // Remove
     var hours = time.getHours();
     var minutes = time.getMinutes();
     var seconds = time.getSeconds();
@@ -25,37 +22,27 @@ exercise.roman = function(time){
 
 exercise.binary = function(time, col){
 
-    //----------------------------------------------------------
-    //  YOUR CODE
     //    Return an object with
     //    the binary clock values 
     //    for the given column
-    //
-    //  For example, for time 05:13:47 PM, and column hour_col2
-    //    var binary = { 
-    //        position8 : 'off', 
-    //        position4 : 'on', 
-    //        position2 : 'on', 
-    //        position1 : 'on', 
-    //    }; 
-    // 
-    //----------------------------------------------------------
     var romanTime = exercise.roman(time);
     var digit = romanTime[col];
     var binaryStr = '000' + digit.toString(2);
     var binaryStr4 = binaryStr.substr(binaryStr.length - 4);
+    var onOff = ['off', 'on'];
 
     var binary = {
-        position8 : binaryStr4.charAt(0),
-        position4 : binaryStr4.charAt(1),
-        position2 : binaryStr4.charAt(2),
-        position1 : binaryStr4.charAt(3)
+        position8 : onOff[Number(binaryStr4.charAt(0))],
+        position4 : onOff[Number(binaryStr4.charAt(1))],
+        position2 : onOff[Number(binaryStr4.charAt(2))],
+        position1 : onOff[Number(binaryStr4.charAt(3))]
     };
 
     return binary;
+
 };
 
-
 exercise.coordString = function(i, j){
-	return i + '-' + j;
+    return i + '-' + j;
+    
 };
