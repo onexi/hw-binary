@@ -57,7 +57,7 @@ exercise.binary = function(time, col){
         // "min_col2":(getPositions(col)),
         // "sec_col1":(getPositions(col)),
         // "sec_col2":(getPositions(col)),
-        [col]:(getPositions(time,col))
+        [col]:(getPositions(time,col)),
     };
  
     return binary;
@@ -66,7 +66,7 @@ exercise.binary = function(time, col){
 function getPositions(time,col){
    var timeString = getLabel(time,col);
    var positions = {};
-   positions = positionSetting(timeString);
+   positions = positionSetting(timeString,col);
    return positions;
 }
 function getLabel(time,col){
@@ -96,14 +96,16 @@ function getLabel(time,col){
     return timeString;
 }
 
-function positionSetting(timeString){
+function positionSetting(timeString,col){
     switch(timeString){
         case "0": 
             var binary = {
                 "position8":  'off', 
                 "position4": 'off',
                 "position2":  'off',
-                "position1":  'off'
+                "position1":  'off',
+                [col]:timeString
+
             };
  
             // document.getElementById(col+"_pos8").style.background = "silver";
@@ -116,7 +118,9 @@ function positionSetting(timeString){
                 "position8":  'off', 
                 "position4": 'off',
                 "position2":  'off',
-                "position1":  'on'
+                "position1":  'on',
+                [col]:timeString
+
             };
             // document.getElementById(col+"_pos8").style.background = "silver";
             // document.getElementById(col+"_pos4").style.background = "silver";
@@ -128,7 +132,9 @@ function positionSetting(timeString){
                 "position8":  'off', 
                 "position4": 'off',
                 "position2":  'on',
-                "position1":  'off'
+                "position1":  'off',
+                [col]:timeString
+
             };
             // document.getElementById(col+"_pos8").style.background = "silver";
             // document.getElementById(col+"_pos4").style.background = "silver";
@@ -140,7 +146,9 @@ function positionSetting(timeString){
                 "position8":  'off', 
                 "position4": 'off',
                 "position2":  'on',
-                "position1":  'on'
+                "position1":  'on',
+                [col]:timeString
+
             };
             // document.getElementById(col+"_pos8").style.background = "silver";
             // document.getElementById(col+"_pos4").style.background = "silver";
@@ -152,7 +160,9 @@ function positionSetting(timeString){
                 "position8":  'off', 
                 "position4": 'on',
                 "position2":  'off',
-                "position1":  'off'
+                "position1":  'off',
+                [col]:timeString
+
             };
             // document.getElementById("hour_"+col+"_pos8").style.background = "silver";
             // document.getElementById("hour_"+col+"_pos4").style.background = "red";
@@ -164,7 +174,9 @@ function positionSetting(timeString){
                 "position8":  'off', 
                 "position4": 'on',
                 "position2":  'off',
-                "position1":  'on'
+                "position1":  'on',
+                [col]:timeString
+
             };
             // document.getElementById("hour_"+col+"_pos8").style.background = "silver";
             // document.getElementById("hour_"+col+"_pos4").style.background = "red";
@@ -176,7 +188,9 @@ function positionSetting(timeString){
                 "position8":  'off', 
                 "position4": 'on',
                 "position2":  'on',
-                "position1":  'off'
+                "position1":  'off',
+                [col]:timeString
+
             };
 
             // document.getElementById("hour_"+col+"_pos8").style.background = "silver";
@@ -189,7 +203,9 @@ function positionSetting(timeString){
                 "position8":  'off', 
                 "position4": 'on',
                 "position2":  'on',
-                "position1":  'on'
+                "position1":  'on',
+                [col]:timeString
+
             };
             // document.getElementById("hour_"+col+"_pos8").style.background = "silver";
             // document.getElementById("hour_"+col+"_pos4").style.background = "red";
@@ -201,7 +217,9 @@ function positionSetting(timeString){
                 "position8":  'on', 
                 "position4": 'off',
                 "position2":  'off',
-                "position1":  'off'
+                "position1":  'off',
+                [col]:timeString
+
             };
             // document.getElementById("hour_"+col+"_pos8").style.background = "red";
             // document.getElementById("hour_"+col+"_pos4").style.background = "silver";
@@ -213,7 +231,9 @@ function positionSetting(timeString){
                 "position8":  'on', 
                 "position4": 'off',
                 "position2":  'off',
-                "position1":  'on'
+                "position1":  'on',
+                [col]:timeString
+
             };
             // document.getElementById("hour_"+col+"_pos8").style.background = "red";
             // document.getElementById("hour_"+col+"_pos4").style.background = "silver";
