@@ -76,11 +76,19 @@ window.onload=timer;
 	*/
 	body {
     display:flex;
-    align-items: center;
-    justify-content: center;
+	justify-content: center;
+
+	}
+
+	.maincontainer{
+		height: 100vh;
+		display:grid;
+		grid-template-rows: 1fr 5fr 1fr;
 	}
 
 	.columns {
+		grid-row: 2;
+
 		display:grid;
 		grid-template-columns: repeat(6,100px);
 		grid-template-rows: repeat(5,100px);
@@ -111,44 +119,44 @@ window.onload=timer;
 
 
 <body>
-	<div class = "columns">
-		<div class = "invisiblecells" id = "hr1_8"></div>
-		<div class = "invisiblecells" id = "hr1_4"></div>
-		<div class = "visiblecells" id = "hr1_2"></div>
-		<div class = "visiblecells" id = "hr1_1"></div>
-		<div class = "romantime" id = "hr1"></div>
+	<div class = "maincontainer">
+		<div class = "columns">
+			<div class = "invisiblecells" id = "hr1_8"></div>
+			<div class = "invisiblecells" id = "hr1_4"></div>
+			<div class = "visiblecells" id = "hr1_2"></div>
+			<div class = "visiblecells" id = "hr1_1"></div>
+			<div class = "romantime" id = "hr1"></div>
 
-		<div class = "visiblecells" id = "hr2_8"></div>
-		<div class = "visiblecells" id = "hr2_4"></div>
-		<div class = "visiblecells" id = "hr2_2"></div>
-		<div class = "visiblecells" id = "hr2_1"></div>
-		<div class = "romantime" id = "hr2"></div>
-		
-		<div class = "invisiblecells" id = "min1_8"></div>
-		<div class = "visiblecells" id = "min1_4"></div>
-		<div class = "visiblecells" id = "min1_2"></div>
-		<div class = "visiblecells" id = "min1_1"></div>
-		<div class = "romantime" id = "min1"></div>
+			<div class = "visiblecells" id = "hr2_8"></div>
+			<div class = "visiblecells" id = "hr2_4"></div>
+			<div class = "visiblecells" id = "hr2_2"></div>
+			<div class = "visiblecells" id = "hr2_1"></div>
+			<div class = "romantime" id = "hr2"></div>
+			
+			<div class = "invisiblecells" id = "min1_8"></div>
+			<div class = "visiblecells" id = "min1_4"></div>
+			<div class = "visiblecells" id = "min1_2"></div>
+			<div class = "visiblecells" id = "min1_1"></div>
+			<div class = "romantime" id = "min1"></div>
 
-		<div class = "visiblecells" id = "min2_8"></div>
-		<div class = "visiblecells" id = "min2_4"></div>
-		<div class = "visiblecells" id = "min2_2"></div>
-		<div class = "visiblecells" id = "min2_1"></div>
-		<div class = "romantime" id = "min2"></div>
+			<div class = "visiblecells" id = "min2_8"></div>
+			<div class = "visiblecells" id = "min2_4"></div>
+			<div class = "visiblecells" id = "min2_2"></div>
+			<div class = "visiblecells" id = "min2_1"></div>
+			<div class = "romantime" id = "min2"></div>
 
-		<div class = "invisiblecells" id = "sec1_8"></div>
-		<div class = "visiblecells" id = "sec1_4"></div>
-		<div class = "visiblecells" id = "sec1_2"></div>
-		<div class = "visiblecells" id = "sec1_1"></div>
-		<div class = "romantime" id = "sec1"></div>
+			<div class = "invisiblecells" id = "sec1_8"></div>
+			<div class = "visiblecells" id = "sec1_4"></div>
+			<div class = "visiblecells" id = "sec1_2"></div>
+			<div class = "visiblecells" id = "sec1_1"></div>
+			<div class = "romantime" id = "sec1"></div>
 
-		<div class = "visiblecells" id = "sec2_8"></div>
-		<div class = "visiblecells" id = "sec2_4"></div>
-		<div class = "visiblecells" id = "sec2_2"></div>
-		<div class = "visiblecells" id = "sec2_1"></div>
-		<div class = "romantime" id = "sec2"></div>
-		
-
+			<div class = "visiblecells" id = "sec2_8"></div>
+			<div class = "visiblecells" id = "sec2_4"></div>
+			<div class = "visiblecells" id = "sec2_2"></div>
+			<div class = "visiblecells" id = "sec2_1"></div>
+			<div class = "romantime" id = "sec2"></div>
+		</div>
 	</div>
 </body>
 
