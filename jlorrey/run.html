@@ -14,10 +14,12 @@ var timer = function() {
 	// myTime.getSeconds() --> 12
 
 	// show roman time, using 6 columns
-	setRoman(time);
+	romanCols = setRoman(time);
 
 	// show binary time
-	setBinary(time);
+    for (var col in romanCols) { //for each column in roman time object:
+		setBinary(time, col);
+    }
 
 	// update every 1 second
 	setTimeout(timer, 1000);
@@ -29,7 +31,7 @@ var setRoman = function(time){
 	exercise.roman(time);
 };
 
-var setBinary = function(time){
+var setBinary = function(time, col){
 	// set roman time
 	// you must implement exercise.binary()
 	exercise.binary(time, col);
