@@ -127,6 +127,8 @@ exercise.binary = function(time, col){
         exercise.binary.position8 = 'on'    
     }
 
+    return exercise.binary;
+
     //console.log(exercise.binary.position1)
     //console.log(exercise.binary.position2)
     //console.log(exercise.binary.position4)
