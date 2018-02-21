@@ -34,72 +34,81 @@ var timer = function() {
 
 var setRoman = function(formattedTime){
 	// set roman time
-	exercise.roman(formattedTime);  
+	var colResponse = {}
+	colResponse = exercise.roman(formattedTime); 
+	document.getElementById("hour_col1_roman").innerHTML = colResponse.hour_col1;
+	document.getElementById("hour_col2_roman").innerHTML = colResponse.hour_col2;
+	document.getElementById("min_col3_roman").innerHTML = colResponse.min_col1;
+	document.getElementById("min_col4_roman").innerHTML = colResponse.min_col2;
+	document.getElementById("sec_col5_roman").innerHTML = colResponse.sec_col1;
+	document.getElementById("sec_col6_roman").innerHTML = colResponse.sec_col2;
+
 };
 
 var setBinary = function(formattedTime){
 	// set roman time
 	// you must implement exercise.binary()
 	var colResponse = {}
-	var timeLabel = ["hour","hour","min","min","sec","sec"];
-
-	for(var i = 1; i <= 6; i++){
-		for(var j = 1; j<=2; j++){
-			colResponse = exercise.binary(formattedTime, timeLabel[i]+"_col"+j);
-			if(colResponse.position8 == "off"){
-				document.getElementById("col"+i+"_pos8").style.background = "silver";
-			}else{
-				document.getElementById("col"+i+"_pos8").style.background = "red";
-			}
-			if(colResponse.position4 == "off"){
-				document.getElementById("col"+i+"_pos4").style.background = "silver";
-
-			}else{
-				document.getElementById("col"+i+"_pos4").style.background = "red";
-			}
-			if(colResponse.position2 == "off"){
-				document.getElementById("col"+i+"_pos2").style.background = "silver";
-
-			}else{
-				document.getElementById("col"+i+"_pos2").style.background = "red";
-			}
-			if(colResponse.position1 == "off"){
-				document.getElementById("col"+i+"_pos1").style.background = "silver";
-
-			}else{
-				document.getElementById("col"+i+"_pos1").style.background = "red";
-			}
-		}
-		
-	}
+	// var timeLabel = ["hour","hour","min","min","sec","sec"];
 
 	// for(var i = 1; i <= 6; i++){
-	// 	colResponse = exercise.binary(formattedTime,"col"+i);
-	// 	if(colResponse.position8 == "off"){
-    //         document.getElementById("col"+i+"_pos8").style.background = "silver";
-	// 	}else{
-	// 		document.getElementById("col"+i+"_pos8").style.background = "red";
-	// 	}
-	// 	if(colResponse.position4 == "off"){
-	// 		document.getElementById("col"+i+"_pos4").style.background = "silver";
+	// 	for(var j = 1; j<=2; j++){
+	// 		colResponse = exercise.binary(formattedTime, timeLabel[i-1]+"_col"+j);
+	// 		if(colResponse.position8 == "off"){
+	// 			document.getElementById("col"+i+"_pos8").style.background = "silver";
+	// 		}else{
+	// 			document.getElementById("col"+i+"_pos8").style.background = "red";
+	// 		}
+	// 		if(colResponse.position4 == "off"){
+	// 			document.getElementById("col"+i+"_pos4").style.background = "silver";
 
-	// 	}else{
-	// 		document.getElementById("col"+i+"_pos4").style.background = "red";
-	// 	}
-	// 	if(colResponse.position2 == "off"){
-	// 		document.getElementById("col"+i+"_pos2").style.background = "silver";
+	// 		}else{
+	// 			document.getElementById("col"+i+"_pos4").style.background = "red";
+	// 		}
+	// 		if(colResponse.position2 == "off"){
+	// 			document.getElementById("col"+i+"_pos2").style.background = "silver";
 
-	// 	}else{
-	// 		document.getElementById("col"+i+"_pos2").style.background = "red";
-	// 	}
-	// 	if(colResponse.position1 == "off"){
-	// 		document.getElementById("col"+i+"_pos1").style.background = "silver";
+	// 		}else{
+	// 			document.getElementById("col"+i+"_pos2").style.background = "red";
+	// 		}
+	// 		if(colResponse.position1 == "off"){
+	// 			document.getElementById("col"+i+"_pos1").style.background = "silver";
 
-	// 	}else{
-	// 		document.getElementById("col"+i+"_pos1").style.background = "red";
+	// 		}else{
+	// 			document.getElementById("col"+i+"_pos1").style.background = "red";
+	// 		}
 	// 	}
-
+		
 	// }
+	var cols = ["hour_col1","hour_col2","min_col1","min_col2","sec_col1","sec_col2"];
+	//hours
+	for(var i = 1; i <= 6; i++){
+		colResponse = exercise.binary(formattedTime,cols[i-1]);
+		if(colResponse[cols[i-1]]["position8"] == "off"){
+            document.getElementById("col"+i+"_pos8").style.background = "silver";
+		}else{
+			document.getElementById("col"+i+"_pos8").style.background = "red";
+		}
+		if(colResponse[cols[i-1]]["position4"] == "off"){
+			document.getElementById("col"+i+"_pos4").style.background = "silver";
+
+		}else{
+			document.getElementById("col"+i+"_pos4").style.background = "red";
+		}
+		if(colResponse[cols[i-1]]["position2"] == "off"){
+			document.getElementById("col"+i+"_pos2").style.background = "silver";
+
+		}else{
+			document.getElementById("col"+i+"_pos2").style.background = "red";
+		}
+		if(colResponse[cols[i-1]]["position1"] == "off"){
+			document.getElementById("col"+i+"_pos1").style.background = "silver";
+
+		}else{
+			document.getElementById("col"+i+"_pos1").style.background = "red";
+		}
+
+	}
 
 };
 

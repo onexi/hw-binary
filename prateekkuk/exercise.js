@@ -19,15 +19,23 @@ exercise.roman = function(time){
     //     };
     // 
     //-------------------------------------
-    document.getElementById("hour_col1_roman").innerHTML = time[0];
-    document.getElementById("hour_col2_roman").innerHTML = time[1];
-    document.getElementById("min_col3_roman").innerHTML = time[3];
-    document.getElementById("min_col4_roman").innerHTML = time[4];
-    document.getElementById("sec_col5_roman").innerHTML = time[6];
-    document.getElementById("sec_col6_roman").innerHTML = time[7];
+        var romanTime = {
+            hour_col1:time[0],
+            hour_col2:time[1],
+            min_col1:time[3],
+            min_col2:time[4],
+            sec_col1:time[6],
+            sec_col2:time[7]
+        };
+        // document.getElementById("hour_col1_roman").innerHTML = time[0];
+        // document.getElementById("hour_col2_roman").innerHTML = time[1];
+        // document.getElementById("min_col3_roman").innerHTML = time[3];
+        // document.getElementById("min_col4_roman").innerHTML = time[4];
+        // document.getElementById("sec_col5_roman").innerHTML = time[6];
+        // document.getElementById("sec_col6_roman").innerHTML = time[7];
 
 
-
+        return romanTime;
 
 };
 
@@ -48,7 +56,26 @@ exercise.binary = function(time, col){
     //    }; 
     // 
     //----------------------------------------------------------
-    var binary = {}
+    var binary = {
+        // "hour_col1":(getPositions(col)),
+        // "hour_col2":(getPositions(col)),
+        // "min_col1":(getPositions(col)),
+        // "min_col2":(getPositions(col)),
+        // "sec_col1":(getPositions(col)),
+        // "sec_col2":(getPositions(col)),
+        [col]:(getPositions(time,col))
+    };
+ 
+    return binary;
+};
+
+function getPositions(time,col){
+   var timeString = getLabel(time,col);
+   var positions = {};
+   positions = positionSetting(timeString);
+   return positions;
+}
+function getLabel(time,col){
     var timeString = "";
     switch(col){
         case "hour_col1":
@@ -72,102 +99,128 @@ exercise.binary = function(time, col){
         default:
             console.log(col +" :was sent instead");
     }
+    return timeString;
+}
+
+function positionSetting(timeString){
     switch(timeString){
         case "0": 
-            binary.position8 =  'off'; 
-            binary.position4 =  'off';
-            binary.position2 =  'off';
-            binary.position1 =  'off';
+            var binary = {
+                "position8":  'off', 
+                "position4": 'off',
+                "position2":  'off',
+                "position1":  'off'
+            };
+ 
             // document.getElementById(col+"_pos8").style.background = "silver";
             // document.getElementById(col+"_pos4").style.background = "silver";
             // document.getElementById(col+"_pos2").style.background = "silver";
             // document.getElementById(col+"_pos1").style.background = "silver";
         break;
         case "1":
-            binary.position8 =  'off'; 
-            binary.position4 =  'off';
-            binary.position2 =  'off';
-            binary.position1 =  'on';
+            var binary = {
+                "position8":  'off', 
+                "position4": 'off',
+                "position2":  'off',
+                "position1":  'on'
+            };
             // document.getElementById(col+"_pos8").style.background = "silver";
             // document.getElementById(col+"_pos4").style.background = "silver";
             // document.getElementById(col+"_pos2").style.background = "silver";
             // document.getElementById(col+"_pos1").style.background = "red";
         break;
         case "2":
-            binary.position8 =  'off'; 
-            binary.position4 =  'off';
-            binary.position2 =  'on';
-            binary.position1 =  'off';
+            var binary = {
+                "position8":  'off', 
+                "position4": 'off',
+                "position2":  'on',
+                "position1":  'off'
+            };
             // document.getElementById(col+"_pos8").style.background = "silver";
             // document.getElementById(col+"_pos4").style.background = "silver";
             // document.getElementById(col+"_pos2").style.background = "red";
             // document.getElementById(col+"_pos1").style.background = "silver";
         break;
         case "3":
-            binary.position8 =  'off'; 
-            binary.position4 =  'off';
-            binary.position2 =  'on';
-            binary.position1 =  'on';
+            var binary = {
+                "position8":  'off', 
+                "position4": 'off',
+                "position2":  'on',
+                "position1":  'on'
+            };
             // document.getElementById(col+"_pos8").style.background = "silver";
             // document.getElementById(col+"_pos4").style.background = "silver";
             // document.getElementById(col+"_pos2").style.background = "red";
             // document.getElementById(col+"_pos1").style.background = "red";
         break;
         case "4":
-            binary.position8 =  'off'; 
-            binary.position4 =  'on';
-            binary.position2 =  'off';
-            binary.position1 =  'off';
+            var binary = {
+                "position8":  'off', 
+                "position4": 'on',
+                "position2":  'off',
+                "position1":  'off'
+            };
             // document.getElementById("hour_"+col+"_pos8").style.background = "silver";
             // document.getElementById("hour_"+col+"_pos4").style.background = "red";
             // document.getElementById("hour_"+col+"_pos2").style.background = "silver";
             // document.getElementById("hour_"+col+"_pos1").style.background = "silver";
         break;
         case "5":
-            binary.position8 =  'off'; 
-            binary.position4 =  'on';
-            binary.position2 =  'off';
-            binary.position1 =  'on';
+            var binary = {
+                "position8":  'off', 
+                "position4": 'on',
+                "position2":  'off',
+                "position1":  'on'
+            };
             // document.getElementById("hour_"+col+"_pos8").style.background = "silver";
             // document.getElementById("hour_"+col+"_pos4").style.background = "red";
             // document.getElementById("hour_"+col+"_pos2").style.background = "silver";
             // document.getElementById("hour_"+col+"_pos1").style.background = "red";
         break;
         case "6":
-            binary.position8 =  'off'; 
-            binary.position4 =  'on';
-            binary.position2 =  'on';
-            binary.position1 =  'off';
+            var binary = {
+                "position8":  'off', 
+                "position4": 'on',
+                "position2":  'on',
+                "position1":  'off'
+            };
+
             // document.getElementById("hour_"+col+"_pos8").style.background = "silver";
             // document.getElementById("hour_"+col+"_pos4").style.background = "red";
             // document.getElementById("hour_"+col+"_pos2").style.background = "red";
             // document.getElementById("hour_"+col+"_pos1").style.background = "silver";
         break;
         case "7":
-            binary.position8 =  'off'; 
-            binary.position4 =  'on';
-            binary.position2 =  'on';
-            binary.position1 =  'on';
+            var binary = {
+                "position8":  'off', 
+                "position4": 'on',
+                "position2":  'on',
+                "position1":  'on'
+            };
             // document.getElementById("hour_"+col+"_pos8").style.background = "silver";
             // document.getElementById("hour_"+col+"_pos4").style.background = "red";
             // document.getElementById("hour_"+col+"_pos2").style.background = "red";
             // document.getElementById("hour_"+col+"_pos1").style.background = "red";
         break;
         case "8":
-            binary.position8 =  'on'; 
-            binary.position4 =  'off';
-            binary.position2 =  'off';
-            binary.position1 =  'off';
+            var binary = {
+                "position8":  'on', 
+                "position4": 'off',
+                "position2":  'off',
+                "position1":  'off'
+            };
             // document.getElementById("hour_"+col+"_pos8").style.background = "red";
             // document.getElementById("hour_"+col+"_pos4").style.background = "silver";
             // document.getElementById("hour_"+col+"_pos2").style.background = "silver";
             // document.getElementById("hour_"+col+"_pos1").style.background = "silver";
         break;
         case "9":
-            binary.position8 =  'on'; 
-            binary.position4 =  'off';
-            binary.position2 =  'off';
-            binary.position1 =  'on';
+            var binary = {
+                "position8":  'on', 
+                "position4": 'off',
+                "position2":  'off',
+                "position1":  'on'
+            };
             // document.getElementById("hour_"+col+"_pos8").style.background = "red";
             // document.getElementById("hour_"+col+"_pos4").style.background = "silver";
             // document.getElementById("hour_"+col+"_pos2").style.background = "silver";
@@ -176,4 +229,4 @@ exercise.binary = function(time, col){
         default: console.log("error in converting to binary");
     }
     return binary;
-};
+}
