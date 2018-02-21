@@ -19,12 +19,12 @@ exercise.roman = function(time){
     //     };
     // 
     //-------------------------------------
-    document.getElementById("hour_col1_roman").innerHTML = time.charAt(0);
-    document.getElementById("hour_col2_roman").innerHTML = time.charAt(1);
-    document.getElementById("min_col3_roman").innerHTML = time.charAt(3);
-    document.getElementById("min_col4_roman").innerHTML = time.charAt(4);
-    document.getElementById("sec_col5_roman").innerHTML = time.charAt(6);
-    document.getElementById("sec_col6_roman").innerHTML = time.charAt(7);
+    document.getElementById("hour_col1_roman").innerHTML = time[0];
+    document.getElementById("hour_col2_roman").innerHTML = time[1];
+    document.getElementById("min_col3_roman").innerHTML = time[3];
+    document.getElementById("min_col4_roman").innerHTML = time[4];
+    document.getElementById("sec_col5_roman").innerHTML = time[6];
+    document.getElementById("sec_col6_roman").innerHTML = time[7];
 
 
 
@@ -52,22 +52,22 @@ exercise.binary = function(time, col){
     var timeString = "";
     switch(col){
         case "hour_col1":
-            timeString = time.charAt(0);
+            timeString = time[0];
         break;
         case "hour_col2":
-            timeString = time.charAt(1);
+            timeString = time[1];
         break;
         case "min_col1":
-            timeString = time.charAt(3); //skipping the :
+            timeString = time[3]; //skipping the :
         break;
         case "min_col2":
-            timeString = time.charAt(4);
+            timeString = time[4];
         break;
         case "sec_col1":
-            timeString = time.charAt(6);
+            timeString = time[6];
         break;
         case "sec_col2":
-            timeString = time.charAt(7);
+            timeString = time[7];
         break;
         default:
             console.log(col +" :was sent instead");
