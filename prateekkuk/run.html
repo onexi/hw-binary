@@ -36,12 +36,12 @@ var setRoman = function(formattedTime){
 	// set roman time
 	var colResponse = {}
 	colResponse = exercise.roman(formattedTime); 
-	document.getElementById("hour_col1_roman").innerHTML = colResponse.hour_col1;
-	document.getElementById("hour_col2_roman").innerHTML = colResponse.hour_col2;
-	document.getElementById("min_col3_roman").innerHTML = colResponse.min_col1;
-	document.getElementById("min_col4_roman").innerHTML = colResponse.min_col2;
-	document.getElementById("sec_col5_roman").innerHTML = colResponse.sec_col1;
-	document.getElementById("sec_col6_roman").innerHTML = colResponse.sec_col2;
+	document.getElementById("hour_col1_roman").innerHTML = colResponse["hour_col1"];
+	document.getElementById("hour_col2_roman").innerHTML = colResponse["hour_col2"];
+	document.getElementById("min_col3_roman").innerHTML = colResponse["min_col1"];
+	document.getElementById("min_col4_roman").innerHTML = colResponse["min_col2"];
+	document.getElementById("sec_col5_roman").innerHTML = colResponse["sec_col1"];
+	document.getElementById("sec_col6_roman").innerHTML = colResponse["sec_col2"];
 
 };
 

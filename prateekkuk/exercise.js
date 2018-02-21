@@ -20,12 +20,12 @@ exercise.roman = function(time){
     // 
     //-------------------------------------
         var romanTime = {
-            hour_col1:time[0],
-            hour_col2:time[1],
-            min_col1:time[3],
-            min_col2:time[4],
-            sec_col1:time[6],
-            sec_col2:time[7]
+            "hour_col1":time[0],
+            "hour_col2":time[1],
+            "min_col1":time[3],
+            "min_col2":time[4],
+            "sec_col1":time[6],
+            "sec_col2":time[7]
         };
       
 
@@ -51,13 +51,13 @@ exercise.binary = function(time, col){
     // 
     //----------------------------------------------------------
     var binary = {
-        "hour_col1":(getPositions(col)),
-        "hour_col2":(getPositions(col)),
-        "min_col1":(getPositions(col)),
-        "min_col2":(getPositions(col)),
-        "sec_col1":(getPositions(col)),
-        "sec_col2":(getPositions(col)),
-        //[col]:(getPositions(time,col))
+        // "hour_col1":(getPositions(col)),
+        // "hour_col2":(getPositions(col)),
+        // "min_col1":(getPositions(col)),
+        // "min_col2":(getPositions(col)),
+        // "sec_col1":(getPositions(col)),
+        // "sec_col2":(getPositions(col)),
+        [col]:(getPositions(time,col))
     };
  
     return binary;
