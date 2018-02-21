@@ -51,22 +51,22 @@ exercise.binary = function(time, col){
     var binary = {}
     var timeString = "";
     switch(col){
-        case "col1":
+        case "hour_col1":
             timeString = time.charAt(0);
         break;
-        case "col2":
+        case "hour_col2":
             timeString = time.charAt(1);
         break;
-        case "col3":
+        case "min_col1":
             timeString = time.charAt(3); //skipping the :
         break;
-        case "col4":
+        case "min_col2":
             timeString = time.charAt(4);
         break;
-        case "col5":
+        case "sec_col1":
             timeString = time.charAt(6);
         break;
-        case "col6":
+        case "sec_col2":
             timeString = time.charAt(7);
         break;
         default:
