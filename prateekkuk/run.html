@@ -34,18 +34,40 @@ var timer = function() {
 
 var setRoman = function(formattedTime){
 	// set roman time
-	// you must implement exercise.roman()  
+	exercise.roman(formattedTime);  
 };
 
 var setBinary = function(formattedTime){
 	// set roman time
 	// you must implement exercise.binary()
-	var col1response = exercise.binary(formattedTime,"col1");
-	var col2response = exercise.binary(formattedTime,"col2");
-	var col3response = exercise.binary(formattedTime,"col3");
-	var col4response = exercise.binary(formattedTime,"col4");
-	var col5response = exercise.binary(formattedTime,"col5");
-	var col6response = exercise.binary(formattedTime,"col6");
+	var colResponse = {}
+	for(var i = 1; i <= 6; i++){
+		colResponse = exercise.binary(formattedTime,"col"+i);
+		if(colResponse.position8 == "off"){
+            document.getElementById("col"+i+"_pos8").style.background = "silver";
+		}else{
+			document.getElementById("col"+i+"_pos8").style.background = "red";
+		}
+		if(colResponse.position4 == "off"){
+			document.getElementById("col"+i+"_pos4").style.background = "silver";
+
+		}else{
+			document.getElementById("col"+i+"_pos4").style.background = "red";
+		}
+		if(colResponse.position2 == "off"){
+			document.getElementById("col"+i+"_pos2").style.background = "silver";
+
+		}else{
+			document.getElementById("col"+i+"_pos2").style.background = "red";
+		}
+		if(colResponse.position1 == "off"){
+			document.getElementById("col"+i+"_pos1").style.background = "silver";
+
+		}else{
+			document.getElementById("col"+i+"_pos1").style.background = "red";
+		}
+
+	}
 
 };
 
@@ -66,34 +88,55 @@ window.onload = function() {
 	There are 6 columns in a binary clock
 
 -->
-	<div class="col1" id="hour_col1_pos1" style="left:10px;top:340px"></div> 
-	<div class="col1" id="hour_col1_pos2" style="left:10px;top:230px"></div>
-	<div class="col1" id="hour_col1_pos4" style="left:10px;top:120px; visibility:hidden"></div>
-	<div class="col1" id="hour_col1_pos8" style="left:10px;top:10px; visibility:hidden"></div>
+	<!-- hour -->
+	<div class="col1" id="col1_pos8" style="left:10px;top:10px; visibility:hidden"></div>
+	<div class="col1" id="col1_pos4" style="left:10px;top:120px; visibility:hidden"></div>
+	<div class="col1" id="col1_pos2" style="left:10px;top:230px"></div>
+	<div class="col1" id="col1_pos1" style="left:10px;top:340px"></div> 
 
-	<div class="col2" id="hour_col2_pos1" style="left:120px;top:340px"></div> 
-	<div class="col2" id="hour_col2_pos2" style="left:120px;top:230px"></div>
-	<div class="col2" id="hour_col2_pos4" style="left:120px;top:120px;"></div>
-	<div class="col2" id="hour_col2_pos8" style="left:120px;top:10px;"></div>
+	<div id="hour_col1_roman" style="left:10px;top:450px;background:white;border:1px gray dashed"></div> 
 
-	<div class="col3" id="hour_col3_pos1" style="left:230px;top:340px"></div> 
-	<div class="col3" id="hour_col3_pos2" style="left:230px;top:230px"></div>
-	<div class="col3" id="hour_col3_pos4" style="left:230px;top:120px;"></div>
-	<div class="col3" id="hour_col3_pos8" style="left:230px;top:10px;visibility:hidden"></div>
 
-	<div class="col4" id="hour_col4_pos1" style="left:340px;top:340px"></div> 
-	<div class="col4" id="hour_col4_pos2" style="left:340px;top:230px"></div>
-	<div class="col4" id="hour_col4_pos4" style="left:340px;top:120px;"></div>
-	<div class="col4" id="hour_col4_pos8" style="left:340px;top:10px;"></div>
+	<div class="col2" id="col2_pos8" style="left:120px;top:10px;"></div>
+	<div class="col2" id="col2_pos4" style="left:120px;top:120px;"></div>
+	<div class="col2" id="col2_pos2" style="left:120px;top:230px"></div>
+	<div class="col2" id="col2_pos1" style="left:120px;top:340px"></div> 
 
-	<div id="hour_col5_pos1" style="left:450px;top:340px"></div> 
-	<div id="hour_col5_pos2" style="left:450px;top:230px"></div>
-	<div id="hour_col5_pos4" style="left:450px;top:120px;"></div>
-	<div id="hour_col5_pos8" style="left:450px;top:10px;visibility:hidden"></div>
+	<div id="hour_col2_roman" style="left:120px;top:450px;background:white;border:1px gray dashed"></div> 
 
-	<div id="hour_col6_pos1" style="left:560px;top:340px"></div> 
-	<div id="hour_col6_pos2" style="left:560px;top:230px"></div>
-	<div id="hour_col6_pos4" style="left:560px;top:120px;"></div>
-	<div id="hour_col6_pos8" style="left:560px;top:10px;"></div>
+	<!-- mins -->
+
+	<div class="col3" id="col3_pos8" style="left:230px;top:10px;visibility:hidden"></div>
+	<div class="col3" id="col3_pos4" style="left:230px;top:120px;"></div>
+	<div class="col3" id="col3_pos2" style="left:230px;top:230px"></div>
+	<div class="col3" id="col3_pos1" style="left:230px;top:340px"></div> 
+
+	<div id="min_col3_roman" style="left:230px;top:450px;background:white;border:1px gray dashed"></div> 
+
+
+	<div class="col4" id="col4_pos8" style="left:340px;top:10px;"></div>
+	<div class="col4" id="col4_pos4" style="left:340px;top:120px;"></div>
+	<div class="col4" id="col4_pos2" style="left:340px;top:230px"></div>
+	<div class="col4" id="col4_pos1" style="left:340px;top:340px"></div> 
+
+	<div id="min_col4_roman" style="left:340px;top:450px;background:white;border:1px gray dashed"></div> 
+
+	<!-- seconds -->
+
+	<div class="col5" id="col5_pos8" style="left:450px;top:10px;visibility:hidden"></div>
+	<div class="col5" id="col5_pos4" style="left:450px;top:120px;"></div>
+	<div class="col5" id="col5_pos2" style="left:450px;top:230px"></div>
+	<div class="col5" id="col5_pos1" style="left:450px;top:340px"></div> 
+	
+	<div id="sec_col5_roman" style="left:450px;top:450px;background:white;border:1px gray dashed"></div> 
+
+	<div class="col6" id="col6_pos8" style="left:560px;top:10px;"></div>
+	<div class="col6" id="col6_pos4" style="left:560px;top:120px;"></div>
+	<div class="col6" id="col6_pos2" style="left:560px;top:230px"></div>
+	<div class="col6" id="col6_pos1" style="left:560px;top:340px"></div> 
+
+	<div id="sec_col6_roman" style="left:560px;top:450px;background:white;border:1px gray dashed"></div> 
+
+
 </html>
      
