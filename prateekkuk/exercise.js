@@ -107,11 +107,6 @@ function positionSetting(timeString,col){
                 [col]:timeString
 
             };
- 
-            // document.getElementById(col+"_pos8").style.background = "silver";
-            // document.getElementById(col+"_pos4").style.background = "silver";
-            // document.getElementById(col+"_pos2").style.background = "silver";
-            // document.getElementById(col+"_pos1").style.background = "silver";
         break;
         case "1":
             var binary = {
@@ -122,10 +117,6 @@ function positionSetting(timeString,col){
                 [col]:timeString
 
             };
-            // document.getElementById(col+"_pos8").style.background = "silver";
-            // document.getElementById(col+"_pos4").style.background = "silver";
-            // document.getElementById(col+"_pos2").style.background = "silver";
-            // document.getElementById(col+"_pos1").style.background = "red";
         break;
         case "2":
             var binary = {
@@ -136,10 +127,6 @@ function positionSetting(timeString,col){
                 [col]:timeString
 
             };
-            // document.getElementById(col+"_pos8").style.background = "silver";
-            // document.getElementById(col+"_pos4").style.background = "silver";
-            // document.getElementById(col+"_pos2").style.background = "red";
-            // document.getElementById(col+"_pos1").style.background = "silver";
         break;
         case "3":
             var binary = {
@@ -150,10 +137,6 @@ function positionSetting(timeString,col){
                 [col]:timeString
 
             };
-            // document.getElementById(col+"_pos8").style.background = "silver";
-            // document.getElementById(col+"_pos4").style.background = "silver";
-            // document.getElementById(col+"_pos2").style.background = "red";
-            // document.getElementById(col+"_pos1").style.background = "red";
         break;
         case "4":
             var binary = {
@@ -164,10 +147,6 @@ function positionSetting(timeString,col){
                 [col]:timeString
 
             };
-            // document.getElementById("hour_"+col+"_pos8").style.background = "silver";
-            // document.getElementById("hour_"+col+"_pos4").style.background = "red";
-            // document.getElementById("hour_"+col+"_pos2").style.background = "silver";
-            // document.getElementById("hour_"+col+"_pos1").style.background = "silver";
         break;
         case "5":
             var binary = {
@@ -178,10 +157,6 @@ function positionSetting(timeString,col){
                 [col]:timeString
 
             };
-            // document.getElementById("hour_"+col+"_pos8").style.background = "silver";
-            // document.getElementById("hour_"+col+"_pos4").style.background = "red";
-            // document.getElementById("hour_"+col+"_pos2").style.background = "silver";
-            // document.getElementById("hour_"+col+"_pos1").style.background = "red";
         break;
         case "6":
             var binary = {
@@ -192,11 +167,6 @@ function positionSetting(timeString,col){
                 [col]:timeString
 
             };
-
-            // document.getElementById("hour_"+col+"_pos8").style.background = "silver";
-            // document.getElementById("hour_"+col+"_pos4").style.background = "red";
-            // document.getElementById("hour_"+col+"_pos2").style.background = "red";
-            // document.getElementById("hour_"+col+"_pos1").style.background = "silver";
         break;
         case "7":
             var binary = {
@@ -207,10 +177,6 @@ function positionSetting(timeString,col){
                 [col]:timeString
 
             };
-            // document.getElementById("hour_"+col+"_pos8").style.background = "silver";
-            // document.getElementById("hour_"+col+"_pos4").style.background = "red";
-            // document.getElementById("hour_"+col+"_pos2").style.background = "red";
-            // document.getElementById("hour_"+col+"_pos1").style.background = "red";
         break;
         case "8":
             var binary = {
@@ -218,13 +184,8 @@ function positionSetting(timeString,col){
                 "position4": 'off',
                 "position2":  'off',
                 "position1":  'off',
-                [col]:timeString
 
             };
-            // document.getElementById("hour_"+col+"_pos8").style.background = "red";
-            // document.getElementById("hour_"+col+"_pos4").style.background = "silver";
-            // document.getElementById("hour_"+col+"_pos2").style.background = "silver";
-            // document.getElementById("hour_"+col+"_pos1").style.background = "silver";
         break;
         case "9":
             var binary = {
@@ -232,13 +193,8 @@ function positionSetting(timeString,col){
                 "position4": 'off',
                 "position2":  'off',
                 "position1":  'on',
-                [col]:timeString
 
             };
-            // document.getElementById("hour_"+col+"_pos8").style.background = "red";
-            // document.getElementById("hour_"+col+"_pos4").style.background = "silver";
-            // document.getElementById("hour_"+col+"_pos2").style.background = "silver";
-            // document.getElementById("hour_"+col+"_pos1").style.background = "red";
         break;
         default: console.log("error in converting to binary");
     }
