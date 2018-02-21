@@ -48,6 +48,30 @@ var setBinary = function(time){
 	//console.log(exercise.roman.hour_col2)
 	//console.log(exercise.roman.min_col1)
 	//console.log(exercise.roman.min_col2)
+	if(exercise.binary.position1 == 'on'){
+        document.getElementById(col+'_pos1').style.backgroundColor='red';
+    }
+    else{
+        document.getElementById(col+'_pos1').style.backgroundColor='silver';
+    };
+    if(exercise.binary.position2 == 'on'){
+        document.getElementById(col+'_pos2').style.backgroundColor='red';
+    }
+    else{
+        document.getElementById(col+'_pos2').style.backgroundColor='silver';
+    };
+    if(exercise.binary.position4 == 'on'){
+        document.getElementById(col+'_pos4').style.backgroundColor='red';
+    }
+    else{
+        document.getElementById(col+'_pos4').style.backgroundColor='silver';
+    };
+    if(exercise.binary.position8 == 'on'){
+        document.getElementById(col+'_pos8').style.backgroundColor='red';
+    }
+    else{
+        document.getElementById(col+'_pos8').style.backgroundColor='silver';
+    };
 };
 
 // start timer when page is loaded

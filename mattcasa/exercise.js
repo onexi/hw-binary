@@ -132,30 +132,7 @@ exercise.binary = function(time, col){
     //console.log(exercise.binary.position4)
     //console.log(exercise.binary.position8)
     
-    if(exercise.binary.position1 == 'on'){
-        document.getElementById(col+'_pos1').style.backgroundColor='red';
-    }
-    else{
-        document.getElementById(col+'_pos1').style.backgroundColor='silver';
-    };
-    if(exercise.binary.position2 == 'on'){
-        document.getElementById(col+'_pos2').style.backgroundColor='red';
-    }
-    else{
-        document.getElementById(col+'_pos2').style.backgroundColor='silver';
-    };
-    if(exercise.binary.position4 == 'on'){
-        document.getElementById(col+'_pos4').style.backgroundColor='red';
-    }
-    else{
-        document.getElementById(col+'_pos4').style.backgroundColor='silver';
-    };
-    if(exercise.binary.position8 == 'on'){
-        document.getElementById(col+'_pos8').style.backgroundColor='red';
-    }
-    else{
-        document.getElementById(col+'_pos8').style.backgroundColor='silver';
-    };
+   
 
     //----------------------------------------------------------
     //  YOUR CODE
