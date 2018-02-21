@@ -51,16 +51,16 @@ exercise.binary = function(time, col){
     //        position1 : 'on', 
     //    };    
     //----------------------------------------------------------
-    romanCols = exercise.roman(time); //unclear if this is given in col or not
-    romanVal = romanCols.col; //the roman digit associated with column
-    binaryVal = romanVal.toString(2); //convert to binary string (bonus: can index strings)
+    // romanCols = exercise.roman(time); //unclear if this is given in col or not
+    // romanVal = romanCols.col; //the roman digit associated with column
+    // binaryVal = romanVal.toString(2); //convert to binary string (bonus: can index strings)
     
-    stateArray = ['off', 'on']; //will use to map binary (0, 1) to ('off', 'on') 
+    // stateArray = ['off', 'on']; //will use to map binary (0, 1) to ('off', 'on') 
     
-    var binary = {
-        "position8" : stateArray[binaryVal[3]],
-        "position4" : stateArray[binaryVal[2]],
-        "position2" : stateArray[binaryVal[1]],
-        "position1" : stateArray[binaryVal[0]]
-    };
+    // var binary = {
+    //     "position8" : stateArray[binaryVal[3]],
+    //     "position4" : stateArray[binaryVal[2]],
+    //     "position2" : stateArray[binaryVal[1]],
+    //     "position1" : stateArray[binaryVal[0]]
+    // };
 };
