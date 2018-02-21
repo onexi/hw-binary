@@ -6,36 +6,23 @@
 var timer = function() {
 	// get the current date & time
 	var time = new Date();
-	//console.log(time);
-	var hours = time.getHours();
-	var minutes = time.getMinutes();
-	var seconds = time.getSeconds();
-	if(hours.toString().length == 1){
-		hours = "0"+hours;
-	};
-	if(minutes.toString().length == 1){
-		minutes = "0"+minutes;
-	};
-	if(seconds.toString().length == 1){
-		seconds = "0"+seconds;
-	};
-	var formattedTime = hours + ":" + minutes + ":" + seconds;
-	console.log(formattedTime);
+	
+	console.log(time);
 
 	// show roman time, using 6 columns
-	setRoman(formattedTime);
+	setRoman(time);
 
 	// show binary time
-	setBinary(formattedTime);
+	setBinary(time);
 
 	// update every 1 second
 	setTimeout(timer, 1000);
 };
 
-var setRoman = function(formattedTime){
+var setRoman = function(time){
 	// set roman time
 	var colResponse = {}
-	colResponse = exercise.roman(formattedTime); 
+	colResponse = exercise.roman(time); 
 	document.getElementById("hour_col1_roman").innerHTML = colResponse.hour_col1;
 	document.getElementById("hour_col2_roman").innerHTML = colResponse.hour_col2;
 	document.getElementById("min_col3_roman").innerHTML = colResponse.min_col1;
@@ -45,15 +32,14 @@ var setRoman = function(formattedTime){
 
 };
 
-var setBinary = function(formattedTime){
+var setBinary = function(time){
 	// set roman time
 	// you must implement exercise.binary()
 	var colResponse = {}
 	var cols = ["hour_col1","hour_col2","min_col1","min_col2","sec_col1","sec_col2"];
-	// var colResponse = exercise.binary(formattedTime,cols);
 	
 	for(var i = 1; i <= 6; i++){
-		colResponse = exercise.binary(formattedTime,cols[i-1]);
+		colResponse = exercise.binary(time,cols[i-1]);
 		if(colResponse.position8 == "off"){
             document.getElementById("col"+i+"_pos8").style.background = "silver";
 		}else{

@@ -20,13 +20,16 @@ exercise.roman = function(time){
     //     };
     // 
     //-------------------------------------
+
+    var formattedTime = returnTimeAsString(time);
+
         var romanTime = {
-            "hour_col1":time[0],
-            "hour_col2":time[1],
-            "min_col1":time[3],
-            "min_col2":time[4],
-            "sec_col1":time[6],
-            "sec_col2":time[7]
+            "hour_col1":formattedTime[0],
+            "hour_col2":formattedTime[1],
+            "min_col1":formattedTime[3],
+            "min_col2":formattedTime[4],
+            "sec_col1":formattedTime[6],
+            "sec_col2":formattedTime[7]
         };
         return romanTime;
 
@@ -52,19 +55,31 @@ exercise.binary = function(time, col){
     //var test = {[col]:(getPositions(time,col)),};
     // col.forEach(getPositions);
     // console.log(binary)
-
+   
+    var formattedTime = returnTimeAsString(time);
     var binary = {};
-    binary = getPositions(time,col);
+    binary = getPositions(formattedTime,col);
     return binary;
 };
 
-// function getPositions(currentValue){
-//    var col = currentValue;
-//    var timeString = getLabel(time,col);
-//    var positions = {};
-//    positions = positionSetting(timeString,col);
-//    return positions;
-// }
+function returnTimeAsString(time){
+    var hours = time.getHours();
+	var minutes = time.getMinutes();
+	var seconds = time.getSeconds();
+	if(hours.toString().length == 1){
+		hours = "0"+hours;
+	};
+	if(minutes.toString().length == 1){
+		minutes = "0"+minutes;
+	};
+	if(seconds.toString().length == 1){
+		seconds = "0"+seconds;
+	};
+    var formattedTime = hours + ":" + minutes + ":" + seconds;
+    return formattedTime;
+}
+
+
 function getPositions(time,col){
     var timeString = getTimeValue(time,col);
     var positions = {};
