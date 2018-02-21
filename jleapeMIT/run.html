@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<script src="exercise.js"></script>
+<script>
+
+var timer = function() {
+
+	// get the current date & time
+	var time = new Date();
+	console.log(time);
+
+	// show roman time, using 6 columns
+	setRoman(time);
+
+	// show binary time
+	setBinary(time);
+
+	// update every 1 second
+	setTimeout(timer, 1000);
+};
+
+var makeClock = function(){
+	// make grid of squares for binary clock
+
+	// grab the root html element that we'll add the timer blocks to
+	timerRoot = document.getElementById('timerRoot')
+
+	for (i = 0; i < 6; i++) {
+		for (j = 0; j < 5; j++) {
+			// create a timer block div
+			timerBlock = document.createElement("div");
+
+			// apply css styles to our new
+			timerBlock.setAttribute("style", "position:absolute; left:50px; top:50px; width:100px; height:100px; background:red;");
+			timerBlock.id = exercise.coordString(i, j);
+			timerBlock.style.fontSize = '80px';
+			timerBlock.style.textAlign = 'center';
+			timerBlock.style.left = 50 + i * 100 + i * 10 + 'px';
+			timerBlock.style.top = 50 + j * 100 + j * 10 + 'px';
+			if (j === 4) {
+				timerBlock.style.backgroundColor = 'white';
+			}
+			var hiddenCoords = ['0-0', '0-1', '2-0', '4-0'];
+			if (hiddenCoords.includes(timerBlock.id)){
+				timerBlock.style.visibility = 'hidden';
+			}
+			timerRoot.appendChild(timerBlock);
+		}
+	}
+}
+
+var setRoman = function(time){
+
+	var colNames = ['hour_col1', 'hour_col2', 'min_col1', 'min_col2', 'sec_col1', 'sec_col2']
+
+	// set roman time
+	var romanTime = exercise.roman(time);
+	for (i = 0; i < 6; i++) {
+		var blockId = exercise.coordString(i, 4);
+		var timerBlock = document.getElementById(blockId);
+		var col = colNames[i];
+		timerBlock.innerHTML = romanTime[col];
+	}
+};
+
+var setBinary = function(time){
+
+	var colNames = ['hour_col1', 'hour_col2', 'min_col1', 'min_col2', 'sec_col1', 'sec_col2']
+	var rowNames = ['position8', 'position4', 'position2', 'position1']
+
+	// set binary time
+	for (i = 0; i < 6; i++) {
+
+		var binary = exercise.binary(time, colNames[i])
+
+		for (j = 0; j < 4; j++) {
+			var blockId = exercise.coordString(i, j);
+			var timerBlock = document.getElementById(blockId);
+			var row = rowNames[j]
+			if (binary[row] === '0') {
+				timerBlock.style.backgroundColor = 'silver';
+			} else {
+				timerBlock.style.backgroundColor = 'red';
+			}
+			
+		}
+	}
+};
+
+// start timer when page is loaded
+window.onload = function(){
+  
+	makeClock();
+ 	timer();
+
+}
+
+</script>
+
+<div id="timerRoot"></div>
+
+</html>
+     
