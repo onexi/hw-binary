@@ -3,7 +3,6 @@ var exercise = {};
 
 
 exercise.roman = function(time){
-
     //-------------------------------------
     //  YOUR CODE
     //    Return an object with roman time. 
@@ -36,7 +35,6 @@ exercise.roman = function(time){
 };
 
 exercise.binary = function(time, col){
-
     //----------------------------------------------------------
     //  YOUR CODE
     //    Return an object with
@@ -58,7 +56,7 @@ exercise.binary = function(time, col){
     
     stateArray = ['off', 'on']; //will use to map binary (0, 1) to ('off', 'on') 
     
-    var binary = {                            //e.g. if romanVal = 7 --> binaryVal = '0111'
+    var binary = {                                //e.g. if romanVal = 7 --> binaryVal = '0111'
         position8 : stateArray[Boolean(binaryVal[0])], // binaryVal[0]=0 > bool=0 > stateArray[0]='off'
         position4 : stateArray[Boolean(binaryVal[1])], // binaryVal[1]=1 > bool=1 > stateArray[1]='on'
         position2 : stateArray[Boolean(binaryVal[2])], // binaryVal[2]=1 > bool=1 > stateArray[1]='on'
