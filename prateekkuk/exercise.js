@@ -21,12 +21,12 @@ exercise.roman = function(time){
     // 
     //-------------------------------------
         var romanTime = {
-            hour_col1:time[0],
-            hour_col2:time[1],
-            min_col1:time[3],
-            min_col2:time[4],
-            sec_col1:time[6],
-            sec_col2:time[7]
+            "hour_col1":time[0],
+            "hour_col2":time[1],
+            "min_col1":time[3],
+            "min_col2":time[4],
+            "sec_col1":time[6],
+            "sec_col2":time[7]
         };
         return romanTime;
 
