@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<script src="exercise.js"></script>
+<script>
+
+var timer = function() {
+	// get the current date & time
+	var time = new Date();
+	console.log(time);
+
+	// show roman time, using 6 columns
+	var romanTime = setRoman(time);
+
+	// show binary time
+	setBinary(romanTime);
+
+	// update every 1 second
+	setTimeout(timer, 1000);
+};
+
+var setRoman = function(time){
+	// set roman time
+	// you must implement exercise.roman() 
+	return exercise.roman(time);
+	//console.log("got the roman time");
+};
+
+var setBinary = function(time){
+	// set roman time
+	// you must implement exercise.binary()
+	//var romanTime = setRoman(time);
+	console.log(time)
+	for (key in time){
+		//get value of each time column
+		var binaryTime = exercise.binary(time,time[key]);
+		console.log(key);
+		//assign color to correct div
+		for (binaryKey in binaryTime){
+			currentID = key+"_"+binaryKey[3]
+			var currentBox = document.getElementById(currentID);
+			
+			if (binaryTime[binaryKey]==="on"){
+				currentBox.style.background = "red";
+			}
+			else{
+				currentBox.style.background = "silver";
+			}
+			
+		}
+
+		var timeBox = document.getElementById(key);
+		timeBox.innerText=time[key];
+	}
+	
+};
+
+// start timer when page is loaded
+// your code here
+window.onload=timer;
+
+</script>
+
+
+<style> 
+/*
+	div {
+		position:absolute; 
+		width: 100px; 
+		height: 100px; 
+		background: silver; 
+		text-align: center;
+		vertical-align: middle; 
+		line-height: 100px;
+		font-size: 5em;
+	}
+	*/
+	body {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+	}
+
+	.columns {
+		display:grid;
+		grid-template-columns: repeat(6,100px);
+		grid-template-rows: repeat(5,100px);
+		grid-auto-flow: column;
+		grid-gap: 10px; 
+	}
+
+	.invisiblecells {
+		visibility: hidden;
+	}
+
+	.visiblecells{
+		background-color: silver;
+
+		border-radius: 25px;
+	}
+
+	.romantime{
+		display: flex;
+		justify-content: center;
+		align-self:center;
+
+		font-size: 75px;
+		font-family: 'Courier New', Courier, monospace;
+		font-weight: bold;
+	}
+</style>
+
+
+<body>
+	<div class = "columns">
+		<div class = "invisiblecells" id = "hr1_8"></div>
+		<div class = "invisiblecells" id = "hr1_4"></div>
+		<div class = "visiblecells" id = "hr1_2"></div>
+		<div class = "visiblecells" id = "hr1_1"></div>
+		<div class = "romantime" id = "hr1"></div>
+
+		<div class = "visiblecells" id = "hr2_8"></div>
+		<div class = "visiblecells" id = "hr2_4"></div>
+		<div class = "visiblecells" id = "hr2_2"></div>
+		<div class = "visiblecells" id = "hr2_1"></div>
+		<div class = "romantime" id = "hr2"></div>
+		
+		<div class = "invisiblecells" id = "min1_8"></div>
+		<div class = "visiblecells" id = "min1_4"></div>
+		<div class = "visiblecells" id = "min1_2"></div>
+		<div class = "visiblecells" id = "min1_1"></div>
+		<div class = "romantime" id = "min1"></div>
+
+		<div class = "visiblecells" id = "min2_8"></div>
+		<div class = "visiblecells" id = "min2_4"></div>
+		<div class = "visiblecells" id = "min2_2"></div>
+		<div class = "visiblecells" id = "min2_1"></div>
+		<div class = "romantime" id = "min2"></div>
+
+		<div class = "invisiblecells" id = "sec1_8"></div>
+		<div class = "visiblecells" id = "sec1_4"></div>
+		<div class = "visiblecells" id = "sec1_2"></div>
+		<div class = "visiblecells" id = "sec1_1"></div>
+		<div class = "romantime" id = "sec1"></div>
+
+		<div class = "visiblecells" id = "sec2_8"></div>
+		<div class = "visiblecells" id = "sec2_4"></div>
+		<div class = "visiblecells" id = "sec2_2"></div>
+		<div class = "visiblecells" id = "sec2_1"></div>
+		<div class = "romantime" id = "sec2"></div>
+		
+
+	</div>
+</body>
+
+</html>
+     

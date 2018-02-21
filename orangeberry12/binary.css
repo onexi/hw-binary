@@ -1,0 +1,37 @@
+body {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.columns {
+    display:grid;
+    grid-template-columns: repeat(6,100px);
+    grid-template-rows: 440px;
+    grid-gap: 10px; 
+}
+
+/*
+#col1 {
+    background-color: aqua;
+}
+
+#col2 {
+    background-color: blueviolet;
+}
+
+#col3 {
+    background-color: darkmagenta;
+}
+
+#col4 {
+    background-color: lightseagreen;
+}
+
+#col5 {
+    background-color: lightpink;
+}
+
+#col6 {
+    background-color: lightgreen;
+}
+*/
