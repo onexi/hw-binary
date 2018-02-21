@@ -25,15 +25,15 @@ exercise.roman = function(time){
     seconds = String(time.getSeconds());
 
 
-    var romanObj = {
-        "hour_col1" : Number(hours[0]), //index string, then make that value a number
-        "hour_col2" : Number(hours[1]),
-        "min_col1"  : Number(minutes[0]), 
-        "min_col2"  : Number(minutes[1]),
-        "sec_col1"  : Number(seconds[0]), 
-        "sec_col2"  : Number(seconds[1])
+    var romanCols = {
+        hour_col1 : Number(hours[0]), //index string, then make that value a number
+        hour_col2 : Number(hours[1]),
+        min_col1  : Number(minutes[0]), 
+        min_col2  : Number(minutes[1]),
+        sec_col1  : Number(seconds[0]), 
+        sec_col2  : Number(seconds[1])
     };
-    return romanObj;
+    return romanCols;
 
 };
 
@@ -54,6 +54,6 @@ exercise.binary = function(time, col){
     //    }; 
     // 
     //----------------------------------------------------------
-    // romanObj = exercise.roman(time); //unclear if this is given in col or not
+    // romanCols = exercise.roman(time); //unclear if this is given in col or not
     
 };
