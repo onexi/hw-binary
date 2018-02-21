@@ -50,7 +50,7 @@ exercise.binary = function(time, col){
     //    };    
     //----------------------------------------------------------
     romanCols = exercise.roman(time); 
-    romanVal = romanCols.col; //the roman digit associated with column
+    romanVal = romanCols[col]; //the roman digit associated with column
 
     binaryVal = romanVal.toString(2); //convert to binary string (bonus: can index strings)
     
