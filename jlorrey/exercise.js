@@ -1,7 +1,6 @@
 // Jocelyn Lorrey 1.00 Pset 2 2/20/18
 var exercise = {};
 
-
 exercise.roman = function(time){
     //-------------------------------------
     //  YOUR CODE
