@@ -77,7 +77,7 @@ var setBinary = function(time){
 			var blockId = exercise.coordString(i, j);
 			var timerBlock = document.getElementById(blockId);
 			var row = rowNames[j]
-			if (binary[row] === '0') {
+			if (binary[row] === 'off') {
 				timerBlock.style.backgroundColor = 'silver';
 			} else {
 				timerBlock.style.backgroundColor = 'red';
