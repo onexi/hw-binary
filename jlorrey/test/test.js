@@ -24,7 +24,7 @@ function binary(time, col){
         position8 : 'off', 
 		position4 : 'off', 
 		position2 : 'off', 
-		position1 : 'off' 
+		position1 : 'off', 
     }; 
 
 	if (number >= 8){
