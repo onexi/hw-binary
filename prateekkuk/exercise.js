@@ -1,6 +1,4 @@
 var exercise = {};
-// var time = "";
-
 
 exercise.roman = function(time){
 
@@ -119,7 +117,7 @@ function positionSetting(timeString,col){
         case "0": 
             var binary = {
                 position8:  'off', 
-                position4: 'off',
+                position4:  'off',
                 position2:  'off',
                 position1:  'off',
 
@@ -128,7 +126,7 @@ function positionSetting(timeString,col){
         case "1":
             var binary = {
                 position8:  'off', 
-                position4: 'off',
+                position4:  'off',
                 position2:  'off',
                 position1:  'on',
 
@@ -137,7 +135,7 @@ function positionSetting(timeString,col){
         case "2":
             var binary = {
                 position8:  'off', 
-                position4: 'off',
+                position4:  'off',
                 position2:  'on',
                 position1:  'off',
 
@@ -146,7 +144,7 @@ function positionSetting(timeString,col){
         case "3":
             var binary = {
                 position8:  'off', 
-                position4: 'off',
+                position4:  'off',
                 position2:  'on',
                 position1:  'on',
 
@@ -155,7 +153,7 @@ function positionSetting(timeString,col){
         case "4":
             var binary = {
                 position8:  'off', 
-                position4: 'on',
+                position4:  'on',
                 position2:  'off',
                 position1:  'off',
 
@@ -164,7 +162,7 @@ function positionSetting(timeString,col){
         case "5":
             var binary = {
                 position8:  'off', 
-                position4: 'on',
+                position4:  'on',
                 position2:  'off',
                 position1:  'on',
 
@@ -182,7 +180,7 @@ function positionSetting(timeString,col){
         case "7":
             var binary = {
                 position8:  'off', 
-                position4: 'on',
+                position4:  'on',
                 position2:  'on',
                 position1:  'on',
 
@@ -191,7 +189,7 @@ function positionSetting(timeString,col){
         case "8":
             var binary = {
                 position8:  'on', 
-                position4: 'off',
+                position4:  'off',
                 position2:  'off',
                 position1:  'off',
 
@@ -200,7 +198,7 @@ function positionSetting(timeString,col){
         case "9":
             var binary = {
                 position8:  'on', 
-                position4: 'off',
+                position4:  'off',
                 position2:  'off',
                 position1:  'on',
 
