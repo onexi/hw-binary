@@ -65,7 +65,8 @@ exercise.binary = function(time, col){
     romanVal = romanCols[col]; //the roman digit associated with column
 
     binaryVal = romanVal.toString(2); //convert to binary string (bonus: can index strings)
-    binaryVal = exercise.addZeros(binaryVal, 4); //ensure 4 digits (ex. "0001", not "1")
+    binaryVal = exercise.addZeros(binaryVal, 4); //ensure 4 digits 
+    //(ex. "0001", not "1")
     stateArray = ['off', 'on']; //will use to map binary (0, 1) to ('off', 'on') 
 
     var binary = {                                //e.g. if romanVal = 7 --> binaryVal = '0111'
