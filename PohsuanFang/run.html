@@ -6,7 +6,7 @@
 var timer = function() {
 	// get the current date & time
 	var time = new Date();
-	console.log(time);
+	// console.log(time);
 
 	// show roman time, using 6 columns
 	setRoman(time);
@@ -17,21 +17,140 @@ var timer = function() {
 	// update every 1 second
 	setTimeout(timer, 1000);
 };
-var exercise={};
+
 var setRoman = function(time){
+	var SetRomanTime = exercise.roman(time);
 	
-	return exercise.roman(time);
+//console.log(SetRomanTime);
+
 
 	// set roman time
 	// you must implement exercise.roman() 
 };
 
-var setBinary = function(time){
-	return exercise.binary;
-	console.log(setBinary);
+var setBinary = function(time,column){
+
+var col1=exercise.binary (time,1);
+var col2=exercise.binary (time,2);
+var col3=exercise.binary (time,3);
+var col4=exercise.binary (time,4);
+var col5=exercise.binary (time,5);
+var col6=exercise.binary (time,6);
+var array=[col1,col2,col3,col4,col5,col6]
+//console.log(array[2].position1);
+
+if (array[0].position1=='on')
+{
+	document.getElementById('hour_c1_1').style.backgroundColor='red';
+}
+else {
+	document.getElementById('hour_c1_1').style.backgroundColor='silver';
+}
+if (array[0].position2=='on')
+{
+	document.getElementById('hour_c1_2').style.backgroundColor='red';
+}
+else {
+	document.getElementById('hour_c1_2').style.backgroundColor='silver';
+}
+//col_2
+var col_2=['hour_c2_1', 'hour_c2_2', 'hour_c2_4', 'hour_c2_8'];
+var status_2 =[array[1].position1, array[1].position2, array[1].position3,array[1].position4];
+for (var i=0;i<4;i++)
+{
+	if (status_2[i]=='on')
+		{
+		document.getElementById(col_2[i]).style.backgroundColor='red';
+		}
+	else {
+		document.getElementById(col_2[i]).style.backgroundColor='silver';
+	}
+}
+//col_3
+var col_3=['min_c1_1', 'min_c1_2', 'min_c1_4', 'min_c1_8'];
+var status_3 =[array[2].position1, array[2].position2, array[2].position3,array[2].position4];
+for (var i=0;i<4;i++)
+{
+	if (status_3[i]=='on')
+		{
+		document.getElementById(col_3[i]).style.backgroundColor='red';
+		}
+	else {
+		document.getElementById(col_3[i]).style.backgroundColor='silver';
+	}
+}
+//col_4
+var col_4=['min_c2_1', 'min_c2_2', 'min_c2_4', 'min_c2_8'];
+var status_4 =[array[3].position1, array[3].position2, array[3].position3,array[3].position4];
+for (var i=0;i<4;i++)
+{
+	if (status_4[i]=='on')
+		{
+		document.getElementById(col_4[i]).style.backgroundColor='red';
+		}
+	else {
+		document.getElementById(col_4[i]).style.backgroundColor='silver';
+	}
+}
+//col_5
+var col_5=['sec_c1_1', 'sec_c1_2', 'sec_c1_4', 'sec_c1_8'];
+var status_5 =[array[4].position1, array[4].position2, array[4].position3,array[4].position4];
+for (var i=0;i<4;i++)
+{
+	if (status_5[i]=='on')
+		{
+		document.getElementById(col_5[i]).style.backgroundColor='red';
+		}
+	else {
+		document.getElementById(col_5[i]).style.backgroundColor='silver';
+	}
+}
+//col_6
+var col_6=['sec_c2_1', 'sec_c2_2', 'sec_c2_4', 'sec_c2_8'];
+var status_6 =[array[5].position1, array[5].position2, array[5].position3,array[5].position4];
+for (var i=0;i<4;i++)
+{
+	if (status_6[i]=='on')
+		{
+		document.getElementById(col_6[i]).style.backgroundColor='red';
+		}
+	else {
+		document.getElementById(col_6[i]).style.backgroundColor='silver';
+	}
+}
+	// if (array[1].position[1]=='on')
+	// {
+	// 	document.getElementById('idname[i]').style.backgroundColor='red';
+	// }
+	// else {
+	// 	document.getElementById('idname[i]').style.backgroundColor='silver';}
+	// if (array[1].position3=='on')
+	// {
+	// 	document.getElementById('idname[i]').style.backgroundColor='red';
+	// }
+	// else {
+	// 	document.getElementById('idname[i]').style.backgroundColor='silver';
+	// if (array[1].position4=='on')
+	// {
+	// 	document.getElementById('idname[i]').style.backgroundColor='red';
+	// }
+	// else {
+	// 	document.getElementById('idname[i]').style.backgroundColor='silver';
+	// }}
+
+
+
+};
+
+// console.log(col1);	
+// console.log(col2);
+// console.log(col3);	
+// console.log(col4);
+// console.log(col5);	
+// console.log(col6);
 	// set roman time
 	// you must implement exercise.binary()
-};
+
 window.onload=timer;
 // start timer when page is loaded
 // your code here
@@ -45,35 +164,41 @@ window.onload=timer;
 <div id="hour_c1_2" style= "left:10px; top:230px;"></div>	
 <div id="hour_c1_4" style= "left:10px; top:120px; visibility:hidden"></div>
 <div id="hour_c1_8" style= "left:10px; top:10px;visibility:hidden"></div>
-<div id="hour_c2_1" style= "left:10px; top:340px;"></div>
+
+<div id="hour_c2_1" style= "left:120px; top:340px;"></div>
 <div id="hour_c2_2" style= "left:120px; top:230px;"></div>	
-<div id="hour_c2_4" style= "left:230px; top:120px;"></div>
-<div id="hour_c2_8" style= "left:340px; top:10px;visibility:hi"></div>
-<script>
-// var response1={
-// 	position1: 'on',
-// 	position2: 'off',
-// 	position3: 'off',
-// 	position4: 'off',
+<div id="hour_c2_4" style= "left:120px; top:120px;"></div>
+<div id="hour_c2_8" style= "left:120px; top:10px;"></div>
 
-// };
-if (hour_col1.position1==='on')
-{
-	document.getElementById('hour_c1_1').style.backgroundColor='red';
-}
-else {
-	document.getElementById('hour_c1_1').style.backgroundColor='silver';
-}
-</script>
+<div id="min_c1_1" style= "left:230px; top:340px;"></div>
+<div id="min_c1_2" style= "left:230px; top:230px;"></div>	
+<div id="min_c1_4" style= "left:230px; top:120px;"></div>
+<div id="min_c1_8" style= "left:230px; top:10px;"></div>
+
+<div id="min_c2_1" style= "left:340px; top:340px;"></div>
+<div id="min_c2_2" style= "left:340px; top:230px;"></div>	
+<div id="min_c2_4" style= "left:340px; top:120px;"></div>
+<div id="min_c2_8" style= "left:340px; top:10px;"></div>
+
+<div id="sec_c1_1" style= "left:450px; top:340px;"></div>
+<div id="sec_c1_2" style= "left:450px; top:230px;"></div>	
+<div id="sec_c1_4" style= "left:450px; top:120px;"></div>
+<div id="sec_c1_8" style= "left:450px; top:10px;"></div>
+
+<div id="sec_c2_1" style= "left:560px; top:340px;"></div>
+<div id="sec_c2_2" style= "left:560px; top:230px;"></div>	
+<div id="sec_c2_4" style= "left:560px; top:120px;"></div>
+<div id="sec_c2_8" style= "left:560px; top:10px;"></div>
 
 
-<!--
+
+<!-- 
 
 	Write HTML elements to hold your binary clock positions
 
 	There are 6 columns in a binary clock
+ -->
 
--->
 
 </html>
      
