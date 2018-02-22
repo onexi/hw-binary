@@ -38,8 +38,21 @@ exercise.cleanseTime = function (time, asObj=true) {
 	}
     //console.log(obj);
 }
+
+exercise.convertPositionArraytoSignals = function(positionArray) {
+    var binary = {
+        "position8":"",
+        "position4":"",
+        "position2":"",
+        "position1":""
+    }
+    for(var i=0;i<positionArray.length;i++) {
+        binary["position"+Math.pow(2,i)] = positionArray[i];
+    }
+    return binary;
+}
     
-exercise.binary = function(time, col){
+exercise.binary = function(time, col, outputFromat="obj"){
     // Assumed columns to be numbers (indexed from 0), and not in the format hour_col2
     // So, for 05:13:47 and column nunber 0, element to process to binary would be 0
     // Returns positions array from 0 to 4, 0 being the bottom position
@@ -62,7 +75,11 @@ exercise.binary = function(time, col){
     var toConvert = Number(exercise.cleanseTime(time,osObj=false)[col]); //To convert is a number to be converted positions
     // Find highest power of two contained by the number
     if (toConvert == 0) {
-        return positions;
+        if (outputFromat == "obj") {
+            return convertPositionArraytoSignals(positions);
+        }
+        else
+            return positions;
     }
     var tempVar = toConvert;
     var highestPowerof2 = 0;
@@ -79,6 +96,10 @@ exercise.binary = function(time, col){
     }
     if (remainder > 0) {
         positions[0] = true;
+    }
+    if (outputFromat=="obj")
+    {
+        return convertPositionArraytoSignals(positions);
     }
     return positions;
 };
