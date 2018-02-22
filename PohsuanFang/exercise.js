@@ -2,22 +2,18 @@ var exercise = {};
 
 
 exercise.roman = function(time){
+var roman={
+    hour_col1: time.getHours().toString()[0],
+    hour_col2: time.getHours().toString()[1],
+    min_col1: time.getMinutes().toString()[0],
+    min_col2: time.getMinutes().toString()[1],
+    sec_col1: time.getMinutes().toString()[0],
+    sec_col2: time.getMinutes().toString()[1],
+};
+return roman;
 
-var hour_col1=time.getHours().toString()[0];
-var hour_col2=time.getHours().toString()[1];
-var min_col1=time.getMinutes().toString()[0];
-var min_col2=time.getMinutes().toString()[1];
-var sec_col1=time.getMinutes().toString()[0];
-var sec_col2=time.getMinutes().toString()[1];
-   
    
 
-exercise.hour_col1=hour_col1;
-exercise.hour_col2=hour_col2;
-exercise.min_col1=min_col1;
-exercise.min_col2=min_col2;
-exercise.sec_col1=sec_col1;
-exercise.sec_col2=sec_col2;
  //-------------------------------------
     //  YOUR CODE
     //    Return an object with roman time. 
@@ -35,13 +31,34 @@ exercise.sec_col2=sec_col2;
     // 
     //-------------------------------------
 };
+var columnname=['hour_col1','hour_col2', 'min_col1','min_col2','sec_col1','sec_col2'];
 
 exercise.binary = function(time, col){
-    
-if (exercise.col==1 ||exercise.col==3||exercise.col==5||exercise.col==7||exercise.col==9)
+var binary={
+    position8: 'off',
+    position4: 'off',
+    position2: 'off',
+    position1: 'off',
+};
+var col=columnname[i];
+for (i=0;i<<5;i++){
+if (exercise.roman.col==1 || exercise.roman.col==3||exercise.roman.col==5||exercise.roman.col==7||exercise.roman.col==9)
+{position1=='on';}   
+else
+{position1=='off';}
+if (exercise.roman.col==2 ||exercise.roman.col==3||exercise.roman.col==6||exercise.roman.col==7)
+{position1=='on';}
+else
+{position2=='off';}
+if (exercise.roman.hour_col==4 || exercise.roman.col==5||exercise.roman.col==6||exercise.roman.col==7)
+{position3=='on';}
+else 
+{position3=='off';}
+if (exercise.roman.hour_col==8 || exercise.roman.col==9)
+{position4=='on';}
+else{position4=='off';}
+}
 
-{position1=='on'};
-else {position1=='off'};
 
     //----------------------------------------------------------
     //  YOUR CODE
@@ -58,5 +75,5 @@ else {position1=='off'};
     //    }; 
     // 
     //----------------------------------------------------------
-exercise.position8=
+
 };
