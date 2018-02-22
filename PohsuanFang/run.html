@@ -17,15 +17,18 @@ var timer = function() {
 	// update every 1 second
 	setTimeout(timer, 1000);
 };
-
+var exercise={};
 var setRoman = function(time){
-	exercise.roman();
+	
+	return exercise.roman(time);
+
 	// set roman time
 	// you must implement exercise.roman() 
 };
 
 var setBinary = function(time){
-	exercise.binary();
+	return exercise.binary;
+	console.log(setBinary);
 	// set roman time
 	// you must implement exercise.binary()
 };
@@ -42,15 +45,20 @@ window.onload=timer;
 <div id="hour_c1_2" style= "left:10px; top:230px;"></div>	
 <div id="hour_c1_4" style= "left:10px; top:120px; visibility:hidden"></div>
 <div id="hour_c1_8" style= "left:10px; top:10px;visibility:hidden"></div>
+<div id="hour_c2_1" style= "left:10px; top:340px;"></div>
+<div id="hour_c2_2" style= "left:120px; top:230px;"></div>	
+<div id="hour_c2_4" style= "left:230px; top:120px;"></div>
+<div id="hour_c2_8" style= "left:340px; top:10px;visibility:hi"></div>
 <script>
-var response={
-	position1: 'on',
-	position2: 'off',
-	position3: 'off',
-	position4: 'off',
+// var response1={
+// 	position1: 'on',
+// 	position2: 'off',
+// 	position3: 'off',
+// 	position4: 'off',
 
-};
-if (response.position1==='on'){
+// };
+if (hour_col1.position1==='on')
+{
 	document.getElementById('hour_c1_1').style.backgroundColor='red';
 }
 else {
