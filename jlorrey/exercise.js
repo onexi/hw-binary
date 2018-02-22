@@ -49,17 +49,21 @@ exercise.binary = function(time, col){
     //    };    
     //----------------------------------------------------------
     romanCols = exercise.roman(time); 
-    romanVal = romanCols.col; //the roman digit associated with column
+    romanVal = romanCols[col]; //the roman digit associated with column
 
     binaryVal = romanVal.toString(2); //convert to binary string (bonus: can index strings)
-    
+    //Make sure binary value has 4 digits:
+    zerosToAdd = 4 - binaryVal.length;
+    for (i=0; i<zerosToAdd, i++) {
+        binaryVal = "0".concat(binaryVal);
+    }
     stateArray = ['off', 'on']; //will use to map binary (0, 1) to ('off', 'on') 
-    
+
     var binary = {                                //e.g. if romanVal = 7 --> binaryVal = '0111'
-        position8 : stateArray[Boolean(binaryVal[0])], // binaryVal[0]=0 > bool=0 > stateArray[0]='off'
-        position4 : stateArray[Boolean(binaryVal[1])], // binaryVal[1]=1 > bool=1 > stateArray[1]='on'
-        position2 : stateArray[Boolean(binaryVal[2])], // binaryVal[2]=1 > bool=1 > stateArray[1]='on'
-        position1 : stateArray[Boolean(binaryVal[3])]  // binaryVal[3]=1 > bool=1 > stateArray[1]='on'
+        position8 : stateArray[Number(binaryVal[0])], // binaryVal[0]=0 > bool=0 > stateArray[0]='off'
+        position4 : stateArray[Number(binaryVal[1])], // binaryVal[1]=1 > bool=1 > stateArray[1]='on'
+        position2 : stateArray[Number(binaryVal[2])], // binaryVal[2]=1 > bool=1 > stateArray[1]='on'
+        position1 : stateArray[Number(binaryVal[3])]  // binaryVal[3]=1 > bool=1 > stateArray[1]='on'
     };
     return binary;
 };
