@@ -31,9 +31,9 @@ exercise.binary = function (time, col) {
     //change binary var
     for (i = 0; i < 4; i++) {
         if (num[3 - i] === "0") {
-            binary["pos" + (2 ** i).toString()] = 'off';
+            binary["position" + (2 ** i).toString()] = 'off';
         } else {
-            binary["pos" + (2 ** i).toString()] = 'on';
+            binary["position" + (2 ** i).toString()] = 'on';
         }
     }
     //console.log(binary);
