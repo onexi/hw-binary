@@ -1,6 +1,14 @@
 // Jocelyn Lorrey 1.00 Pset 2 2/20/18
 var exercise = {};
 
+// My helper function to ensure proper number digits if first digits are 0's:
+exercise.addZeros = function(valueToChange, desiredNumZeros) {
+    zerosToAdd = desiredNumZeros - valueToChange.length;
+    for (i=0; i<zerosToAdd; i++) {
+        valueToChange = "0".concat(valueToChange);
+    }
+    return valueToChange;
+}
 exercise.roman = function(time){
     //-------------------------------------
     //  YOUR CODE
@@ -21,6 +29,11 @@ exercise.roman = function(time){
     hours   = String(time.getHours()); //make string for indexing
     minutes = String(time.getMinutes());
     seconds = String(time.getSeconds());
+
+    //Ensure proper number of 0's (e.g reported as "06", not "6")
+    hours = exercise.addZeros(hours, 2); //call helper function addZeros (defined @ top)
+    minutes = exercise.addZeros(minutes, 2);
+    seconds = exercise.addZeros(seconds, 2);
 
     var romanCols = {
         hour_col1 : Number(hours[0]), //index string, then make that value a number
@@ -52,11 +65,7 @@ exercise.binary = function(time, col){
     romanVal = romanCols[col]; //the roman digit associated with column
 
     binaryVal = romanVal.toString(2); //convert to binary string (bonus: can index strings)
-    //Make sure binary value has 4 digits:
-    zerosToAdd = 4 - binaryVal.length;
-    for (i=0; i<zerosToAdd, i++) {
-        binaryVal = "0".concat(binaryVal);
-    }
+    binaryVal = exercise.addZeros(binaryVal, 4); //ensure 4 digits (ex. "0001", not "1")
     stateArray = ['off', 'on']; //will use to map binary (0, 1) to ('off', 'on') 
 
     var binary = {                                //e.g. if romanVal = 7 --> binaryVal = '0111'
