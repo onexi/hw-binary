@@ -76,7 +76,7 @@ exercise.binary = function(time, col, outputFromat="obj"){
     // Find highest power of two contained by the number
     if (toConvert == 0) {
         if (outputFromat == "obj") {
-            return convertPositionArraytoSignals(positions);
+            return exercise.convertPositionArraytoSignals(positions);
         }
         else
             return positions;
@@ -99,7 +99,7 @@ exercise.binary = function(time, col, outputFromat="obj"){
     }
     if (outputFromat=="obj")
     {
-        return convertPositionArraytoSignals(positions);
+        return exercise.convertPositionArraytoSignals(positions);
     }
     return positions;
 };
