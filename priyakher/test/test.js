@@ -54,7 +54,7 @@ for(i=0;i<10;i++){
 	var minutes = Math.floor(Math.random()*60);
 	var seconds = Math.floor(Math.random()*60);
 
-	var time = new Date(Date.parse('09 Aug 2017 ' + 
+	var time = new Date(Date.parse('09 Aug 2017 ' +     
 				hours   + ':' +
 				minutes + ':' +
 				seconds));
