@@ -4,11 +4,11 @@ var exercise = {};
 exercise.roman = function(time){
     var time= new Date();
     var hc1 = ~~(time.getHours()/10);
-    var hc2 = time.getHours()%10;
+    var hc2 = ~~(time.getHours()%10);
     var mc1 = ~~(time.getMinutes()/10);
-    var mc2 = time.getMinutes()%10;
+    var mc2 = ~~(time.getMinutes()%10);
     var sc1 = ~~(time.getSeconds()/10);
-    var sc2 = time.getSeconds()%10;
+    var sc2 = ~~(time.getSeconds()%10);
     
 var SetRomanTime={ 
     hour_col1: hc1,
@@ -52,6 +52,7 @@ var columnname=['hour_col1','hour_col2', 'min_col1','min_col2','sec_col1','sec_c
 //exercise.binary code
 
 exercise.binary = function(time, column){
+
 var col1value=exercise.roman(time).hour_col1;
 var col2value=exercise.roman(time).hour_col2;
 var col3value=exercise.roman(time).min_col1;
@@ -73,7 +74,7 @@ var col={
 
 //checking rules
     var number=values[column-1];
-    console.log(number);
+//console.log(number);
     if (number==1)
     {
             col.position1='on';
