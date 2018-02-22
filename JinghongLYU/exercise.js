@@ -19,7 +19,7 @@ exercise.roman = function(time){
     //     };
     // 
     //-------------------------------------
-    var romantime = {
+    var stamp = {
         hour_col1: Math.floor(time.getHours()/10),
         hour_col2: (time.getHours() % 10),
         min_col1: Math.floor(time.getMinutes() / 10),
@@ -27,7 +27,7 @@ exercise.roman = function(time){
         sec_col1: Math.floor(time.getSeconds() / 10),
         sec_col2: (time.getSeconds() % 10)
     }
-    return romantime;
+    return stamp;
 };
 
 exercise.binary = function(time, col){
