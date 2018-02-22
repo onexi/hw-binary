@@ -31,12 +31,15 @@ exercise.roman = function(time){
          
 
              var hour=time.getHours();
+             var min=time.getMinutes();
+             var sec=time.getSeconds();
+             
              romanTime.hour_col1= Math.floor(hour/10);
              romanTime.hour_col2= (hour%10);
-             var min=time.getMinutes();
+            
              romanTime.min_col1= Math.floor(min/10);
              romanTime.min_col2= (min%10);
-             var sec=time.getSeconds();
+             
              romanTime.sec_col1= Math.floor(sec/10);
              romanTime.sec_col2= (sec%10);
 
@@ -93,15 +96,15 @@ function val (item) {
     switch(item)
     {
     case 0: { binary.position8='off';  binary.position4='off';  binary.position2='off';  binary.position1='off'; return  binary;  } ;
-    case 1: { binary.position8='off';  binary.position4='off';  binary.position2='off';  binary.position1='on'; return  binary;  } ;
+    case 1: { binary.position8='off';  binary.position4='off';  binary.position2='off';  binary.position1='on';  return  binary;  } ;
     case 2: { binary.position8='off';  binary.position4='off';  binary.position2='on';   binary.position1='off'; return  binary;  } ;
-    case 3: { binary.position8='off';  binary.position4='off';  binary.position2='on';   binary.position1='on'; return  binary;  } ;
-    case 4: { binary.position8='off';  binary.position4='on';  binary.position2='off';  binary.position1='off'; return  binary;  } ;
-    case 5: { binary.position8='off';  binary.position4='on';  binary.position2='off';  binary.position1='on'; return  binary;  } ;
-    case 6: { binary.position8='off';  binary.position4='on';  binary.position2='on';  binary.position1='off'; return  binary;  } ;
-    case 7: { binary.position8='off';  binary.position4='on';  binary.position2='on';  binary.position1='on'; return  binary;  } ;
-    case 8: { binary.position8='on';  binary.position4='off';  binary.position2='off';  binary.position1='off'; return  binary;  } ;
-    case 9: { binary.position8='on';  binary.position4='off';  binary.position2='off';  binary.position1='on'; return  binary;  } ;
+    case 3: { binary.position8='off';  binary.position4='off';  binary.position2='on';   binary.position1='on';  return  binary;  } ;
+    case 4: { binary.position8='off';  binary.position4='on';   binary.position2='off';  binary.position1='off'; return  binary;  } ;
+    case 5: { binary.position8='off';  binary.position4='on';   binary.position2='off';  binary.position1='on';  return  binary;  } ;
+    case 6: { binary.position8='off';  binary.position4='on';   binary.position2='on';   binary.position1='off'; return  binary;  } ;
+    case 7: { binary.position8='off';  binary.position4='on';   binary.position2='on';   binary.position1='on';  return  binary;  } ;
+    case 8: { binary.position8='on';   binary.position4='off';  binary.position2='off';  binary.position1='off'; return  binary;  } ;
+    case 9: { binary.position8='on';   binary.position4='off';  binary.position2='off';  binary.position1='on';  return  binary;  } ;
   
     }
 

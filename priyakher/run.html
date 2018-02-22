@@ -79,37 +79,32 @@ function divload() {
   {
 	  for (var j=0;j<6;j++)
 	  {
-	  var cell=document.createElement("div");
-	  var tid=i + "_" + j;
-	  cell.setAttribute("id",tid);
-	 // cell.setAttribute("width", "10px");
-	  cell.setAttribute("height","100px");
-	  var itop= (i*100) +5 +'px';
-	  var ileft=(j*100) +5 +'px';
-	  cell.style.top=itop;
-	  cell.style.left=ileft;
-	  cell.innerText="";
-	  //cell.style.top=
-	  if ( (j==0 && i<=1) || (i==0 && j==2) || (i==0 && j==4) ||(i==4) ) {
-	  cell.style.backgroundColor='white';
-	  cell.style.visibility=false;
+	    var cell=document.createElement("div");
+	    var tid=i + "_" + j;
+	    cell.setAttribute("id",tid);
+	    var itop= (i*115)  +'px';
+	    var ileft=(j*115)  +'px';
+	    cell.style.top=itop;
+	    cell.style.left=ileft;
+	    cell.innerText="";
+	    if ( (j==0 && i<=1) || (i==0 && j==2) || (i==0 && j==4) ||(i==4) ) 
+	    {
+	      cell.style.backgroundColor='white';
+	      cell.style.visibility=false;
 
-	  }
+	    }
 
-	  else
-	  {
-		cell.style.backgroundColor='grey';
+	 
 
-	  }
+	    document.body.appendChild(cell);
 
-	 document.body.appendChild(cell);
-
-}
+    }
 
   }
 
 
 	}
+
 window.onload= timer();
 
 function reset()
@@ -121,14 +116,16 @@ function reset()
 
 	   var tid=i + "_" + j;
 	   
-	   if ( (j==0 && i<=1) || (i==0 && j==2) || (i==0 && j==4) ||(i==4) ) {
+	   if ( (j==0 && i<=1) || (i==0 && j==2) || (i==0 && j==4) ||(i==4) )
+	    {
 	     document.getElementById(tid).style.backgroundColor="white";
 
-	  }
+	    }
 
 	  else
 	  {
-		document.getElementById(tid).style.backgroundColor="grey";
+		  
+		document.getElementById(tid).style.backgroundColor="silver";
 
 	  }
 
@@ -141,12 +138,12 @@ function reset()
 <style> div
 
  {position:absolute; 
- width: 90px;
- height: 90px;
+ width: 105px;
+ height: 105px;
  background: silver;
  text-align: center;
  vertical-align:  middle;
- line-height: 100px;
+ line-height: 105px;
  font-size: 5em;} </style>
 
 <!--
