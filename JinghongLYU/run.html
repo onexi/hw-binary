@@ -21,12 +21,54 @@ var timer = function() {
 var setRoman = function(time){
 	// set roman time
 	// you must implement exercise.roman() 
+
+	document.getElementById("hour_col1_roman").innerHTML = exercise.roman(time).hour_col1;
+	document.getElementById("hour_col2_roman").innerHTML = exercise.roman(time).hour_col2;
+	document.getElementById("min_col1_roman").innerHTML = exercise.roman(time).min_col1;
+	document.getElementById("min_col2_roman").innerHTML = exercise.roman(time).min_col2;
+	document.getElementById("sec_col1_roman").innerHTML = exercise.roman(time).sec_col1;
+	document.getElementById("sec_col2_roman").innerHTML = exercise.roman(time).sec_col2;
 };
+
 
 var setBinary = function(time){
 	// set roman time
 	// you must implement exercise.binary()
+	// create an object array that stores the binary columns
+	
+	var objectlist = ['hour_col1','hour_col2','min_col1','min_col2','sec_col1','sec_col2'];
+
+	// loop through the binary columns and decide the on/off of the positions in each column
+	for (i=0; i<6; i++){
+		var response = exercise.binary(time, objectlist[i]);
+
+		if (response.position1 === "on"){
+			document.getElementById(objectlist[i]+'_pos1').style.backgroundColor = "red";
+		}
+		else{
+			document.getElementById(objectlist[i]+'_pos1').style.backgroundColor = "silver";
+		}
+		if (response.position2 === "on"){
+			document.getElementById(objectlist[i]+'_pos2').style.backgroundColor = "red";
+		}
+		else{
+			document.getElementById(objectlist[i]+'_pos2').style.backgroundColor = "silver";
+		}
+		if (response.position4 === "on"){
+			document.getElementById(objectlist[i]+'_pos4').style.backgroundColor = "red";
+		}
+		else{
+			document.getElementById(objectlist[i]+'_pos4').style.backgroundColor = "silver";
+		}
+		if (response.position8 === "on"){
+			document.getElementById(objectlist[i]+'_pos8').style.backgroundColor = "red";
+		}
+		else{
+			document.getElementById(objectlist[i]+'_pos8').style.backgroundColor = "silver";
+		}
+	}
 };
+
 
 // start timer when page is loaded
 // your code here
@@ -36,18 +78,9 @@ window.onload = timer;
 
 <style> div {position:absolute; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;} </style>
 
-<!--
-
-	Write HTML elements to hold your binary clock positions
-
-	There are 6 columns in a binary clock
-
--->
+<!--Binary clock positions-->
 <!--hour -->
-<div id="hour_col1" style="left:10px; top:340px;"></div>
-
-
-
+<div id="hour_col1_pos1" style="left:10px; top:340px;"></div>
 <div id="hour_col1_pos2" style="left:10px; top:230px;"></div>
 <div id="hour_col1_pos4" style="left:10px; top:120px; visibility:hidden;"></div>
 <div id="hour_col1_pos8" style="left:10px; top:10px; visibility:hidden;"></div>
@@ -56,18 +89,30 @@ window.onload = timer;
 <div id="hour_col2_pos4" style="left:120px; top:120px;"></div>
 <div id="hour_col2_pos8" style="left:120px; top:10px;"></div>
 <!--minute-->
-<div id="_col1_pos1" style="left:10px; top:340px;"></div>
-
-
-
-
-<script>
-	
-	document.getElementById('hour_col1_pos1').style.backgroundColor = "red";
-
-
-
-</script>
+<div id="min_col1_pos1" style="left:230px; top:340px;"></div>
+<div id="min_col1_pos2" style="left:230px; top:230px;"></div>
+<div id="min_col1_pos4" style="left:230px; top:120px;"></div>
+<div id="min_col1_pos8" style="left:230px; top:10px; visibility:hidden;"></div>
+<div id="min_col2_pos1" style="left:340px; top:340px;"></div>
+<div id="min_col2_pos2" style="left:340px; top:230px;"></div>
+<div id="min_col2_pos4" style="left:340px; top:120px;"></div>
+<div id="min_col2_pos8" style="left:340px; top:10px;"></div>
+<!--second-->
+<div id="sec_col1_pos1" style="left:450px; top:340px;"></div>
+<div id="sec_col1_pos2" style="left:450px; top:230px;"></div>
+<div id="sec_col1_pos4" style="left:450px; top:120px;"></div>
+<div id="sec_col1_pos8" style="left:450px; top:10px; visibility:hidden;"></div>
+<div id="sec_col2_pos1" style="left:560px; top:340px;"></div>
+<div id="sec_col2_pos2" style="left:560px; top:230px;"></div>
+<div id="sec_col2_pos4" style="left:560px; top:120px;"></div>
+<div id="sec_col2_pos8" style="left:560px; top:10px;"></div>
+<!--Roman clock-->
+<div id="hour_col1_roman" style="left:10px; top:450px; background: white;"></div>
+<div id="hour_col2_roman" style="left:120px; top:450px; background: white;"></div>
+<div id="min_col1_roman" style="left:230px; top:450px; background: white;"></div>
+<div id="min_col2_roman" style="left:340px; top:450px; background: white;"></div>
+<div id="sec_col1_roman" style="left:450px; top:450px; background: white;"></div>
+<div id="sec_col2_roman" style="left:560px; top:450px; background: white;"></div>
 
 </html>
      
