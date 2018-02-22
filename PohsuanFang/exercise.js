@@ -40,6 +40,7 @@ var binary={
     position2: 'off',
     position1: 'off',
 };
+var i=0;
 var col=columnname[i];
 for (i=0;i<<5;i++){
 if (exercise.roman.col==1 || exercise.roman.col==3||exercise.roman.col==5||exercise.roman.col==7||exercise.roman.col==9)
