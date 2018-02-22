@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+		<body>
+     	</body>
+<script src="exercise.js"></script>
+<script>
+
+function init()
+{
+	divload();
+}
+init()
+
+var timer = function() {
+	// get the current date & time
+	
+	var time = new Date();
+
+	reset();
+   
+	console.log(time);
+
+	// show roman time, using 6 columns
+	setRoman(time);
+
+	// show binary time
+	setBinary(time);
+
+	// update every 1 second
+	setTimeout(timer, 1000);
+};
+
+var setRoman = function(time){
+	// set roman time
+	// you must implement 
+	
+	var romanTime=exercise.roman(time) ;
+	console.log(romanTime);
+	document.getElementById("4_0").innerText=romanTime.hour_col1;
+	document.getElementById("4_1").innerText=romanTime.hour_col2;
+	document.getElementById("4_2").innerText=romanTime.min_col1;
+	document.getElementById("4_3").innerText=romanTime.min_col2;
+	document.getElementById("4_4").innerText=romanTime.sec_col1;
+	document.getElementById("4_5").innerText=romanTime.sec_col2;
+	
+};
+
+var setBinary = function(time){
+	// set roman time
+	// you must implement
+	for(var j=0; j<6;j++)
+	{
+	 var setBinary=exercise.binary(time,j);
+
+	 
+	 for (var i=0; i<4 ;i++)
+
+	 {
+		console.log(setBinary);
+		 var tid= i + '_' +j;
+		
+	  switch(i) {
+
+		case 0: if (setBinary.position8 == "on" ){document.getElementById(tid).style.backgroundColor="red"; break; } else break;
+		case 1: if (setBinary.position4 == "on" ){document.getElementById(tid).style.backgroundColor="red"; break; } else break;
+		case 2: if (setBinary.position2 == "on" ){document.getElementById(tid).style.backgroundColor="red"; break; } else break;
+		case 3: if (setBinary.position1 == "on" ){document.getElementById(tid).style.backgroundColor="red"; break; } else break;
+	  }
+	  
+
+	}
+}
+};
+
+// start timer when page is loaded
+// your code here
+function divload() {
+   for (var i=0; i<5; i++)
+  {
+	  for (var j=0;j<6;j++)
+	  {
+	    var cell=document.createElement("div");
+	    var tid=i + "_" + j;
+	    cell.setAttribute("id",tid);
+	    var itop= (i*115)  +'px';
+	    var ileft=(j*115)  +'px';
+	    cell.style.top=itop;
+	    cell.style.left=ileft;
+	    cell.innerText="";
+	    if ( (j==0 && i<=1) || (i==0 && j==2) || (i==0 && j==4) ||(i==4) ) 
+	    {
+	      cell.style.backgroundColor='white';
+	      cell.style.visibility=false;
+
+	    }
+
+	 
+
+	    document.body.appendChild(cell);
+
+    }
+
+  }
+
+
+	}
+
+window.onload= timer();
+
+function reset()
+{
+	for (var i=0; i<5; i++)
+  {
+	  for (var j=0;j<6;j++)
+	  {
+
+	   var tid=i + "_" + j;
+	   
+	   if ( (j==0 && i<=1) || (i==0 && j==2) || (i==0 && j==4) ||(i==4) )
+	    {
+	     document.getElementById(tid).style.backgroundColor="white";
+
+	    }
+
+	  else
+	  {
+		  
+		document.getElementById(tid).style.backgroundColor="silver";
+
+	  }
+
+	  }
+	}
+
+}
+</script>
+
+<style> div
+
+ {position:absolute; 
+ width: 105px;
+ height: 105px;
+ background: silver;
+ text-align: center;
+ vertical-align:  middle;
+ line-height: 105px;
+ font-size: 5em;} </style>
+
+<!--
+
+	Write HTML elements to hold your binary clock positions
+
+	There are 6 columns in a binary clock
+
+-->
+
+
+</html>
+     
