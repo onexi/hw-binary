@@ -42,9 +42,6 @@ exercise.roman = function(time){
         exercise.roman.sec_col2 = sec.toString()[1];
         }
 
-
-    
-
     //-------------------------------------
     //  YOUR CODE
     //    Return an object with roman time. 
@@ -65,6 +62,68 @@ exercise.roman = function(time){
 };
 
 exercise.binary = function(time, col){
+    if (time == 0){
+        exercise.binary.position1 = 'off'
+        exercise.binary.position2 = 'off'  
+        exercise.binary.position4 = 'off'  
+        exercise.binary.position8 = 'off'  
+        }
+    if (time == 1){
+        exercise.binary.position1 = 'on'
+        exercise.binary.position2 = 'off' 
+        exercise.binary.position4 = 'off'  
+        exercise.binary.position8 = 'off'  
+        }
+    if (time == 2){
+        exercise.binary.position1 = 'off'
+        exercise.binary.position2 = 'on'  
+        exercise.binary.position4 = 'off'  
+        exercise.binary.position8 = 'off'  
+        }
+    if (time == 3){
+        exercise.binary.position1 = 'on'
+        exercise.binary.position2 = 'on'  
+        exercise.binary.position4 = 'off'  
+        exercise.binary.position8 = 'off'  
+        }
+    if (time == 4){
+        exercise.binary.position1 = 'off'
+        exercise.binary.position2 = 'off'
+        exercise.binary.position4 = 'on'
+        exercise.binary.position8 = 'off'  
+        }
+    if (time == 5){
+        exercise.binary.position1 = 'on'
+        exercise.binary.position2 = 'off'
+        exercise.binary.position4 = 'on' 
+        exercise.binary.position8 = 'off'  
+        }
+    if (time == 6){
+        exercise.binary.position1 = 'off'
+        exercise.binary.position2 = 'on'  
+        exercise.binary.position4 = 'on'  
+        exercise.binary.position8 = 'off'  
+        }
+    if (time == 7){
+        exercise.binary.position1 = 'on'
+        exercise.binary.position2 = 'on'  
+        exercise.binary.position4 = 'on'  
+        exercise.binary.position8 = 'off'  
+        }
+    if (time == 8){
+        exercise.binary.position1 = 'off'
+        exercise.binary.position2 = 'off'  
+        exercise.binary.position4 = 'off'  
+        exercise.binary.position8 = 'on'  
+        }
+    if (time == 9){
+        exercise.binary.position1 = 'on'
+        exercise.binary.position2 = 'off'  
+        exercise.binary.position4 = 'off' 
+        exercise.binary.position8 = 'on'  
+        }
+
+    return exercise.binary
 
     //----------------------------------------------------------
     //  YOUR CODE
