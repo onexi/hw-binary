@@ -3,6 +3,15 @@ var exercise = {};
 
 exercise.roman = function(time){
 
+    return { 
+        hour_col1 : Math.floor(time.getHours() / 10), 
+        hour_col2 : time.getHours() % 10,
+        min_col1  : Math.floor(time.getMinutes() / 10),
+        min_col2  : time.getMinutes() % 10,
+        sec_col1  : Math.floor(time.getSeconds() / 10),
+        sec_col2  : time.getSeconds() % 10
+    };
+
     //-------------------------------------
     //  YOUR CODE
     //    Return an object with roman time. 
