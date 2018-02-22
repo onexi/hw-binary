@@ -51,7 +51,7 @@ exercise.binary = function(time, col){
     // 
     //----------------------------------------------------------
 
-    var timeNum = time[col];
+    var number = time[col];
 
 	var binary = { 
         position8 : 'off', 
