@@ -3,12 +3,12 @@ var exercise = {};
 
 exercise.roman = function(time){
 var roman={
-    hour_col1: time.getHours().toString()[0],
-    hour_col2: time.getHours().toString()[1],
-    min_col1: time.getMinutes().toString()[0],
-    min_col2: time.getMinutes().toString()[1],
-    sec_col1: time.getMinutes().toString()[0],
-    sec_col2: time.getMinutes().toString()[1],
+    hour_col1: 'time.getHours().toString()[0]',
+    hour_col2: 'time.getHours().toString()[1]',
+    min_col1: 'time.getMinutes().toString()[0]',
+    min_col2: 'time.getMinutes().toString()[1]',
+    sec_col1: 'time.getMinutes().toString()[0]',
+    sec_col2: 'time.getMinutes().toString()[1]',
 };
 return roman;
 
