@@ -5,11 +5,19 @@
 <script src="exercise.js"></script>
 <script>
 
+function init()
+{
+	divload();
+}
+init()
+
 var timer = function() {
 	// get the current date & time
 	
 	var time = new Date();
-    divload();
+
+	reset();
+   
 	console.log(time);
 
 	// show roman time, using 6 columns
@@ -103,6 +111,31 @@ function divload() {
 
 	}
 window.onload= timer();
+
+function reset()
+{
+	for (var i=0; i<5; i++)
+  {
+	  for (var j=0;j<6;j++)
+	  {
+
+	   var tid=i + "_" + j;
+	   
+	   if ( (j==0 && i<=1) || (i==0 && j==2) || (i==0 && j==4) ||(i==4) ) {
+	     document.getElementById(tid).style.backgroundColor="white";
+
+	  }
+
+	  else
+	  {
+		document.getElementById(tid).style.backgroundColor="grey";
+
+	  }
+
+	  }
+	}
+
+}
 </script>
 
 <style> div
