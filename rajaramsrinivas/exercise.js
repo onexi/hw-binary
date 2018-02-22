@@ -47,7 +47,14 @@ exercise.convertPositionArraytoSignals = function(positionArray) {
         "position1":""
     }
     for(var i=0;i<positionArray.length;i++) {
-        binary["position"+Math.pow(2,i)] = positionArray[i];
+        var tempLight = "off";
+        if (positionArray[i] == "off") {
+            tempLight = "off";
+        }
+        else {
+            tempLight = "on"
+        }
+        binary["position"+Math.pow(2,i)] = tempLight;
     }
     return binary;
 }
