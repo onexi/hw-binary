@@ -35,7 +35,7 @@ var setBinary = function(time){
 	var romanTime = exercise.cleanseTime(time,osObj=false);
 	binaryClock = new Array(romanTime.length);
 	for (var i=0;i<romanTime.length;i++) {
-		binaryClock[i] = exercise.binary(time,i);
+		binaryClock[i] = exercise.binary(time,i,outputFormat="str");
 	}
 	console.log(romanTime);
 	console.log(binaryClock);
