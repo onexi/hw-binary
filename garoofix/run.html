@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<script src="exercise.js"></script>
+<script>
+
+var timer = function() {
+	// get the current date & time
+	var time = new Date();
+	//console.log(time);
+
+	// show roman time, using 6 columns
+	setRoman(time);
+
+	// show binary time
+	setBinary(time);
+
+	// update every 1 second
+	setTimeout(timer, 1000);
+};
+
+var setRoman = function(time){
+	var e = exercise.roman(time);
+	document.getElementById('hour_col1').innerHTML = e.hour_col1;
+    document.getElementById('hour_col2').innerHTML = e.hour_col2;
+    document.getElementById('min_col1').innerHTML = e.min_col1;
+    document.getElementById('min_col2').innerHTML = e.min_col2;
+    document.getElementById('sec_col1').innerHTML = e.sec_col1;
+    document.getElementById('sec_col2').innerHTML = e.sec_col2;
+	// set roman time
+	// you must implement exercise.roman() 
+};
+
+var setBinary = function(time){
+	var cols = ['hour_col1', 'hour_col2', 'min_col1', 'min_col2', 'sec_col1', 'sec_col2'];
+	var positions = ['position1', 'position2', 'position4', 'position8'];
+	cols.forEach((col)=>{
+		var e = exercise.binary(time, col);
+		positions.forEach((pos, i)=>{
+			var bg = 'silver';
+			if(e[pos] === 'on'){bg = 'green'}
+			document.getElementById(col + '_' + positions[i]).style.backgroundColor = bg;
+		});
+	});
+	// set roman time
+	// you must implement exercise.binary()
+};
+
+// start timer when page is loaded
+// your code here
+window.onload = function ()
+{
+	timer();
+}
+    
+
+</script>
+
+<style> div .block{position:absolute; width: 100px; height: 100px; background: silver; text-align: center; line-height: 100px;font-size: 5em;}
+    .readback{background: white !important; border: 1px solid #999;}
+    .column{float: left; position: relative; vertical-align: bottom; border: 1px solid #333; height: 430px; width: 100px;}
+</style>
+
+<!--
+
+	Write HTML elements to hold your binary clock positions
+
+	There are 6 columns in a binary clock
+
+-->
+<div class="column">
+    <div class="block" id="hour_col1_position1" style="top:330px;"></div>
+	<div class="block" id="hour_col1_position2" style="top:220px;"></div>
+	<div class="block" id="hour_col1_position4" style="display: none; top:110px;"></div>
+    <div class="block" id="hour_col1_position8" style="display: none; top:0px;"></div>
+    <div class="block readback" id="hour_col1" style="top:440px;">0</div>
+</div>
+<div class="column">
+    <div class="block" id="hour_col2_position1" style="top:330px;"></div>
+    <div class="block" id="hour_col2_position2" style="top:220px;"></div>
+    <div class="block" id="hour_col2_position4" style="top:110px;"></div>
+    <div class="block" id="hour_col2_position8" style="top:0px;"></div>
+    <div class="block readback" id="hour_col2" style="top:440px;">0</div>
+</div>
+<div class="column">
+    <div class="block" id="min_col1_position1" style="top:330px;"></div>
+    <div class="block" id="min_col1_position2" style="top:220px;"></div>
+	<div class="block" id="min_col1_position4" style="top:110px;"></div>
+	<div class="block" id="min_col1_position8" style="display: none; top:0px;"></div>
+    <div class="block readback" id="min_col1" style="top:440px;">0</div>
+</div>
+<div class="column">
+    <div class="block" id="min_col2_position1" style="top:330px;"></div>
+    <div class="block" id="min_col2_position2" style="top:220px;"></div>
+    <div class="block" id="min_col2_position4" style="top:110px;"></div>
+    <div class="block" id="min_col2_position8" style="top:0px;"></div>
+    <div class="block readback" id="min_col2" style="top:440px;">0</div>
+</div>
+<div class="column">
+    <div class="block" id="sec_col1_position1" style="top:330px;"></div>
+    <div class="block" id="sec_col1_position2" style="top:220px;"></div>
+	<div class="block" id="sec_col1_position4" style="top:110px;"></div>
+	<div class="block" id="sec_col1_position8" style="display: none; top:0px;"></div>
+    <div class="block readback" id="sec_col1" style="top:440px;">0</div>
+</div>
+<div class="column">
+    <div class="block" id="sec_col2_position1" style="top:330px;"></div>
+    <div class="block" id="sec_col2_position2" style="top:220px;"></div>
+    <div class="block" id="sec_col2_position4" style="top:110px;"></div>
+    <div class="block" id="sec_col2_position8" style="top:0px;"></div>
+    <div class="block readback" id="sec_col2" style="top:440px;">0</div>
+</div>
+</html>
+     
