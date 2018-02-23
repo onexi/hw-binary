@@ -1,0 +1,213 @@
+<html>
+
+<script src = "exercise.js"> </script>
+
+<script>
+var timer = function(){
+    //get current date and time
+    var time = new Date();
+    console.log(time)
+
+    //show roman time using 6 columns
+    setRoman(time);
+
+    //show binary time
+    setBinarys1(time);
+    setBinarys2(time);
+    setBinarym1(time);
+    setBinarym2(time);
+    setBinaryh1(time);
+    setBinaryh2(time);
+
+    //update every 1 second
+    setTimeout(timer, 1000)
+}
+
+
+
+var setRoman = function(time){
+
+    return exercise.roman(time)
+
+}
+
+var setBinarys1 = function(time){
+
+        var s = time.getSeconds();
+
+        var s1 = 0;
+        var s2 = 0;
+
+        if (s < 10){
+            s1 = 0
+            s2 = s;
+        }else{
+            s1 = Number(String(s)[0]);
+            s2 = Number(String(s)[1]);
+        }
+
+        return exercise.binary(time, 's', 1, s1)
+
+}
+
+var setBinarys2 = function(time){
+
+        var s = time.getSeconds();
+
+        var s1 = 0;
+        var s2 = 0;
+
+        if (s < 10){
+            s1 = 0
+            s2 = s;
+        }else{
+            s1 = Number(String(s)[0]);
+            s2 = Number(String(s)[1]);
+        }
+
+        return exercise.binary(time, 's', 2, s2)
+
+}
+
+var setBinarym1 = function(time){
+
+        var m = time.getMinutes();
+
+        var m1 = 0;
+        var m2 = 0;
+
+        if (m < 10){
+            m1 = 0
+            m2 = m;
+        }else{
+            m1 = Number(String(m)[0]);
+            m2 = Number(String(m)[1]);
+        }
+
+        return exercise.binary(time, 'm', 1, m1)
+
+}
+
+var setBinarym2 = function(time){
+
+        var m = time.getMinutes();
+
+        var m1 = 0;
+        var m2 = 0;
+
+        if (m < 10){
+            m1 = 0
+            m2 = m;
+        }else{
+            m1 = Number(String(m)[0]);
+            m2 = Number(String(m)[1]);
+        }
+
+return exercise.binary(time, 'm', 2, m2)
+
+}
+
+var setBinaryh1 = function(time){
+
+        var h = time.getHours();
+
+        var h1 = 0;
+        var h2 = 0;
+
+        if (h < 10){
+            h1 = 0
+            h2 = h;
+        }else{
+            h1 = Number(String(h)[0]);
+            h2 = Number(String(h)[1]);
+        }
+
+        return exercise.binary(time, 'h', 1, h1)
+
+}
+
+var setBinaryh2 = function(time){
+
+        var h = time.getHours();
+
+        var h1 = 0;
+        var h2 = 0;
+
+        if (h < 10){
+            h1 = 0
+            h2 = h;
+        }else{
+            h1 = Number(String(h)[0]);
+            h2 = Number(String(h)[1]);
+        }
+
+        return exercise.binary(time, 'h', 2, h2)
+
+}
+
+
+//start timer when page is loaded
+//your code here
+window.onload = function(){
+    timer();
+};
+
+</script>
+
+<style>
+    div{position:absolute; width:100px; height:100px; 
+    background:silver; text-align:cetner; vertical-align:middle;
+    line-height:100px; font-size: 5em;}
+</style>
+
+
+<div id = "h1_1" style="left: 10px; top:340px"></div>
+<div id = "h1_2" style="left: 10px; top:230px"></div>
+<div id = "h1_3" style="left: 10px; top:120px; visibility:hidden"></div>
+<div id = "h1_4" style="left: 10px; top: 10px; visibility:hidden"></div>
+
+<div id = "h2_1" style="left:120px; top:340px"></div>
+<div id = "h2_2" style="left:120px; top:230px"></div>
+<div id = "h2_3" style="left:120px; top:120px"></div>
+<div id = "h2_4" style="left:120px; top: 10px"></div>
+
+<div id = "m1_1" style="left:230px; top:340px"></div>
+<div id = "m1_2" style="left:230px; top:230px"></div>
+<div id = "m1_3" style="left:230px; top:120px"></div>
+<div id = "m1_4" style="left:230px; top: 10px; visibility:hidden"></div>
+
+<div id = "m2_1" style="left:340px; top:340px"></div>
+<div id = "m2_2" style="left:340px; top:230px"></div>
+<div id = "m2_3" style="left:340px; top:120px"></div>
+<div id = "m2_4" style="left:340px; top: 10px"></div>
+
+<div id = "s1_1" style="left:450px; top:340px"></div>
+<div id = "s1_2" style="left:450px; top:230px"></div>
+<div id = "s1_3" style="left:450px; top:120px"></div>
+<div id = "s1_4" style="left:450px; top: 10px; visibility:hidden"></div>
+
+<div id = "s2_1" style="left:560px; top:340px"></div>
+<div id = "s2_2" style="left:560px; top:230px"></div>
+<div id = "s2_3" style="left:560px; top:120px"></div>
+<div id = "s2_4" style="left:560px; top: 10px"></div>
+
+<style>
+        div{
+            position: fixed;
+            width: 100px;
+            background-color: rgb(172, 134, 88);
+            text-align: center;
+            font-family: courier;
+            color: white;
+        }
+</style>
+
+<div id = "h1" style = "left: 10px; top: 450px"></div>
+<div id = "h2" style = "left: 120px; top: 450px"></div>
+<div id = "m1" style = "left: 230px; top: 450px"></div>
+<div id = "m2" style = "left: 340px; top: 450px"></div>
+<div id = "s1" style = "left: 450px; top: 450px"></div>
+<div id = "s2" style = "left: 560px; top: 450px"></div>
+
+</html>
+
