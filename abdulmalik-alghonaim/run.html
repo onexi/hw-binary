@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<script src="exercise.js"></script>
+<script>
+var timer = function() {
+	// get the current date & time
+	var time = new Date();
+	console.log(time);
+
+	// show roman time, using 6 columns
+	setRoman(time);
+
+	// show binary time
+	setBinary(time);
+
+	// update every 1 second
+	setTimeout(timer, 1000);
+};
+
+var setRoman = function(time){
+	// set roman time
+	// you must implement exercise.roman() 
+	var responce = exercise.roman(time);
+	document.getElementById("hour_col1_roman").innerHTML = responce.hour_col1;
+	document.getElementById("hour_col2_roman").innerHTML = responce.hour_col2;
+
+	document.getElementById("minute_col1_roman").innerHTML = responce.min_col1;
+	document.getElementById("minute_col2_roman").innerHTML = responce.min_col2;
+
+	document.getElementById("second_col1_roman").innerHTML = responce.sec_col1;
+	document.getElementById("second_col2_roman").innerHTML = responce.sec_col2;
+
+
+
+
+};
+
+var setBinary = function(time){
+	// set roman time
+	// you must implement exercise.binary()
+// hour_col1
+	var responce = exercise.binary(time,'hour_col1');
+	if (responce.position8 === 'on'){
+		document.getElementById('hour_col1_pos8').style.backgroundColor = 'red';
+	}
+	else{
+		document.getElementById('hour_col1_pos8').style.backgroundColor = 'silver';
+	};
+	if (responce.position4 === 'on'){
+		document.getElementById('hour_col1_pos4').style.backgroundColor = 'red';
+	}
+	else{
+		document.getElementById('hour_col1_pos4').style.backgroundColor = 'silver';
+	};
+	if (responce.position2 === 'on'){
+		document.getElementById('hour_col1_pos2').style.backgroundColor = 'red';
+	}
+	else{
+		document.getElementById('hour_col1_pos2').style.backgroundColor = 'silver';
+	};
+	if (responce.position1 === 'on'){
+		document.getElementById('hour_col1_pos1').style.backgroundColor = 'red';
+	}
+	else{
+		document.getElementById('hour_col1_pos1').style.backgroundColor = 'silver';
+	};
+
+// hour_col2
+	responce = exercise.binary(time,'hour_col2');
+	if (responce.position8 === 'on'){
+		document.getElementById('hour_col2_pos8').style.backgroundColor = 'red';
+	}
+	else{
+		document.getElementById('hour_col2_pos8').style.backgroundColor = 'silver';
+	};
+	if (responce.position4 === 'on'){
+		document.getElementById('hour_col2_pos4').style.backgroundColor = 'red';
+	}
+	else{
+		document.getElementById('hour_col2_pos4').style.backgroundColor = 'silver';
+	};
+	if (responce.position2 === 'on'){
+		document.getElementById('hour_col2_pos2').style.backgroundColor = 'red';
+	}
+	else{
+		document.getElementById('hour_col2_pos2').style.backgroundColor = 'silver';
+	};
+	if (responce.position1 === 'on'){
+		document.getElementById('hour_col2_pos1').style.backgroundColor = 'red';
+	}
+	else{
+		document.getElementById('hour_col2_pos1').style.backgroundColor = 'silver';
+	};
+
+// minute_col1
+	responce = exercise.binary(time,'minute_col1');
+	if (responce.position8 === 'on'){
+		document.getElementById('minute_col1_pos8').style.backgroundColor = 'red';
+	}
+	else{
+		document.getElementById('minute_col1_pos8').style.backgroundColor = 'silver';
+	};
+	if (responce.position4 === 'on'){
+		document.getElementById('minute_col1_pos4').style.backgroundColor = 'red';
+	}
+	else{
+		document.getElementById('minute_col1_pos4').style.backgroundColor = 'silver';
+	};
+	if (responce.position2 === 'on'){
+		document.getElementById('minute_col1_pos2').style.backgroundColor = 'red';
+	}
+	else{
+		document.getElementById('minute_col1_pos2').style.backgroundColor = 'silver';
+	};
+	if (responce.position1 === 'on'){
+		document.getElementById('minute_col1_pos1').style.backgroundColor = 'red';
+	}
+	else{
+		document.getElementById('minute_col1_pos1').style.backgroundColor = 'silver';
+	};
+	//minute_col2
+	responce = exercise.binary(time,'minute_col2');
+	if (responce.position8 === 'on'){
+		document.getElementById('minute_col2_pos8').style.backgroundColor = 'red';
+	}
+	else{
+		document.getElementById('minute_col2_pos8').style.backgroundColor = 'silver';
+	};
+	if (responce.position4 === 'on'){
+		document.getElementById('minute_col2_pos4').style.backgroundColor = 'red';
+	}
+	else{
+		document.getElementById('minute_col2_pos4').style.backgroundColor = 'silver';
+	};
+	if (responce.position2 === 'on'){
+		document.getElementById('minute_col2_pos2').style.backgroundColor = 'red';
+	}
+	else{
+		document.getElementById('minute_col2_pos2').style.backgroundColor = 'silver';
+	};
+	if (responce.position1 === 'on'){
+		document.getElementById('minute_col2_pos1').style.backgroundColor = 'red';
+	}
+	else{
+		document.getElementById('minute_col2_pos1').style.backgroundColor = 'silver';
+	};
+
+	//second_col1
+	responce = exercise.binary(time,'second_col1');
+	if (responce.position8 === 'on'){
+		document.getElementById('second_col1_pos8').style.backgroundColor = 'red';
+	}
+	else{
+		document.getElementById('second_col1_pos8').style.backgroundColor = 'silver';
+	};
+	if (responce.position4 === 'on'){
+		document.getElementById('second_col1_pos4').style.backgroundColor = 'red';
+	}
+	else{
+		document.getElementById('second_col1_pos4').style.backgroundColor = 'silver';
+	};
+	if (responce.position2 === 'on'){
+		document.getElementById('second_col1_pos2').style.backgroundColor = 'red';
+	}
+	else{
+		document.getElementById('second_col1_pos2').style.backgroundColor = 'silver';
+	};
+	if (responce.position1 === 'on'){
+		document.getElementById('second_col1_pos1').style.backgroundColor = 'red';
+	}
+	else{
+		document.getElementById('second_col1_pos1').style.backgroundColor = 'silver';
+	};
+	// second_col2
+	responce = exercise.binary(time,'second_col2');
+	if (responce.position8 === 'on'){
+		document.getElementById('second_col2_pos8').style.backgroundColor = 'red';
+	}
+	else{
+		document.getElementById('second_col2_pos8').style.backgroundColor = 'silver';
+	};
+	if (responce.position4 === 'on'){
+		document.getElementById('second_col2_pos4').style.backgroundColor = 'red';
+	}
+	else{
+		document.getElementById('second_col2_pos4').style.backgroundColor = 'silver';
+	};
+	if (responce.position2 === 'on'){
+		document.getElementById('second_col2_pos2').style.backgroundColor = 'red';
+	}
+	else{
+		document.getElementById('second_col2_pos2').style.backgroundColor = 'silver';
+	};
+	if (responce.position1 === 'on'){
+		document.getElementById('second_col2_pos1').style.backgroundColor = 'red';
+	}
+	else{
+		document.getElementById('second_col2_pos1').style.backgroundColor = 'silver';
+	};
+};
+</script>
+
+
+<style> div {
+	position:absolute;
+	 width: 100px; 
+	 height: 100px;
+	  background: silver; 
+	  text-align: center;
+	  vertical-align: middle;
+	   line-height: 100px;
+	   font-size: 5em;
+	   
+	   } 
+</style>
+ <!-- hours -->
+<div id="hour_col1_pos1" style="left:10px;top: 340px;"></div>
+ <div id="hour_col1_pos2" style="left: 10px;top: 230px;"></div>
+<div id="hour_col1_pos4" style="left: 10px;top: 120px;visibility: hidden;"></div>
+<div id="hour_col1_pos8" style="left: 10px;top: 10px;visibility: hidden;"></div>
+
+<div id="hour_col2_pos1" style="left: 120px;top: 340px;"></div>
+<div id="hour_col2_pos2" style="left: 120px;top: 230px;"></div>
+<div id="hour_col2_pos4" style="left: 120px;top: 120px;"></div>
+<div id="hour_col2_pos8" style="left: 120px;top: 10px;"></div>
+<!-- minuties -->
+<div id="minute_col1_pos1" style="left: 230px;top: 340px;"></div>
+<div id="minute_col1_pos2" style="left: 230px;top: 230px;"></div>
+<div id="minute_col1_pos4" style="left: 230px;top: 120px;"></div>
+<div id="minute_col1_pos8" style="left: 230px;top: 10px;visibility: hidden;"></div>
+
+<div id="minute_col2_pos1" style="left: 340px;top: 340px;"></div>
+<div id="minute_col2_pos2" style="left: 340px;top: 230px;"></div>
+<div id="minute_col2_pos4" style="left: 340px;top: 120px;"></div>
+<div id="minute_col2_pos8" style="left: 340px;top: 10px;"></div> 
+// <!-- seconds -->
+<div id="second_col1_pos1" style="left: 450px;top: 340px;"></div>
+<div id="second_col1_pos2" style="left: 450px;top: 230px;"></div>
+<div id="second_col1_pos4" style="left: 450px;top: 120px;"></div>
+<div id="second_col1_pos8" style="left: 450px;top: 10px;visibility: hidden;"></div>
+
+<div id="second_col2_pos1" style="left: 560px;top: 340px;"></div>
+<div id="second_col2_pos2" style="left: 560px;top: 230px;"></div>
+<div id="second_col2_pos4" style="left: 560px;top: 120px;"></div>
+<div id="second_col2_pos8" style="left: 560px;top: 10px;"></div> 
+// <!-- roman -->
+<div id="hour_col1_roman" style="left: 10px;top: 670px;background: white"></div>
+<div id="hour_col2_roman" style="left: 120px;top: 670px;background: white"></div>
+<div id="minute_col1_roman" style="left: 230px;top: 670px;background: white"></div>
+<div id="minute_col2_roman" style="left: 340px;top: 670px;background: white"></div>
+<div id="second_col1_roman" style="left: 450px;top: 670px;background: white"></div>
+<div id="second_col2_roman" style="left: 560px;top: 670px;background: white"></div>
+</html>
+
+
+<script>// start timer when page is loaded
+window.onload = timer();
+</script>
+
+     
