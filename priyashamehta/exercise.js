@@ -51,7 +51,7 @@ exercise.binary = function(time, col){
     // 
     //----------------------------------------------------------
 
-    var number = time[col];
+    var timeNum = time[col];
 
 	var binary = { 
         position8 : 'off', 
@@ -60,7 +60,7 @@ exercise.binary = function(time, col){
 		position1 : 'off', 
     }; 
 
-    /*if (timeNum == 8 || timeNum == 9){
+    if (timeNum == 8 || timeNum == 9){
         binary.position8 = 'on';
     }
     if (timeNum == 4 || timeNum == 5 || timeNum == 6 || timeNum == 7){
@@ -71,23 +71,6 @@ exercise.binary = function(time, col){
     }
     if (timeNum == 1 || timeNum == 3 || timeNum == 5 || timeNum == 7 || timeNum == 9){
         binary.position1 = 'on';    
-    }*/
-
-    if (number >= 8){
-        binary.position8 = 'on';
-        number -= 8;
-    }
-    if (number >= 4){
-        binary.position4 = 'on';
-        number -= 4;
-    }
-    if (number >= 2){
-        binary.position2 = 'on';
-        number -= 2;
-    }
-    if (number >= 1){
-        binary.position1 = 'on';
-        number -= 1;
     }
 
    return binary;
