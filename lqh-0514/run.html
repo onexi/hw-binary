@@ -19,29 +19,118 @@ var timer = function() {
 };
 
 var setRoman = function(time){
+	var hour_col1_pos0 = exercise.roman(time).hour_col1;
+	document.getElementById('hour_col1_pos0').innerHTML= hour_col1_pos0;
+	var hour_col2_pos0 = exercise.roman(time).hour_col2;
+	document.getElementById('hour_col2_pos0').innerHTML= hour_col2_pos0;
+
 	// set roman time
 	// you must implement exercise.roman() 
 };
 
 var setBinary = function(time){
-	
-		var response = exercise.binary(time,'hour_col1');
-		if(response.position1 === 'on'){document.getElementById('hour_col1_pos1').style.backgroundColor = 'red'}
+	var response1 = exercise.binary(time,'hour_col1');
+		if(response1.position1 === 'on'){document.getElementById('hour_col1_pos1').style.backgroundColor = 'red'}
 		else{
 			document.getElementById('hour_col1_pos1').style.backgroundColor = "silver"};
 
-		if(response.position2 === 'on'){document.getElementById('hour_col1_pos2').style.backgroundColor = 'red'}
+		if(response1.position2 === 'on'){document.getElementById('hour_col1_pos2').style.backgroundColor = 'red'}
 		else{
 		document.getElementById('hour_col1_pos2').style.backgroundColor = "silver"
 		}
-		if(response.position3 === 'on'){document.getElementById('hour_col1_pos3').style.backgroundColor = 'red'}
+		if(response1.position4 === 'on'){document.getElementById('hour_col1_pos4').style.backgroundColor = 'red'}
 		else{
-		document.getElementById('hour_col1_pos2').style.backgroundColor = "silver"
+		document.getElementById('hour_col1_pos4').style.backgroundColor = "silver"
 		}
-		if(response.position4 === 'on'){document.getElementById('hour_col1_pos4').style.backgroundColor = 'red'}
+		if(response1.position8 === 'on'){document.getElementById('hour_col1_pos8').style.backgroundColor = 'red'}
 		else{
-		document.getElementById('hour_col1_pos2').style.backgroundColor = "silver"
+		document.getElementById('hour_col1_pos8').style.backgroundColor = "silver"
+		}	
+	var response2 = exercise.binary(time,'hour_col2');
+		if(response2.position1 === 'on'){document.getElementById('hour_col2_pos1').style.backgroundColor = 'red'}
+		else{
+			document.getElementById('hour_col2_pos1').style.backgroundColor = "silver"};
+
+		if(response2.position2 === 'on'){document.getElementById('hour_col2_pos2').style.backgroundColor = 'red'}
+		else{
+		document.getElementById('hour_col2_pos2').style.backgroundColor = "silver"
 		}
+		if(response2.position4 === 'on'){document.getElementById('hour_col2_pos4').style.backgroundColor = 'red'}
+		else{
+		document.getElementById('hour_col2_pos4').style.backgroundColor = "silver"
+		}
+		if(response2.position8 === 'on'){document.getElementById('hour_col2_pos8').style.backgroundColor = 'red'}
+		else{
+		document.getElementById('hour_col2_pos8').style.backgroundColor = "silver"
+		}	
+	var response3 = exercise.binary(time,'min_col1');
+		if(response3.position1 === 'on'){document.getElementById('minute_col1_pos1').style.backgroundColor = 'red'}
+		else{
+			document.getElementById('minute_col1_pos1').style.backgroundColor = "silver"};
+
+		if(response3.position2 === 'on'){document.getElementById('minute_col1_pos2').style.backgroundColor = 'red'}
+		else{
+		document.getElementById('minute_col1_pos2').style.backgroundColor = "silver"
+		}
+		if(response3.position4 === 'on'){document.getElementById('minute_col1_pos4').style.backgroundColor = 'red'}
+		else{
+		document.getElementById('minute_col1_pos4').style.backgroundColor = 'silver'
+		}
+		if(response3.position8 === 'on'){document.getElementById('minute_col1_pos8').style.backgroundColor = 'red'}
+		else{
+		document.getElementById('minute_col1_pos8').style.backgroundColor = "silver"
+		}		
+	var response4 = exercise.binary(time,'min_col2');
+		if(response4.position1 === 'on'){document.getElementById('minute_col2_pos1').style.backgroundColor = 'red'}
+		else{
+			document.getElementById('minute_col2_pos1').style.backgroundColor = "silver"};
+
+		if(response4.position2 === 'on'){document.getElementById('minute_col2_pos2').style.backgroundColor = 'red'}
+		else{
+		document.getElementById('minute_col2_pos2').style.backgroundColor = "silver"
+		}
+		if(response4.position4 === 'on'){document.getElementById('minute_col2_pos4').style.backgroundColor = 'red'}
+		else{
+		document.getElementById('minute_col2_pos4').style.backgroundColor = "silver"
+		}
+		if(response4.position8 === 'on'){document.getElementById('minute_col2_pos8').style.backgroundColor = 'red'}
+		else{
+		document.getElementById('minute_col2_pos8').style.backgroundColor = "silver"
+		}		
+	var response5 = exercise.binary(time,'sec_col1');
+		if(response5.position1 === 'on'){document.getElementById('sec_col1_pos1').style.backgroundColor = 'red'}
+		else{
+			document.getElementById('sec_col1_pos1').style.backgroundColor = "silver"};
+
+		if(response5.position2 === 'on'){document.getElementById('sec_col1_pos2').style.backgroundColor = 'red'}
+		else{
+		document.getElementById('sec_col1_pos2').style.backgroundColor = "silver"
+		}
+		if(response5.position4 === 'on'){document.getElementById('sec_col1_pos4').style.backgroundColor = 'red'}
+		else{
+		document.getElementById('sec_col1_pos4').style.backgroundColor = 'silver'
+		}
+		if(response5.position8 === 'on'){document.getElementById('sec_col1_pos8').style.backgroundColor = 'red'}
+		else{
+		document.getElementById('sec_col1_pos8').style.backgroundColor = "silver"
+		}		
+	var response6 = exercise.binary(time,'sec_col2');
+		if(response6.position1 === 'on'){document.getElementById('sec_col2_pos1').style.backgroundColor = 'red'}
+		else{
+			document.getElementById('sec_col2_pos1').style.backgroundColor = "silver"};
+
+		if(response6.position2 === 'on'){document.getElementById('sec_col2_pos2').style.backgroundColor = 'red'}
+		else{
+		document.getElementById('sec_col2_pos2').style.backgroundColor = "silver"
+		}
+		if(response6.position4 === 'on'){document.getElementById('sec_col2_pos4').style.backgroundColor = 'red'}
+		else{
+		document.getElementById('sec_col2_pos4').style.backgroundColor = "silver"
+		}
+		if(response6.position8 === 'on'){document.getElementById('sec_col2_pos8').style.backgroundColor = 'red'}
+		else{
+		document.getElementById('sec_col2_pos8').style.backgroundColor = "silver"
+		}	
 	}
 	
 	// set roman time
@@ -97,7 +186,7 @@ window.onload = timer;
 <div id = "sec_col2_pos8" style="left: 560px; top:10px;"></div>
 
 <script>
-	
+
 
 
 </script>
