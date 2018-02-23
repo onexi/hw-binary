@@ -32,7 +32,12 @@ exercise.roman = function(time){
 };
 
 exercise.binary = function(time, col){
-
+    return { 
+        position8 : 'off', 
+        position4 : 'on', 
+        position2 : 'on', 
+        position1 : 'on', 
+    }; 
     //----------------------------------------------------------
     //  YOUR CODE
     //    Return an object with
