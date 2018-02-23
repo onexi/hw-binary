@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<title>Binary Clock</title>
+<script src="exercise.js"></script>
+<script>
+
+var timer = function() {
+	// get the current date & time
+	var time = new Date();
+	console.log(time);
+
+	// show roman time, using 6 columns
+	setRoman(time);
+
+	// show binary time
+	setBinary(time);
+
+	// update every 1 second
+	setTimeout(timer, 1000);
+};
+
+var setRoman = function(time){
+	// set roman time
+	// you must implement exercise.roman() 
+	var romanTime = exercise.roman(time);
+	document.getElementById('roman_Hour_Col1').innerText = romanTime.hour_col1;
+	document.getElementById('roman_Hour_Col2').innerText = romanTime.hour_col2;
+	document.getElementById('roman_Minute_Col1').innerText = romanTime.minute_col1;
+	document.getElementById('roman_Minute_Col2').innerText = romanTime.minute_col2;
+	document.getElementById('roman_Second_Col1').innerText = romanTime.second_col1;
+	document.getElementById('roman_Second_Col2').innerText = romanTime.second_col2;
+};
+
+var setBinary = function(time){
+	// set roman time
+	// you must implement exercise.binary()
+	
+	/* Logic is to get the numbers for each column and 
+		then change the color of the blocks for each column one by one. 
+		Created a new function named 'drawColumn' in exercise.js 
+		to paint each column in the clock */
+
+		var romanTime = exercise.roman(time);
+		var binaryTime = null; 
+		
+		binaryTime = exercise.binary(romanTime, 'hour_col1');
+		exercise.drawColumn(binaryTime, 'hour_col1');
+
+		binaryTime = exercise.binary(romanTime, 'hour_col2');
+		exercise.drawColumn(binaryTime, 'hour_col2');
+
+		binaryTime = exercise.binary(romanTime, 'minute_col1');
+		exercise.drawColumn(binaryTime, 'minute_col1');
+
+		binaryTime = exercise.binary(romanTime, 'minute_col2');
+		exercise.drawColumn(binaryTime, 'minute_col2');
+
+		binaryTime = exercise.binary(romanTime, 'second_col1');
+		exercise.drawColumn(binaryTime, 'second_col1');
+
+		binaryTime = exercise.binary(romanTime, 'second_col2');
+		exercise.drawColumn(binaryTime, 'second_col2');
+
+};
+
+// start timer when page is loaded
+// your code here
+window.onload = timer ;
+</script>
+
+<style> 
+div {
+	position:absolute; 
+	width: 100px; 
+	height: 100px; 
+	background: silver; 
+	text-align: center;
+	vertical-align: middle; 
+	line-height: 100px;
+	font-size: 5em;} 
+
+	/* New class to display the roman numbers */
+	.roman{
+		border-style:dashed; 
+		background-color:white; 
+		border-color:silver;
+		border-width: 0.1px;
+	}
+	
+</style>
+
+<!--
+
+	Write HTML elements to hold your binary clock positions
+
+	There are 6 columns in a binary clock
+
+-->
+<div id="hour_col1_Pos8" style="top: 10px; left: 10px; visibility:hidden;"> </div>
+<div id="hour_col1_Pos4" style="top: 120px; left: 10px; visibility:hidden;"> </div>
+<div id="hour_col1_Pos2" style="top: 230px; left: 10px;"> </div>
+<div id="hour_col1_Pos1" style="top: 340px; left: 10px;"> </div>
+
+<div id="hour_col2_Pos8" style="top: 10px; left: 120px;"> </div>
+<div id="hour_col2_Pos4" style="top: 120px; left: 120px;"> </div>
+<div id="hour_col2_Pos2" style="top: 230px; left: 120px;"> </div>
+<div id="hour_col2_Pos1" style="top: 340px; left: 120px;"> </div>
+
+<div id="minute_col1_Pos8" style="top: 10px; left: 230px; visibility:hidden;"> </div>
+<div id="minute_col1_Pos4" style="top: 120px; left: 230px;"> </div>
+<div id="minute_col1_Pos2" style="top: 230px; left: 230px;"> </div>
+<div id="minute_col1_Pos1" style="top: 340px; left: 230px;"> </div>
+
+<div id="minute_col2_Pos8" style="top: 10px; left: 340px;"> </div>
+<div id="minute_col2_Pos4" style="top: 120px; left: 340px;"> </div>
+<div id="minute_col2_Pos2" style="top: 230px; left: 340px;"> </div>
+<div id="minute_col2_Pos1" style="top: 340px; left: 340px;"> </div>
+
+<div id="second_col1_Pos8" style="top: 10px; left: 450px; visibility:hidden;"> </div>
+<div id="second_col1_Pos4" style="top: 120px; left: 450px;"> </div>
+<div id="second_col1_Pos2" style="top: 230px; left: 450px;"> </div>
+<div id="second_col1_Pos1" style="top: 340px; left: 450px;"> </div>
+
+<div id="second_col2_Pos8" style="top: 10px; left: 560px;"> </div>
+<div id="second_col2_Pos4" style="top: 120px; left: 560px;"> </div>
+<div id="second_col2_Pos2" style="top: 230px; left: 560px;"> </div>
+<div id="second_col2_Pos1" style="top: 340px; left: 560px;"> </div>
+
+<div id="roman_Hour_Col1" style="top: 450px; left: 10px;" class="roman"> </div>
+<div id="roman_Hour_Col2" style="top: 450px; left: 120px;" class="roman"> </div>
+<div id="roman_Minute_Col1" style="top: 450px; left: 230px;" class="roman"> </div>
+<div id="roman_Minute_Col2" style="top: 450px; left: 340px;" class="roman"> </div>
+<div id="roman_Second_Col1" style="top: 450px; left: 450px;" class="roman"> </div>
+<div id="roman_Second_Col2" style="top: 450px; left: 560px;" class="roman"> </div>
+
+
+</html>
+     
