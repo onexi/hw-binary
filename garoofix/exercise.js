@@ -32,12 +32,15 @@ exercise.roman = function(time){
 };
 
 exercise.binary = function(time, col){
-    return { 
-        position8 : 'off', 
-        position4 : 'on', 
-        position2 : 'on', 
-        position1 : 'on', 
-    }; 
+    var rom = exercise.roman(time);
+    var n = rom[col];
+    var o = {};
+
+    if(n % 2)                       {o.position1 = 'on'}else{o.position1 = 'off'}
+    if(n===2||n===3||n===6||n===7)  {o.position2 = 'on'}else{o.position2 = 'off'}
+    if(n>=4&&n<8)                   {o.position4 = 'on'}else{o.position4 = 'off'}
+    if(n>=8)                        {o.position8 = 'on'}else{o.position8 = 'off'}
+    return o; 
     //----------------------------------------------------------
     //  YOUR CODE
     //    Return an object with
