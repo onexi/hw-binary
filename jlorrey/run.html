@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- <style> div {position:absolute; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;} </style> -->
+
+<!--
+	Write HTML elements to hold your binary clock positions
+
+	There are 6 columns in a binary clock
+-->
+<style>
+		.grid-container {
+			display: grid;
+			grid-template-columns: auto auto auto auto auto auto;
+			justify-content: space-evenly;
+			grid-gap: 15px; 
+		}
+		</style>
+		
+		<style>
+		.box {
+			width: 100px; 
+			height: 100px; 
+			background: silver; 
+			text-align: center;
+			vertical-align: middle; 
+			line-height: 100px;
+			font-size: 5em; 
+			}
+		.white_box {
+			width: 100px; 
+			height: 100px; 
+			background: white; 
+			text-align: center;
+			vertical-align: middle; 
+			line-height: 100px;
+			font-size: 5em; 
+			}
+		.red_box {
+			width: 100px; 
+			height: 100px; 
+			background: red; 
+			text-align: center;
+			vertical-align: middle; 
+			line-height: 100px;
+			font-size: 5em; 
+			}
+		</style>
+		
+		<div class="grid-container">
+		
+			<div id="hr1_8" class="white_box"></div>
+			<div id="hr2_8" class="box"></div>
+			<div id="min1_8" class="white_box"></div>
+			<div id="min2_8" class="box"></div>
+			<div id="sec1_8" class="white_box"></div>
+			<div id="sec2_8" class="box"></div>
+		
+			<div id="hr1_4" class="white_box"></div>
+			<div id="hr2_4" class="box"></div>
+			<div id="min1_4" class="box"></div>
+			<div id="min2_4" class="box"></div>
+			<div id="sec1_4" class="box"></div>
+			<div id="sec2_4" class="box"></div>
+		
+			<div id="hr1_2" class="box"></div>
+			<div id="hr2_2" class="box"></div>
+			<div id="min1_2" class="box"></div>
+			<div id="min2_2" class="box"></div>
+			<div id="sec1_2" class="box"></div>
+			<div id="sec2_2" class="box"></div>
+		
+			<div id="hr1_1" class="box"></div>
+			<div id="hr2_1" class="box"></div>
+			<div id="min1_1" class="box"></div>
+			<div id="min2_1" class="box"></div>
+			<div id="sec1_1" class="box"></div>
+			<div id="sec2_1" class="box"></div>
+		
+			<div id="hr1_Num" class="white_box"></div>
+			<div id="hr2_Num" class="white_box"></div>
+			<div id="min1_Num" class="white_box"></div>
+			<div id="min2_Num" class="white_box"></div>
+			<div id="sec1_Num" class="white_box"></div>
+			<div id="sec2_Num" class="white_box"></div>
+		</div>
+</head>
+<script src="exercise.js"></script>
+<script>
+
+var timer = function() {
+	// get the current date & time
+	var time = new Date(); 
+	//console.log(time);
+	// Example:
+	// myTime = new Date() --> Tue Feb 20 2018 14:16:12 GMT-0500 (EST)
+	// myTime.getHours() --> 14
+	// myTime.getMinutes() --> 16
+	// myTime.getSeconds() --> 12
+
+	// show roman time, using 6 columns
+	romanCols = setRoman(time);
+
+    colsArray = ["hour_col1", "hour_col2", "min_col1", "min_col2", "sec_col1", "sec_col2"];
+	idArray = ["hr1_Num", "hr2_Num", "min1_Num", "min2_Num", "sec1_Num", "sec2_Num"];
+	for (i=0; i<idArray.length; i++){
+		b = i;
+		digit = String(romanCols[colsArray[i]]);
+		boxId = idArray[i];
+		document.getElementById(boxId).innerHTML=digit;
+
+	}
+	
+	// show binary time
+	i = 0;
+	hr1_col = ["hr1_1", "hr1_2"]; //positions 1, 2
+	hr2_col = ["hr2_1", "hr2_2", "hr2_4", "hr2_8"]; //positions 1, 2, 4, 8
+	min1_col = ["min1_1", "min1_2", "min1_4"];
+	min2_col = ["min2_1", "min2_2", "min2_3", "min2_4"];
+	sec1_col = ["sec1_1", "sec1_2", "sec1_3"];
+	sec2_col = ["sec2_1", "sec2_2", "sec2_3", "sec2_4"];
+	arrayList = [hr1_col, hr2_col, min1_col, min2_col, sec1_col, sec2_col];
+	
+	colsArray = ["hour_col1", "hour_col2", "min_col1", "min_col2", "sec_col1", "sec_col2"];
+	idArray = ["hr1_Num", "hr2_Num", "min1_Num", "min2_Num", "sec1_Num", "sec2_Num"];
+	
+	for (i=0; i<colsArray.length; i++){
+		col = colsArray[i];
+		currentArray = arrayList[i];
+
+		b = setBinary(time, col);
+
+		if (b["position1"] == "on") {
+			document.getElementById(currentArray[0]).style.backgroundColor = "red";
+		}
+		if (b["position2"] == "on") {
+			document.getElementById(currentArray[1]).style.backgroundColor = "red";
+		}
+		if (currentArray.length >=3) {
+			if (b["position4"] == "on") {
+				document.getElementById(currentArray[2]).style.backgroundColor = "red";	
+			}
+		}
+		if (currentArray.length >=4) {
+			if (b["position4"] == "on") {
+				document.getElementById(currentArray[3]).style.backgroundColor = "red";	
+			}
+		}
+		// console.log(b["position8"]);
+    }
+
+	// update every 1 second
+	setTimeout(timer, 1000);
+};
+
+var setRoman = function(time){
+	// set roman time
+	// you must implement exercise.roman() 
+	return exercise.roman(time);
+};
+
+var setBinary = function(time, col){
+	// set roman time
+	// you must implement exercise.binary()
+	return exercise.binary(time, col);
+};
+
+// start timer when page is loaded
+// your code here
+window.onload = timer()
+
+</script>
+
+
+
+<!-- <script>
+	for elt in binarytime
+	document.getElementById("hr2_8").style.backgroundColor = "red";
+    document.getElementById("hr1_Num").innerHTML = "1";
+
+</script> -->
+</html>
+     
