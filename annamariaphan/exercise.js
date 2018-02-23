@@ -106,6 +106,7 @@ exercise.binary = function(time, col){
     }
 
     // min two
+    document.getElementById('min_col4_pos5').style.backgroundColor = '#ccc';
     document.getElementById('min_col4_pos4').style.backgroundColor = '#ccc';
     document.getElementById('min_col4_pos3').style.backgroundColor = '#ccc';
     document.getElementById('min_col4_pos2').style.backgroundColor = '#ccc';
