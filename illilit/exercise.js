@@ -23,10 +23,26 @@ exercise.roman = function(time){
 };
 
 exercise.binary = function(time, col){
-   //var time2= new Date();
-   //time2.
+
+//var time2= new Date();
+//time2.getSeconds();
+
     var hrs = time.getHours();
-   var hrs_string =  String(hrs);
+    var hrs_string;
+    if(hrs<10){hrs_string = "0" + String(hrs);}
+    else{hrs_string =  String(hrs);}
+    
+
+    var min = time.getMinutes();
+    var min_string;
+    if(min<10){min_string = "0" + String(min);}
+    else{min_string =  String(min);}
+
+    var sec = time.getSeconds();
+    var sec_string;
+    if(sec<10){sec_string = "0" + String(sec);}
+    else{sec_string =  String(sec);}
+//----------------------------------------------------------
 
     //----------------------------------------------------------
     //  YOUR CODE
@@ -118,6 +134,15 @@ exercise.binary = function(time, col){
     var binary=[binary0,binary1,binary2,binary3,binary4,binary5,binary6,binary7,binary8,binary9];
 //----------------------------------------------------------
 
+//document.getElementById('hour_col1_pos1').style.backgroundColor = 'red';
+
+
+if (col === 1) {return binary[Number(hrs_string[0])];} // back to # for string number?
+if (col === 2) {return binary[Number(hrs_string[1])];}
+if (col === 3) {return binary[Number(min_string[0])];}
+if (col === 4) {return binary[Number(min_string[1])];}
+if (col === 5) {return binary[Number(sec_string[0])];}
+if (col === 6) {return binary[Number(sec_string[1])];}
 
 
 
