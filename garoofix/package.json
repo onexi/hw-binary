@@ -2,7 +2,9 @@
     "name": "hw-binary",
     "description": "hw-binary",
     "author": "prof",
-    "keywords": ["hw-binary"],
+    "keywords": [
+        "hw-binary"
+    ],
     "version": "1.0.0",
     "main": "index.js",
     "license": "MIT",
