@@ -43,21 +43,11 @@ var setBinary = function(time){
 	for (var i=0; i< romanTime.length;i++) 	{
 		for (var j=0;j< 4;j++) {
 			if (binaryClock[i][j] == true) {
-				if (i>0) {
-					document.getElementById("r"+String(i)+"c"+String(j)).style.backgroundColor = "red";
-				}
-				else {
-					document.getElementById("r"+String(i)+"c"+String(j)).style.backgroundColor = "red";
-				}			
+					document.getElementById("r"+String(i)+"c"+String(j)).style.backgroundColor = "red";			
 			}
-			
 			else {
-				if (true) {
-					var computedElement = String(i*4+j-1);
-					console.log(computedElement);
-					document.getElementById("r"+String(i)+"c"+String(j)).style.backgroundColor = "silver";
-				}	
-			}
+					document.getElementById("r"+String(i)+"c"+String(j)).style.backgroundColor = "silver";	
+				}
 
 		}
 	}
@@ -67,7 +57,7 @@ var setBinary = function(time){
 // your code here
 
 </script>
-<style> div {position:absolute; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;} </style>
+<style> div {position:absolute; width: 100px; height: 100px; background:silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;} </style>
 
 <div id="r0c0" style="left:10px; top:340px;"></div>
 <div id="r0c1" style="left:10px; top:230px;"></div>
@@ -99,12 +89,12 @@ var setBinary = function(time){
 <div id="r5c2" style="left:560px; top:120px;"></div>
 <div id="r5c3" style="left:560px; top:10px;"></div>
 
-<div id="c1" style="left:10px; top:450px;" backgroundColor:"white"></div>
-<div id="c2" style="left:120px; top:450px;" backgroundColor:"white"></div>
-<div id="c3" style="left:230px; top:450px;" backgroundColor:"white"></div>
-<div id="c4" style="left:340px; top:450px;" backgroundColor:"white"></div>
-<div id="c5" style="left:450px; top:450px;" backgroundColor:"white"></div>
-<div id="c6" style="left:560px; top:450px;" backgroundColor:"white"></div>
+<div id="c1" style="left:10px; top:450px; background:white"></div>
+<div id="c2" style="left:120px; top:450px; background: white"></div>
+<div id="c3" style="left:230px; top:450px; background: white"></div>
+<div id="c4" style="left:340px; top:450px; background: white"></div>
+<div id="c5" style="left:450px; top:450px; background: white" ></div>
+<div id="c6" style="left:560px; top:450px; background: white"></div>
 <!--
 
 	Write HTML elements to hold your binary clock positions

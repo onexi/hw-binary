@@ -19,7 +19,7 @@ exercise.roman = function(time){
     //     };
     // 
     //-------------------------------------
-
+    return exercise.cleanseTime(time, asObj=false);
 
 };
 exercise.cleanseTime = function (time, asObj=true) {
