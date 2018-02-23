@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<script src="exercise.js"></script>
+<script>
+var Roman_Time;
+
+var timer = function() {
+    // get the current date & time
+    var time = new Date();
+    console.log(time);
+
+    // show roman time, using 6 columns
+    setRoman(time);
+
+    // show binary time
+    setBinary(time);
+
+    // update every 1 second
+    setTimeout(timer, 1000);
+};
+
+var setRoman = function(time){
+    // set roman time
+    // you must implement exercise.roman() 
+    /*Roman_Time = {
+        hour_col1: String(time.getHours()%10),
+        hour_col2: String(Math.floor(time.getHours(),10)),
+        min_col1: leftPad(time.getMinutes(),2)[0],
+        min_col2: leftPad(time.getMinutes(),2)[1],
+        sec_col1: String(time.getSeconds()%10),
+        sec_col2: String(Math.floor(time.getSeconds(),10))
+    };*/
+    exercise.roman(time);
+    document.getElementById('hour_col1_pos0').innerHTML= Number(Roman_Time.hour_col1);
+    document.getElementById('hour_col2_pos0').innerHTML= Number(Roman_Time.hour_col2);
+    document.getElementById('min_col1_pos0').innerHTML= Number(Roman_Time.min_col1);
+    document.getElementById('min_col2_pos0').innerHTML= Number(Roman_Time.min_col2);
+    document.getElementById('sec_col1_pos0').innerHTML= Number(Roman_Time.sec_col1);
+    document.getElementById('sec_col2_pos0').innerHTML= Number(Roman_Time.sec_col2);
+      
+};
+
+var setBinary = function(time){
+    // set roman time
+    // you must implement exercise.binary()
+    console.log("Roman_Time in set binary "+Roman_Time);
+
+var placement = exercise.binary(time, Roman_Time.hour_col1);
+
+if (placement.position1=='on'){
+    document.getElementById('hour_col1_pos1').style.backgroundColor='red'
+}
+else{document.getElementById('hour_col1_pos1').style.backgroundColor='silver'
+}
+
+if (placement.position2=='on'){
+    document.getElementById('hour_col1_pos2').style.backgroundColor='red'
+}
+
+else{document.getElementById('hour_col1_pos2').style.backgroundColor='silver'
+}
+
+var placement = exercise.binary(time, Roman_Time.hour_col2)
+if (placement.position1=='on'){
+    document.getElementById('hour_col2_pos1').style.backgroundColor='red'
+}
+else{document.getElementById('hour_col2_pos1').style.backgroundColor='silver'
+}
+
+if (placement.position2=='on'){
+    document.getElementById('hour_col2_pos2').style.backgroundColor='red'
+}
+
+else{document.getElementById('hour_col2_pos2').style.backgroundColor='silver'
+}
+
+if (placement.position4=='on'){
+    document.getElementById('hour_col2_pos4').style.backgroundColor='red'
+}
+else{document.getElementById('hour_col2_pos4').style.backgroundColor='silver'
+}
+
+if (placement.position8=='on'){
+    document.getElementById('hour_col2_pos8').style.backgroundColor='red'
+}   
+else{document.getElementById('hour_col2_pos8').style.backgroundColor='silver'
+
+}
+console.log("Roman_Time in html "+Roman_Time);
+var placement = exercise.binary(time, Roman_Time.min_col1)
+if (placement.position1=='on'){
+    document.getElementById('min_col1_pos1').style.backgroundColor='red'
+}
+
+else{document.getElementById('min_col1_pos1').style.backgroundColor='silver'
+}
+if (placement.position2=='on'){
+    document.getElementById('min_col1_pos2').style.backgroundColor='red'
+}
+
+else{document.getElementById('min_col1_pos2').style.backgroundColor='silver'
+}
+if (placement.position4=='on'){
+    document.getElementById('min_col1_pos4').style.backgroundColor='red'
+}
+
+else{document.getElementById('min_col1_pos4').style.backgroundColor='silver'
+}
+if (placement.position8=='on'){
+    document.getElementById('min_col1_pos8').style.backgroundColor='red'
+}
+
+else{document.getElementById('min_col1_pos8').style.backgroundColor='silver'
+}
+var placement = exercise.binary(time, Roman_Time.min_col2)
+if (placement.position1=='on'){
+    document.getElementById('min_col2_pos1').style.backgroundColor='red'
+}
+
+else{document.getElementById('min_col2_pos1').style.backgroundColor='silver'
+}
+if (placement.position2=='on'){
+    document.getElementById('min_col2_pos2').style.backgroundColor='red'
+}
+else{document.getElementById('min_col2_pos2').style.backgroundColor='silver'
+}
+if (placement.position4=='on'){
+    document.getElementById('min_col2_pos4').style.backgroundColor='red'
+}
+else{document.getElementById('min_col2_pos4').style.backgroundColor='silver'
+}
+if (placement.position8=='on'){
+    document.getElementById('min_col2_pos8').style.backgroundColor='red'
+}
+else{document.getElementById('min_col2_pos8').style.backgroundColor='silver'
+}
+var placement = exercise.binary(time, Roman_Time.sec_col1)
+if (placement.position1=='on'){
+    document.getElementById('sec_col1_pos1').style.backgroundColor='red'
+}
+else{document.getElementById('sec_col1_pos1').style.backgroundColor='silver'
+}
+if (placement.position2=='on'){
+    document.getElementById('sec_col1_pos2').style.backgroundColor='red'
+}
+
+else{document.getElementById('sec_col1_pos2').style.backgroundColor='silver'
+}
+if (placement.position4=='on'){
+    document.getElementById('sec_col1_pos4').style.backgroundColor='red'
+}
+
+else{document.getElementById('sec_col1_pos4').style.backgroundColor='silver'
+}
+if (placement.position8=='on'){
+    document.getElementById('sec_col1_pos8').style.backgroundColor='red'
+}
+else{document.getElementById('sec_col1_pos8').style.backgroundColor='silver'
+}
+var placement = exercise.binary(time, Roman_Time.sec_col2)
+if (placement.position1=='on'){
+    document.getElementById('sec_col2_pos1').style.backgroundColor='red'
+}
+else{document.getElementById('sec_col2_pos1').style.backgroundColor='silver'
+}
+if (placement.position2=='on'){
+    document.getElementById('sec_col2_pos2').style.backgroundColor='red'
+}
+else{document.getElementById('sec_col2_pos2').style.backgroundColor='silver'
+}
+if (placement.position4=='on'){
+    document.getElementById('sec_col2_pos4').style.backgroundColor='red'
+}
+else{document.getElementById('sec_col2_pos4').style.backgroundColor='silver'
+}
+if (placement.position8=='on'){
+    document.getElementById('sec_col2_pos8').style.backgroundColor='red'
+}
+else{document.getElementById('sec_col2_pos8').style.backgroundColor='silver'
+}
+};
+
+window.onload = function (){
+    timer();
+};
+// start timer when page is loaded
+// your code here
+
+</script>
+
+
+<div id ="hour_col1_pos8" style="position:absolute; top: 0px; left: 0px; width: 100px; height:100px; background:white; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+<div id ="hour_col2_pos8"style="position:absolute; top: 0px; left: 110px; width: 100px; height:100px; background:silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+<div id ="min_col1_pos8"style="position:absolute; top: 0px;left: 220px; width: 100px; height:100px; background:white; visibility: hidden; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+<div id ="min_col2_pos8"style="position:absolute; top: 0px;left: 330px; width: 100px; height:100px; background:silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+<div id ="sec_col1_pos8"style="position:absolute; top: 0px;left: 440px; width: 100px; height:100px; background: white; visibility: hidden; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+<div id ="sec_col2_pos8"style="position:absolute; top: 0px;left: 550px; width: 100px; height:100px; background:silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+
+<div id ="hour_col1_pos4"style="position:absolute; top: 110px; left: 0px; width: 100px; height:100px; background:white; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+<div id ="hour_col2_pos4"style="position:absolute; top: 110px; left: 110px; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+<div id ="min_col1_pos4"style="position:absolute; top: 110px; left: 220px; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+<div id ="min_col2_pos4"style="position:absolute; top: 110px; left: 330px; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+<div id ="sec_col1_pos4"style="position:absolute; top: 110px; left: 440px; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+<div id ="sec_col2_pos4"style="position:absolute; top: 110px; left: 550px; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+
+<div id ="hour_col1_pos2"style="position:absolute; top: 220px; left: 0px; width: 100px; height:100px; background:silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+<div id ="hour_col2_pos2"style="position:absolute; top: 220px; left: 110px; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+<div id ="min_col1_pos2"style="position:absolute; top: 220px; left: 220px; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+<div id ="min_col2_pos2"style="position:absolute; top: 220px; left: 330px; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+<div id ="sec_col1_pos2"style="position:absolute; top: 220px; left: 440px; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+<div id ="sec_col2_pos2"style="position:absolute; top: 220px; left: 550px; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+
+<div id ="hour_col1_pos1"style="position:absolute; top: 330px; left: 0px; width: 100px; height:100px; background:silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+<div id ="hour_col2_pos1"style="position:absolute; top: 330px; left: 110px; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+<div id ="min_col1_pos1"style="position:absolute; top: 330px; left: 220px; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+<div id ="min_col2_pos1"style="position:absolute; top: 330px; left: 330px; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+<div id ="sec_col1_pos1"style="position:absolute; top: 330px; left: 440px; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+<div id ="sec_col2_pos1"style="position:absolute; top: 330px; left: 550px; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+ 
+<div id ="hour_col1_pos0"style="position:absolute; top: 440px; left: 0px; width: 100px; height:100px; background:white; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+<div id ="hour_col2_pos0"style="position:absolute; top: 440px; left: 110px; width: 100px; height: 100px; background: white; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+<div id ="min_col1_pos0"style="position:absolute; top: 440px; left: 220px; width: 100px; height: 100px; background: white; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+<div id ="min_col2_pos0"style="position:absolute; top: 440px; left: 330px; width: 100px; height: 100px; background: white; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+<div id ="sec_col1_pos0"style="position:absolute; top: 440px; left: 440px; width: 100px; height: 100px; background: white; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+<div id ="sec_col2_pos0"style="position:absolute; top: 440px; left: 550px; width: 100px; height: 100px; background: white; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;"></div>
+ 
+
+<!--
+
+    Write HTML elements to hold your binary clock positions
+
+    There are 6 columns in a binary clock
+
+-->
+
+</html>
