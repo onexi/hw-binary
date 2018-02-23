@@ -20,7 +20,15 @@ var timer = function() {
 
 var setRoman = function(time){
 	// set roman time
-	// you must implement exercise.roman() 
+	// you must implement exercise.roman()
+	
+	var num_roman = exercise.roman(time);
+	document.getElementById('hour_col1_pos0').innerHTML = num_roman.hour_col1;
+	document.getElementById('hour_col2_pos0').innerHTML = num_roman.hour_col2;
+	document.getElementById('min_col3_pos0').innerHTML = num_roman.min_col1;
+	document.getElementById('min_col4_pos0').innerHTML = num_roman.min_col2;
+	document.getElementById('sec_col5_pos0').innerHTML = num_roman.sec_col1;
+	document.getElementById('sec_col6_pos0').innerHTML = num_roman.sec_col2;
 };
 
 var setBinary = function(time){
@@ -107,56 +115,43 @@ var setBinary = function(time){
 
 <style> div {position:absolute; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;} </style>
 
-
+<div id="hour_col1_pos0" style="left:10px; top:450px; background:white"></div>
 <div id="hour_col1_pos1" style="left:10px; top:340px"></div>
 <div id="hour_col1_pos2" style="left:10px; top:230px"></div>
 <div id="hour_col1_pos4" style="left:10px; top:120px; visibility:hidden"></div>
 <div id="hour_col1_pos8" style="left:10px; top:10px; visibility:hidden"></div>
 
+<div id="hour_col2_pos0" style="left:120px; top:450px; background:white"></div>
 <div id="hour_col2_pos1" style="left:120px; top:340px"></div>
 <div id="hour_col2_pos2" style="left:120px; top:230px"></div>
 <div id="hour_col2_pos4" style="left:120px; top:120px"></div>
 <div id="hour_col2_pos8" style="left:120px; top:10px"></div>
 
+<div id="min_col3_pos0" style="left:230px; top:450px; background:white"></div>
 <div id="min_col3_pos1" style="left:230px; top:340px"></div>
 <div id="min_col3_pos2" style="left:230px; top:230px"></div>
 <div id="min_col3_pos4" style="left:230px; top:120px"></div>
 <div id="min_col3_pos8" style="left:230px; top:10px; visibility:hidden"></div>
 
+<div id="min_col4_pos0" style="left:340px; top:450px; background:white"></div>
 <div id="min_col4_pos1" style="left:340px; top:340px"></div>
 <div id="min_col4_pos2" style="left:340px; top:230px"></div>
 <div id="min_col4_pos4" style="left:340px; top:120px"></div>
 <div id="min_col4_pos8" style="left:340px; top:10px"></div>
 
+<div id="sec_col5_pos0" style="left:450px; top:450px; background:white"></div>
 <div id="sec_col5_pos1" style="left:450px; top:340px"></div>
 <div id="sec_col5_pos2" style="left:450px; top:230px"></div>
 <div id="sec_col5_pos4" style="left:450px; top:120px"></div>
 <div id="sec_col5_pos8" style="left:450px; top:10px; visibility:hidden"></div>
 
+<div id="sec_col6_pos0" style="left:560px; top:450px; background:white"></div>
 <div id="sec_col6_pos1" style="left:560px; top:340px"></div>
 <div id="sec_col6_pos2" style="left:560px; top:230px"></div>
 <div id="sec_col6_pos4" style="left:560px; top:120px"></div>
 <div id="sec_col6_pos8" style="left:560px; top:10px"></div>
 
-<!--/*
-<script>
-	document.getElementById('hour_col1_pos1').style.backgroundColor = 'red';
 
-	document.getElementById('hour_col3_pos4').style.backgroundColor = 'red';
-
-
-
-	document.getElementById('hour_col4_pos1').style.backgroundColor = 'red';
-	document.getElementById('hour_col4_pos4').style.backgroundColor = 'red';
-	document.getElementById('hour_col4_pos8').style.backgroundColor = 'red';
-
-	document.getElementById('hour_col5_pos1').style.backgroundColor = 'red';
-	document.getElementById('hour_col5_pos4').style.backgroundColor = 'red';
-
-	document.getElementById('hour_col6_pos1').style.backgroundColor = 'red';
-	document.getElementById('hour_col6_pos8').style.backgroundColor = 'red';
-</script>
-*/-->
 
 <script>window.onload = timer();</script>
 
