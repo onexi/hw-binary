@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<script src="exercise.js"></script>
+<script>
+
+var timer = function() {
+	// get the current date & time
+	var date = new Date();
+	var time = exercise.parseDate(date);
+
+	// show roman time, using 6 columns
+	setRoman(time);
+
+	// show binary time
+	setBinary(time);
+
+	// update every 1 second
+	setTimeout(timer, 1000);
+
+
+};
+
+var setRoman = function(time){
+	//set up variables to use in the loop
+	var firstPart = ["hour","hour","min","min","sec","sec"];
+	var secondPart = ["1","2"];
+	timeArray = exercise.roman(time);
+
+
+	// Loop through all of the blocks and assign them their proper number
+	for (i = 0; i<6; i++) {
+		//Construct the ID
+		var IDname = firstPart[i] + "_" + secondPart[i%2] + "_rom";
+		var block = document.getElementById(IDname);
+		var key = firstPart[i] + "_col" + secondPart[i%2];
+		block.innerText = timeArray[key];
+	};
+
+};
+
+var setBinary = function(time){
+	// Demonstrate on hour 2
+	var firstPart = ["hour","hour","min","min","sec","sec"];
+	var secondPart = ["col1","col2"];
+	var thirdPart = [8,4,2,1];
+	
+	// Loop through all 6 columns
+	for (i = 0; i < 6; i++){
+		//Construct the 'col' string
+		var colString = firstPart[i] + "_" + secondPart[i%2];
+		var colObject = exercise.binary(time,colString);
+		// Use the object to set the box colors
+		for (j = 0; j < 4; j++){
+			var theID = colString+ "_pos" + thirdPart[j];
+			var key = "position" + thirdPart[j];
+			setColor(theID,colObject[key]);
+		};
+	};
+
+};
+
+function setColor(ID,ONorOFF){
+	if (ONorOFF == 'on'){
+		document.getElementById(ID).style.backgroundColor = 'red';
+	} else if (ONorOFF == 'off'){
+		document.getElementById(ID).style.backgroundColor = 'silver';
+	};
+};
+
+
+// start timer when page is loaded
+window.onload = timer; 
+var imageWidth = (innerWidth - 50 )/ 6;
+</script>
+<style> 
+div {position:absolute; 
+			width: 100px; 
+			height: 100px; 
+			background: silver; 
+			text-align: center;
+			vertical-align: middle; 
+			line-height: 100px;
+			font-size: 5em;} 
+</style>
+
+
+<div id="hour_col1_pos8" style="left: 10px; top: 10px; visibility: hidden"></div>
+<div id="hour_col1_pos4" style="left: 10px; top: 120px; visibility: hidden"></div>
+<div id="hour_col1_pos2" style="left: 10px; top: 230px;"></div>
+<div id="hour_col1_pos1" style="left: 10px; top: 340px;"></div>
+
+
+<div id="hour_col2_pos8" style="left: 120px; top: 10px;"></div>
+<div id="hour_col2_pos4" style="left: 120px; top: 120px;"></div>
+<div id="hour_col2_pos2" style="left: 120px; top: 230px;"></div>
+<div id="hour_col2_pos1" style="left: 120px; top: 340px;"></div>
+
+
+<div id="min_col1_pos8" style="left: 230px; top: 10px; visibility: hidden"></div>
+<div id="min_col1_pos4" style="left: 230px; top: 120px;"></div>
+<div id="min_col1_pos2" style="left: 230px; top: 230px;"></div>
+<div id="min_col1_pos1" style="left: 230px; top: 340px;"></div>
+
+<div id="min_col2_pos8" style="left: 340px; top: 10px;"></div>
+<div id="min_col2_pos4" style="left: 340px; top: 120px;"></div>
+<div id="min_col2_pos2" style="left: 340px; top: 230px;"></div>
+<div id="min_col2_pos1" style="left: 340px; top: 340px;"></div>
+
+<div id="sec_col1_pos8" style="left: 450px; top: 10px; visibility: hidden"></div>
+<div id="sec_col1_pos4" style="left: 450px; top: 120px;"></div>
+<div id="sec_col1_pos2" style="left: 450px; top: 230px;"></div>
+<div id="sec_col1_pos1" style="left: 450px; top: 340px;"></div>
+
+<div id="sec_col2_pos8" style="left: 560px; top: 10px;"></div>
+<div id="sec_col2_pos4" style="left: 560px; top: 120px;"></div>
+<div id="sec_col2_pos2" style="left: 560px; top: 230px;"></div>
+<div id="sec_col2_pos1" style="left: 560px; top: 340px;"></div>
+
+<!--
+	Add a section below for the roman time
+-->
+
+<div id="hour_1_rom" style="left: 10px; top: 450px; background:white; "></div>
+<div id="hour_2_rom" style="left: 120px; top: 450px; background:white;"></div>
+<div id="min_1_rom" style="left: 230px; top: 450px; background: white;"></div>
+<div id="min_2_rom" style="left: 340px; top: 450px; background: white;"></div>
+<div id="sec_1_rom" style="left: 450px; top: 450px; background: white;"></div>
+<div id="sec_2_rom" style="left: 560px; top: 450px; background: white;"></div>
+
+</html>
+     
