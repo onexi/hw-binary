@@ -20,6 +20,33 @@ exercise.roman = function(time){
     // 
     //-------------------------------------
 
+    var hrs = time.getHours();
+    var hrs_string;
+    if(hrs<10){hrs_string = "0" + String(hrs);}
+    else{hrs_string =  String(hrs);}
+    
+
+    var min = time.getMinutes();
+    var min_string;
+    if(min<10){min_string = "0" + String(min);}
+    else{min_string =  String(min);}
+
+    var sec = time.getSeconds();
+    var sec_string;
+    if(sec<10){sec_string = "0" + String(sec);}
+    else{sec_string =  String(sec);}
+
+    return { 
+        hour_col1 : hrs_string[0], 
+        hour_col2 : hrs_string[1],
+        min_col1  : min_string[0], 
+        min_col2  : min_string[1], 
+        sec_col1  : sec_string[0], 
+        sec_col2  : sec_string[1]
+    };
+
+    
+
 };
 
 exercise.binary = function(time, col){
@@ -137,15 +164,12 @@ exercise.binary = function(time, col){
 //document.getElementById('hour_col1_pos1').style.backgroundColor = 'red';
 
 
-if (col === 1) {return binary[Number(hrs_string[0])];} // back to # for string number?
+if (col === 1) {return binary[Number(hrs_string[0])];} // returning  
 if (col === 2) {return binary[Number(hrs_string[1])];}
 if (col === 3) {return binary[Number(min_string[0])];}
 if (col === 4) {return binary[Number(min_string[1])];}
 if (col === 5) {return binary[Number(sec_string[0])];}
 if (col === 6) {return binary[Number(sec_string[1])];}
-
-
-
 
 
 };
