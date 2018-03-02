@@ -1,0 +1,264 @@
+<html>
+
+<style> div {position:absolute; width: 100px; height: 100px; background: silver; text-align: center;vertical-align: middle; line-height: 100px;font-size: 5em;} </style>
+
+
+<div id="hour_col1_roman" style="left:10px;top:450px"></div>
+<div id="hour_col1_pos1" style="left:10px;top:340px"></div>
+<div id="hour_col1_pos2" style="left:10px;top:230px;"></div>
+<div id= "hour_col1_pos4" style="left:10px;top:120px;visibility:hidden;"></div>
+<div id= "hour_col1_pos8" style="left:10px;top:10px;visibility:hidden;"></div>
+                
+<div id="hour_col2_roman" style="left:120px;top:450px"></div>
+<div id="hour_col2_pos1" style="left:120px;top:340px"></div>
+<div id="hour_col2_pos2" style="left:120px;top:230px;"></div>
+<div id= "hour_col2_pos4" style="left:120px;top:120px;"></div>
+<div id= "hour_col2_pos8" style="left:120px;top:10px;"></div>
+                
+<div id="min_col3_roman" style="left:230px;top:450px"></div>
+<div id="min_col3_pos1" style="left:230px;top:340px"></div>
+<div id="min_col3_pos2" style="left:230px;top:230px;"></div>
+<div id= "min_col3_pos4" style="left:230px;top:120px;"></div>
+<div id= "min_col3_pos8" style="left:230px;top:10px;visibility:hidden"></div>
+                
+<div id="min_col4_roman" style="left:340px;top:450px"></div>
+<div id="min_col4_pos1" style="left:340px;top:340px"></div>
+<div id="min_col4_pos2" style="left:340px;top:230px;"></div>
+<div id= "min_col4_pos4" style="left:340px;top:120px;"></div>
+<div id= "min_col4_pos8" style="left:340px;top:10px;"></div>
+                
+<div id="sec_col5_roman" style="left:450px;top:450px"></div>
+<div id="sec_col5_pos1" style="left:450px;top:340px"></div>
+<div id="sec_col5_pos2" style="left:450px;top:230px;"></div>
+<div id= "sec_col5_pos4" style="left:450px;top:120px;"></div>
+<div id= "sec_col5_pos8" style="left:450px;top:10px;visibility:hidden"></div>
+                
+<div id="sec_col6_roman" style="left:560px;top:450px"></div>
+<div id="sec_col6_pos1" style="left:560px;top:340px"></div>
+<div id="sec_col6_pos2" style="left:560px;top:230px;"></div>
+<div id= "sec_col6_pos4" style="left:560px;top:120px;"></div>
+<div id= "sec_col6_pos8" style="left:560px;top:10px;"></div>
+
+<script>
+function addZero(i){
+    if (i<10){
+        i = "0" + i;
+    }
+    return i;
+}
+
+var now = new Date();
+
+var hours = addZero(now.getHours());
+var strHours = hours.toString();
+var min = addZero(now.getMinutes());
+var strMin = min.toString();
+var sec = addZero(now.getSeconds());
+var strSec = sec.toString();
+
+var objectTime = {
+    hour_col1 : strHours[0],
+    hour_col2 : strHours[1],
+    min_col3 : strMin[0],
+    min_col4 : strMin[1],
+    sec_col5 : strSec[0],
+    sec_col6 : strSec[1]
+};
+
+document.getElementById("hour_col1_roman").innerText =  objectTime.hour_col1;
+document.getElementById("hour_col2_roman").innerText =  objectTime.hour_col2;
+document.getElementById("min_col3_roman").innerText =  objectTime.min_col3;
+document.getElementById("min_col4_roman").innerText =  objectTime.min_col4;
+document.getElementById("sec_col5_roman").innerText =  objectTime.sec_col5;
+document.getElementById("sec_col6_roman").innerText =  objectTime.sec_col6; 
+
+if(objectTime.hour_col1 === '1'){
+    document.getElementById('hour_col1_pos1').style.background = 'red'
+} 
+
+if(objectTime.hour_col1 === '2'){
+    document.getElementById('hour_col1_pos2').style.background = 'red'
+} 
+
+if(objectTime.hour_col2 === '1'){
+    document.getElementById('hour_col2_pos1').style.background = 'red'
+} 
+
+if(objectTime.hour_col2 === '2'){
+    document.getElementById('hour_col2_pos2').style.background = 'red'
+}
+
+if(objectTime.hour_col2 === '3'){
+    document.getElementById('hour_col2_pos1').style.background = 'red'
+    document.getElementById('hour_col2_pos2').style.background = 'red'
+}
+
+if(objectTime.hour_col2 === '4'){
+    document.getElementById('hour_col2_pos4').style.background = 'red'
+}
+
+if(objectTime.hour_col2 === '5'){
+    document.getElementById('hour_col2_pos1').style.background = 'red'
+    document.getElementById('hour_col2_pos4').style.background = 'red'
+}
+
+if(objectTime.hour_col2 === '6'){
+    document.getElementById('hour_col2_pos2').style.background = 'red'
+    document.getElementById('hour_col2_pos4').style.background = 'red'
+}
+
+if(objectTime.hour_col2 === '7'){
+    document.getElementById('hour_col2_pos1').style.background = 'red'
+    document.getElementById('hour_col2_pos2').style.background = 'red'
+    document.getElementById('hour_col2_pos4').style.background = 'red'
+}
+
+if(objectTime.hour_col2 === '8'){
+    document.getElementById('hour_col2_pos8').style.background = 'red'
+}
+
+if(objectTime.hour_col2 === '9'){
+    document.getElementById('hour_col2_pos1').style.background = 'red'
+    document.getElementById('hour_col2_pos8').style.background = 'red'
+}
+
+if(objectTime.min_col3 === '1'){
+    document.getElementById('min_col3_pos1').style.background = 'red'
+} 
+
+if(objectTime.min_col3 === '2'){
+    document.getElementById('min_col3_pos2').style.background = 'red'
+}
+
+if(objectTime.min_col3 === '3'){
+    document.getElementById('min_col3_pos1').style.background = 'red'
+    document.getElementById('min_col3_pos2').style.background = 'red'
+}
+
+if(objectTime.min_col3 === '4'){
+    document.getElementById('min_col3_pos4').style.background = 'red'
+}
+
+if(objectTime.min_col3 === '5'){
+    document.getElementById('min_col3_pos1').style.background = 'red'
+    document.getElementById('min_col3_pos4').style.background = 'red'
+}
+
+if(objectTime.min_col3 === '6'){
+    document.getElementById('min_col3_pos2').style.background = 'red'
+    document.getElementById('min_col3_pos4').style.background = 'red'
+}
+
+if(objectTime.min_col4 === '1'){
+    document.getElementById('min_col4_pos1').style.background = 'red'
+} 
+
+if(objectTime.min_col4 === '2'){
+    document.getElementById('min_col4_pos2').style.background = 'red'
+}
+
+if(objectTime.min_col4 === '3'){
+    document.getElementById('min_col4_pos1').style.background = 'red'
+    document.getElementById('min_col4_pos2').style.background = 'red'
+}
+
+if(objectTime.min_col4 === '4'){
+    document.getElementById('min_col4_pos4').style.background = 'red'
+}
+
+if(objectTime.min_col4 === '5'){
+    document.getElementById('min_col4_pos1').style.background = 'red'
+    document.getElementById('min_col4_pos4').style.background = 'red'
+}
+
+if(objectTime.min_col4 === '6'){
+    document.getElementById('min_col4_pos2').style.background = 'red'
+    document.getElementById('min_col4_pos4').style.background = 'red'
+}
+
+if(objectTime.min_col4 === '7'){
+    document.getElementById('min_col4_pos1').style.background = 'red'
+    document.getElementById('min_col4_pos2').style.background = 'red'
+    document.getElementById('min_col4_pos4').style.background = 'red'
+}
+
+if(objectTime.min_col4 === '8'){
+    document.getElementById('min_col4_pos8').style.background = 'red'
+}
+
+if(objectTime.min_col4 === '9'){
+    document.getElementById('min_col4_pos1').style.background = 'red'
+    document.getElementById('min_col4_pos8').style.background = 'red'
+}
+
+if(objectTime.sec_col5 === '1'){
+    document.getElementById('sec_col5_pos1').style.background = 'red'
+} 
+
+if(objectTime.sec_col5 === '2'){
+    document.getElementById('sec_col5_pos2').style.background = 'red'
+}
+
+if(objectTime.sec_col5 === '3'){
+    document.getElementById('sec_col5_pos1').style.background = 'red'
+    document.getElementById('sec_col5_pos2').style.background = 'red'
+}
+
+if(objectTime.sec_col5 === '4'){
+    document.getElementById('sec_col5_pos4').style.background = 'red'
+}
+
+if(objectTime.sec_col5 === '5'){
+    document.getElementById('sec_col5_pos1').style.background = 'red'
+    document.getElementById('sec_col5_pos4').style.background = 'red'
+}
+
+if(objectTime.sec_col5 === '6'){
+    document.getElementById('sec_col5_pos2').style.background = 'red'
+    document.getElementById('sec_col5_pos4').style.background = 'red'
+}
+
+if(objectTime.sec_col6 === '1'){
+    document.getElementById('sec_col6_pos1').style.background = 'red'
+} 
+
+if(objectTime.sec_col6 === '2'){
+    document.getElementById('sec_col6_pos2').style.background = 'red'
+}
+
+if(objectTime.sec_col6 === '3'){
+    document.getElementById('sec_col6_pos1').style.background = 'red'
+    document.getElementById('sec_col6_pos2').style.background = 'red'
+}
+
+if(objectTime.sec_col6 === '4'){
+    document.getElementById('sec_col6_pos4').style.background = 'red'
+}
+
+if(objectTime.sec_col6 === '5'){
+    document.getElementById('sec_col6_pos1').style.background = 'red'
+    document.getElementById('sec_col6_pos4').style.background = 'red'
+}
+
+if(objectTime.sec_col6 === '6'){
+    document.getElementById('sec_col6_pos2').style.background = 'red'
+    document.getElementById('sec_col6_pos4').style.background = 'red'
+}
+
+if(objectTime.sec_col6 === '7'){
+    document.getElementById('sec_col6_pos1').style.background = 'red'
+    document.getElementById('sec_col6_pos2').style.background = 'red'
+    document.getElementById('sec_col6_pos4').style.background = 'red'
+}
+
+if(objectTime.sec_col6 === '8'){
+    document.getElementById('sec_col6_pos8').style.background = 'red'
+}
+
+if(objectTime.sec_col6 === '9'){
+    document.getElementById('sec_col6_pos1').style.background = 'red'
+    document.getElementById('sec_col6_pos8').style.background = 'red'
+}
+</script>
+
+</html>

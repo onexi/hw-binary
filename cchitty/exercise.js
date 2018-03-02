@@ -2,6 +2,30 @@ var exercise = {};
 
 
 exercise.roman = function(time){
+   
+    function addZero(i){
+        if (i<10){
+            i = "0" + i;
+        }
+        return i;
+    }
+
+    var hours = addZero(time.getHours());
+    var strHours = hours.toString();
+    var min = addZero(time.getMinutes());
+    var strMin = min.toString();
+    var sec = addZero(time.getSeconds());
+    var strSec = sec.toString();
+    
+    var objectTime = {
+        hour_col1 : strHours[0],
+        hour_col2 : strHours[1],
+        min_col3 : strMin[0],
+        min_col4 : strMin[1],
+        sec_col5 : strSec[0],
+        sec_col6 : strSec[1]
+    };
+    return objectTime;
 
     //-------------------------------------
     //  YOUR CODE
@@ -23,7 +47,7 @@ exercise.roman = function(time){
 };
 
 exercise.binary = function(time, col){
-
+    
     //----------------------------------------------------------
     //  YOUR CODE
     //    Return an object with
@@ -39,5 +63,4 @@ exercise.binary = function(time, col){
     //    }; 
     // 
     //----------------------------------------------------------
-
 };
